@@ -1,0 +1,23 @@
+{
+  "primary_variant": "week3_combined",
+  "rubric_max": {
+    "code": 8,
+    "explanation": 8,
+    "documentation": 4
+  },
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "data_dir": "data/synthetic_v2",
+  "references_dir": "references",
+  "template_similarity_threshold": 0.9,
+  "roll_pattern": "\\b[A-Z]\\d{3}\\b",
+  "semantic_enabled": true,
+  "onnx_dir": "models/all-MiniLM-L6-v2-onnx",
+  "encoder_name": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+  "concept_threshold": 0.275,
+  "confidence_method": "Agreement between week2_tfidf and week3_combined is computed only where their feature lists differ. This is not a calibrated probability.",
+  "variants": [
+    "week2_tfidf",
+    "week3_semantic",
+    "week3_combined"
+  ]
+}

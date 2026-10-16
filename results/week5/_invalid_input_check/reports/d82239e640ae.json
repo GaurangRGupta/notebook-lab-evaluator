@@ -1,0 +1,24 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "d82239e640ae",
+  "assignment_id": "LAB_SYN1",
+  "split": "test",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.319,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 8.0,
+  "documentation_quality": 1.54,
+  "overall_score": 12.09,
+  "max_score": 20,
+  "errors": [
+    "cell 4 (T1): SyntaxError line 2: expected ':'",
+    "cell 6 (T2): SyntaxError line 2: '(' was never closed",
+    "output mismatch in T1",
+    "output mismatch in T2"
+  ],
+  "missing_concepts": {},
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

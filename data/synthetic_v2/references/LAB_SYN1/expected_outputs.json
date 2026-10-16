@@ -1,0 +1,20 @@
+{
+  "_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "tasks": {
+    "T1": {
+      "value": "Vocabulary size: 12",
+      "match": "numeric",
+      "tol": 0.001
+    },
+    "T2": {
+      "value": "TF-IDF matrix shape: (3, 12)",
+      "match": "numeric",
+      "tol": 0.001
+    },
+    "T3": {
+      "value": "Cosine similarity: 0.6344",
+      "match": "numeric",
+      "tol": 0.001
+    }
+  }
+}

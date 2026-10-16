@@ -1,0 +1,12 @@
+=== data_status: SYNTHETIC_DEVELOPMENT_DATA ===
+[anonymise] 10 notebooks, residual PII pattern matches after scrub: 0
+[parse] 130 cell records (40 code, 90 markdown), 71 template cells flagged
+[labels] 10 labelled notebooks, 2 flagged for discussion
+[split] StratifiedGroupKFold(k=5, seed=42), strata=assignment/source; realised {'train': 0.6, 'val': 0.2, 'test': 0.2} (target {'train': 0.6, 'val': 0.2, 'test': 0.2})
+[eval:week2_tfidf:code:val] n=2 model MAE=0.93 | mean-predictor MAE=2.50
+[eval:week2_tfidf:code:test] n=2 model MAE=0.76 | mean-predictor MAE=2.00
+[eval:week2_tfidf:explanation:val] n=2 model MAE=1.29 | mean-predictor MAE=2.50
+[eval:week2_tfidf:explanation:test] n=2 model MAE=0.96 | mean-predictor MAE=1.00
+[eval:week2_tfidf:documentation:val] n=2 model MAE=0.10 | mean-predictor MAE=0.00
+[eval:week2_tfidf:documentation:test] n=2 model MAE=0.89 | mean-predictor MAE=1.50
+[reports] wrote 10 per-notebook reports

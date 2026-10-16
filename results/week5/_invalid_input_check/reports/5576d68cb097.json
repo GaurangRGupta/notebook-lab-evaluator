@@ -1,0 +1,41 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "5576d68cb097",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.005,
+  "output_match": false,
+  "output_match_rate": 0.0,
+  "explanation_score": 3.16,
+  "documentation_quality": 2.35,
+  "overall_score": 5.55,
+  "max_score": 20,
+  "errors": [
+    "cell 5 (T1): SyntaxError line 2: expected ':'",
+    "cell 7 (T2): SyntaxError line 2: '(' was never closed",
+    "cell 11 (T3): SyntaxError line 4: invalid syntax. Perhaps you forgot a comma?",
+    "output mismatch in T1",
+    "output mismatch in T2",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

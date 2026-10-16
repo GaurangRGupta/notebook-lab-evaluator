@@ -1,0 +1,61 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "f513dcfc5122",
+  "assignment_id": "LAB_SYN2",
+  "split": "test",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.668,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 3.42,
+  "documentation_quality": 2.68,
+  "overall_score": 11.45,
+  "max_score": 20,
+  "errors": [
+    "cell 5 (T1): SyntaxError line 2: expected ':'",
+    "output mismatch in T1"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.773,
+      "T3": 0.802
+    },
+    "concepts_matched_semantically": {
+      "T2": [
+        "unseen bigrams"
+      ],
+      "T3": [
+        "normalised per word",
+        "lower is better"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T2": [
+        "zero probability",
+        "probability mass"
+      ],
+      "T3": [
+        "inverse probability",
+        "surprise"
+      ]
+    }
+  }
+}

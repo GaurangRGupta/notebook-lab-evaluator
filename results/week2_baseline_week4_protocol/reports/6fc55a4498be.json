@@ -1,0 +1,33 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "notebook_id": "6fc55a4498be",
+  "assignment_id": "LAB_SYN2",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.843,
+  "output_match": true,
+  "output_match_rate": 1.0,
+  "explanation_score": 0.0,
+  "documentation_quality": 0.01,
+  "overall_score": 6.75,
+  "max_score": 20,
+  "errors": [],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

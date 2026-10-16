@@ -5,9 +5,23 @@ build/
 dist/
 wheels/
 *.egg-info
+.pytest_cache/
 
 # Virtual environments
-.venv
+.venv/
+venv/
 
-# Submission guidelines
-submission_details/
+# Retired course material, handouts, photographs, and earlier package copies.
+local_archive/
+
+# Model weights. scripts/fetch_models.py writes these. Track models/README.md only.
+*.onnx
+models/*
+models/**/*
+!models/README.md
+
+# Class notebooks once they exist. The empty layout notes stay tracked.
+data/class/raw/**/*.ipynb
+data/class/interim/*.ipynb
+data/class/interim/id_map.csv
+*.salt

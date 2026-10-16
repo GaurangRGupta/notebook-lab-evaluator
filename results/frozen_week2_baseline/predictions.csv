@@ -1,0 +1,13 @@
+variant,notebook_id,split,dimension,human,predicted
+week2_tfidf,de5aaa0b5b63,val,code,3.0,2.480373051224944
+week2_tfidf,c8a0c8c2e4e8,val,code,3.0,1.6568763919821823
+week2_tfidf,60cf8659878a,test,code,7.0,6.740710031955069
+week2_tfidf,bced8ee14adb,test,code,8.0,6.740710031955069
+week2_tfidf,de5aaa0b5b63,val,explanation,5.0,4.239450957907549
+week2_tfidf,c8a0c8c2e4e8,val,explanation,6.0,4.177003542221206
+week2_tfidf,60cf8659878a,test,explanation,2.0,0.9436708190302623
+week2_tfidf,bced8ee14adb,test,explanation,2.0,1.1421565014906567
+week2_tfidf,de5aaa0b5b63,val,documentation,2.0,1.806189342378155
+week2_tfidf,c8a0c8c2e4e8,val,documentation,2.0,2.0124165085423376
+week2_tfidf,60cf8659878a,test,documentation,1.0,2.054316430584559
+week2_tfidf,bced8ee14adb,test,documentation,4.0,3.2679722335305033

@@ -1,0 +1,16 @@
+nbformat>=5.9
+nbclient>=0.10        # fixture generation / optional re-execution
+ipykernel>=6          # fixture generation
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.4
+pyyaml>=6
+pytest>=8
+sentence-transformers>=4.0   # Week 3 MiniLM bi-encoder + Week 4 NLI cross-encoder, local CPU (pulls in torch)
+onnxruntime>=1.17          # Week 5: run the verified ONNX export of all-MiniLM-L6-v2 offline
+tokenizers>=0.15
+fastapi>=0.115             # Week 6 local API
+uvicorn>=0.32
+httpx>=0.27                # TestClient
+python-multipart>=0.0.9    # form upload on POST /evaluate-notebook

@@ -1,0 +1,65 @@
+# ======================================================================
+# WEEK 4 SYNTHETIC DEVELOPMENT CONFIG (baseline vs improved). Uses team-authored fixtures + SIMULATED labels.
+# Synthetic development run: results are not evidence of real student performance.
+# Results produced with this config are NOT evidence of real-world performance.
+# ======================================================================
+data_status: SYNTHETIC_DEVELOPMENT_DATA
+data_dir: data/synthetic
+interim_dir: data/synthetic/interim        # anonymised copies
+results_dir: results/synthetic_dev_week4
+manifest: manifest.csv                     # raw_path, assignment_id, group_key, source, license
+references_dir: references                 # <ASSIGNMENT_ID>/{template,reference_solution}.ipynb + json
+annotations:
+  raw: annotations/raw_annotations.csv     # raw_path, annotator, code, explanation, documentation
+  adjudicated: annotations/adjudicated.csv # optional: post-discussion labels for flagged items
+  discussion_tolerance: 1                  # annotator range > 1 mark -> discuss
+anonymisation:
+  salt: SYNTHETIC-DEV-SALT-NOT-SECRET      # real data: load from an env var / file outside the repo
+  roll_pattern: '\b[A-Z]\d{3}\b'
+  class_list: class_list.txt
+rubric_max: {code: 8, explanation: 8, documentation: 4}
+preprocessing:
+  template_similarity_threshold: 0.9
+split:
+  target: [0.6, 0.2, 0.2]                  # approximate; whole groups are assigned
+  seed: 42
+  near_duplicate_threshold: 0.95
+model:
+  alpha_grid: [0.1, 1.0, 10.0]
+  evaluate_test: true                      # frozen variants scored once on test
+  # Progression: Week 2 Baseline -> Week 3 Semantic Model -> Week 4 Improved Model, plus ablations
+  variants: [week2_tfidf, week3_semantic, week3_combined, week4_improved, abl_nli_only, abl_week4_plus_code]
+  primary_variant: week4_improved          # used for per-notebook reports
+  compare: [week2_tfidf, week4_improved]   # baseline vs improved, for error_analysis.csv
+  week4_estimator_selection:               # PRE-REGISTERED before any Week 4 result was seen
+    enabled: true
+    reference_variant: week4_improved
+    apply_to: [week4_improved, abl_nli_only, abl_week4_plus_code]
+    min_relative_gain: 0.10                # forest only if >=10% lower CV MAE than Ridge (train+val only)
+  grouped_cv: true                         # leave-one-group-out on TRAIN+VAL only (test untouched)
+  cv_alpha: 1.0
+semantic:
+  enabled: true
+  encoder: sentence-transformers           # 'stub' = lexical test stand-in, NEVER report as semantic
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+  revision: null                           # pin a commit hash once downloaded; resolved hash is logged
+  local_path: null                         # or a folder containing a saved copy of the model (offline)
+  device: cpu
+  batch_size: 32
+  seed: 42
+  concept_threshold: calibrate             # chosen on week3/concept_pairs.csv tune split only
+  calibration_pairs: week3/concept_pairs.csv
+  probes: week3/probes.json                # error-analysis probe pairs
+nli:
+  enabled: true
+  encoder: cross-encoder                   # 'stub' = lexical test stand-in, NEVER report as model results
+  model_name: cross-encoder/nli-deberta-v3-xsmall
+  revision: null                           # pin the hash logged on first run
+  local_path: null
+  device: cpu
+  batch_size: 16
+  seed: 42
+  flag_threshold: 0.5                      # flag a sentence as a possible conceptual error (report only)
+robustness:
+  suite: week4/robustness_cases.json
+features: null                             # null -> defaults in src/models/features.py

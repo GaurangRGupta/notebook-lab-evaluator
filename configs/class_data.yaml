@@ -1,0 +1,42 @@
+# REAL CLASS DATA CONFIG (template). Fill data/class/ with the same layout as data/synthetic/.
+data_status: REAL_CLASS_DATA
+data_dir: data/class
+interim_dir: data/class/interim        # anonymised copies
+results_dir: results/week2_class
+manifest: manifest.csv                     # raw_path, assignment_id, group_key, source, license
+references_dir: references                 # <ASSIGNMENT_ID>/{template,reference_solution}.ipynb + json
+annotations:
+  raw: annotations/raw_annotations.csv     # raw_path, annotator, code, explanation, documentation
+  adjudicated: annotations/adjudicated.csv # optional: post-discussion labels for flagged items
+  discussion_tolerance: 1                  # annotator range > 1 mark -> discuss
+anonymisation:
+  salt: ${NB_EVAL_SALT}      # MUST be set from outside the repo; pipeline refuses the placeholder
+  roll_pattern: '\b[A-Z]\d{3}\b'
+  class_list: class_list.txt
+rubric_max: {code: 8, explanation: 8, documentation: 4}
+preprocessing:
+  template_similarity_threshold: 0.9
+split:
+  target: [0.6, 0.2, 0.2]                  # approximate; whole groups are assigned
+  seed: 42
+  near_duplicate_threshold: 0.95
+model:
+  alpha_grid: [0.1, 1.0, 10.0]
+  evaluate_test: true                      # score test ONCE, after variants and settings are frozen
+  variants: [week2_tfidf, week3_semantic, week3_combined]
+  primary_variant: week3_combined
+  grouped_cv: true
+  cv_alpha: 1.0
+semantic:
+  enabled: true
+  encoder: sentence-transformers
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+  revision: null                           # set to the hash logged by the development run
+  local_path: null
+  device: cpu
+  batch_size: 32
+  seed: 42
+  concept_threshold: calibrate
+  calibration_pairs: week3/concept_pairs.csv   # copy data/synthetic/week3/ into data/class/week3/
+  probes: week3/probes.json
+features: null                             # null -> defaults in src/models/features.py

@@ -1,0 +1,65 @@
+# WEEK 5 MAIN EVALUATION: synthetic development set v2 (rule-derived labels). See docs/week5_protocol.md
+data_status: SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS
+data_dir: data/synthetic_v2
+interim_dir: data/synthetic_v2/interim
+results_dir: results/week5/v2_run
+manifest: manifest.csv
+references_dir: references
+annotations:
+  raw: annotations/raw_annotations.csv
+  adjudicated: annotations/adjudicated.csv
+  discussion_tolerance: 1
+anonymisation:
+  salt: SYNTHETIC-DEV-SALT-NOT-SECRET
+  roll_pattern: \b[A-Z]\d{3}\b
+  class_list: class_list.txt
+rubric_max:
+  code: 8
+  explanation: 8
+  documentation: 4
+preprocessing:
+  template_similarity_threshold: 0.9
+split:
+  target:
+  - 0.6
+  - 0.2
+  - 0.2
+  seed: 42
+  near_duplicate_threshold: 0.95
+model:
+  alpha_grid:
+  - 0.1
+  - 1.0
+  - 10.0
+  evaluate_test: true
+  variants:
+  - week2_tfidf
+  - week3_semantic
+  - week3_combined
+  primary_variant: week3_combined
+  compare:
+  - week2_tfidf
+  - week3_combined
+  week4_estimator_selection:
+    enabled: false
+  grouped_cv: true
+  cv_alpha: 1.0
+semantic:
+  enabled: true
+  encoder: onnx
+  model_name: sentence-transformers/all-MiniLM-L6-v2
+  revision: null
+  local_path: null
+  device: cpu
+  batch_size: 32
+  seed: 42
+  concept_threshold: calibrate
+  calibration_pairs: week3/concept_pairs.csv
+  probes: week3/probes.json
+  onnx_dir: models/all-MiniLM-L6-v2-onnx
+nli:
+  enabled: false
+  _note: Week 4 NLI cross-encoder unavailable in this environment (see docs/week5_protocol.md)
+robustness:
+  suite: week4/robustness_cases.json
+features: null

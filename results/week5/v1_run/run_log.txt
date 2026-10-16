@@ -1,0 +1,27 @@
+=== data_status: SYNTHETIC_DEVELOPMENT_DATA ===
+[anonymise] 10 notebooks, residual PII pattern matches after scrub: 0
+[parse] 130 cell records (40 code, 90 markdown), 71 template cells flagged
+[labels] 10 labelled notebooks, 2 flagged for discussion
+[split] StratifiedGroupKFold(k=5, seed=42), strata=assignment/source; realised {'train': 0.6, 'val': 0.2, 'test': 0.2} (target {'train': 0.6, 'val': 0.2, 'test': 0.2})
+[semantic] concept threshold 0.275 chosen on authored tune pairs (never on notebooks)
+[semantic] sentence-transformers/all-MiniLM-L6-v2 (ONNX export) @ onnx:/home/claude/nb_lab_evaluator/models/all-MiniLM-L6-v2-onnx: dim=384, frozen, 10 notebooks embedded
+[robustness] 40 variant/scorer rows written
+[eval:week2_tfidf:code:val] n=2 model MAE=0.93 | mean-predictor MAE=2.50
+[eval:week2_tfidf:code:test] n=2 model MAE=0.76 | mean-predictor MAE=2.00
+[eval:week2_tfidf:explanation:val] n=2 model MAE=1.29 | mean-predictor MAE=2.50
+[eval:week2_tfidf:explanation:test] n=2 model MAE=0.96 | mean-predictor MAE=1.00
+[eval:week2_tfidf:documentation:val] n=2 model MAE=0.10 | mean-predictor MAE=0.00
+[eval:week2_tfidf:documentation:test] n=2 model MAE=0.89 | mean-predictor MAE=1.50
+[eval:week3_semantic:code:val] n=2 model MAE=0.93 | mean-predictor MAE=2.50
+[eval:week3_semantic:code:test] n=2 model MAE=0.76 | mean-predictor MAE=2.00
+[eval:week3_semantic:explanation:val] n=2 model MAE=1.71 | mean-predictor MAE=2.50
+[eval:week3_semantic:explanation:test] n=2 model MAE=1.21 | mean-predictor MAE=1.00
+[eval:week3_semantic:documentation:val] n=2 model MAE=0.10 | mean-predictor MAE=0.00
+[eval:week3_semantic:documentation:test] n=2 model MAE=0.89 | mean-predictor MAE=1.50
+[eval:week3_combined:code:val] n=2 model MAE=0.93 | mean-predictor MAE=2.50
+[eval:week3_combined:code:test] n=2 model MAE=0.76 | mean-predictor MAE=2.00
+[eval:week3_combined:explanation:val] n=2 model MAE=1.41 | mean-predictor MAE=2.50
+[eval:week3_combined:explanation:test] n=2 model MAE=0.14 | mean-predictor MAE=1.00
+[eval:week3_combined:documentation:val] n=2 model MAE=0.10 | mean-predictor MAE=0.00
+[eval:week3_combined:documentation:test] n=2 model MAE=0.89 | mean-predictor MAE=1.50
+[reports] wrote 10 per-notebook reports

@@ -1,0 +1,62 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "f50c4563ef4f",
+  "assignment_id": "LAB_SYN1",
+  "split": "test",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.672,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 3.65,
+  "documentation_quality": 2.97,
+  "overall_score": 12.0,
+  "max_score": 20,
+  "errors": [
+    "output mismatch in T1"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.869,
+      "T3": 0.766
+    },
+    "concepts_matched_semantically": {
+      "T2": [
+        "term frequency",
+        "common words down-weighted",
+        "rare words weighted higher"
+      ],
+      "T3": [
+        "dot product",
+        "norm",
+        "direction"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T2": [
+        "logarithm"
+      ],
+      "T3": [
+        "document length"
+      ]
+    }
+  }
+}

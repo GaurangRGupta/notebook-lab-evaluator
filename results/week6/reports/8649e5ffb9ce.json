@@ -1,0 +1,63 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "8649e5ffb9ce",
+  "assignment_id": "LAB_SYN2",
+  "split": "train",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.36,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 1.52,
+  "documentation_quality": 2.02,
+  "overall_score": 6.43,
+  "max_score": 20,
+  "errors": [
+    "output mismatch in T2",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.461,
+      "T3": 0.0
+    },
+    "concepts_matched_semantically": {
+      "T2": [
+        "vocabulary size"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T2": [
+        "zero probability",
+        "unseen bigrams",
+        "add one",
+        "probability mass"
+      ],
+      "T3": [
+        "inverse probability",
+        "normalised per word",
+        "lower is better",
+        "surprise"
+      ]
+    }
+  }
+}

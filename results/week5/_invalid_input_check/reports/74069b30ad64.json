@@ -1,0 +1,32 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "74069b30ad64",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.439,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 6.69,
+  "documentation_quality": 1.52,
+  "overall_score": 11.72,
+  "max_score": 20,
+  "errors": [
+    "cell 4 (T1): SyntaxError line 2: expected ':'",
+    "output mismatch in T1",
+    "output mismatch in T3",
+    "cell 10 was never executed"
+  ],
+  "missing_concepts": {
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

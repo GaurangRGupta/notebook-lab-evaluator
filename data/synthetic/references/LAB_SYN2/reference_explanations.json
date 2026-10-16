@@ -1,0 +1,94 @@
+{
+  "_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "tasks": {
+    "T2": {
+      "text": "Maximum likelihood estimates assign zero probability to any bigram that never appeared in the training data, so a sentence containing one unseen bigram gets probability zero. Add-one (Laplace) smoothing adds one to every bigram count and adds the vocabulary size V to the denominator, redistributing probability mass from seen to unseen events so that no probability is zero.",
+      "concepts": [
+        {
+          "term": "zero probability",
+          "variants": [
+            "probability of zero",
+            "probability zero",
+            "0 probability"
+          ]
+        },
+        {
+          "term": "unseen bigrams",
+          "variants": [
+            "unseen",
+            "never seen",
+            "never appeared",
+            "not in the training"
+          ]
+        },
+        {
+          "term": "add one",
+          "variants": [
+            "add-one",
+            "laplace",
+            "plus one",
+            "adding one",
+            "adds one"
+          ]
+        },
+        {
+          "term": "vocabulary size",
+          "variants": [
+            "vocabulary",
+            "v"
+          ]
+        },
+        {
+          "term": "probability mass",
+          "variants": [
+            "redistribute",
+            "redistributes",
+            "redistributing",
+            "mass"
+          ]
+        }
+      ]
+    },
+    "T3": {
+      "text": "Perplexity is the exponentiated average negative log-probability per word, i.e. the inverse probability of the test sentence normalised by the number of words. It measures how surprised the model is by the text; a lower perplexity means the model assigns higher probability to the test data and is therefore a better language model.",
+      "concepts": [
+        {
+          "term": "inverse probability",
+          "variants": [
+            "negative log",
+            "negative log-probability",
+            "inverse of the probability"
+          ]
+        },
+        {
+          "term": "normalised per word",
+          "variants": [
+            "per word",
+            "number of words",
+            "normalised",
+            "normalized",
+            "average"
+          ]
+        },
+        {
+          "term": "lower is better",
+          "variants": [
+            "lower perplexity",
+            "lower is better",
+            "lower value",
+            "smaller perplexity"
+          ]
+        },
+        {
+          "term": "surprise",
+          "variants": [
+            "surprised",
+            "uncertainty",
+            "uncertain",
+            "branching factor"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# ======================================================================
+# SYNTHETIC DEVELOPMENT CONFIG. Uses team-authored fixtures + SIMULATED labels.
+# Results produced with this config are NOT evidence of real-world performance.
+# ======================================================================
+data_status: SYNTHETIC_DEVELOPMENT_DATA
+data_dir: data/synthetic
+interim_dir: data/synthetic/interim        # anonymised copies
+results_dir: results/synthetic_dev
+manifest: manifest.csv                     # raw_path, assignment_id, group_key, source, license
+references_dir: references                 # <ASSIGNMENT_ID>/{template,reference_solution}.ipynb + json
+annotations:
+  raw: annotations/raw_annotations.csv     # raw_path, annotator, code, explanation, documentation
+  adjudicated: annotations/adjudicated.csv # optional: post-discussion labels for flagged items
+  discussion_tolerance: 1                  # annotator range > 1 mark -> discuss
+anonymisation:
+  salt: SYNTHETIC-DEV-SALT-NOT-SECRET      # real data: load from an env var / file outside the repo
+  roll_pattern: '\b[A-Z]\d{3}\b'
+  class_list: class_list.txt
+rubric_max: {code: 8, explanation: 8, documentation: 4}
+preprocessing:
+  template_similarity_threshold: 0.9
+split:
+  target: [0.6, 0.2, 0.2]                  # approximate; whole groups are assigned
+  seed: 42
+  near_duplicate_threshold: 0.95
+model:
+  alpha_grid: [0.1, 1.0, 10.0]
+  evaluate_test: true                      # run the frozen baseline once on test
+features: null                             # null -> defaults in src/models/features.py

@@ -1,0 +1,37 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "478865cb4630",
+  "assignment_id": "LAB_SYN2",
+  "split": "val",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.279,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 4.81,
+  "documentation_quality": 1.56,
+  "overall_score": 8.6,
+  "max_score": 20,
+  "errors": [
+    "cell 5 (T1): NameError [code error] name 'bigram_counts' is not defined",
+    "cell 7 (T2): NameError [code error] name 'vocab_size' is not defined",
+    "output mismatch in T1",
+    "output mismatch in T2"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

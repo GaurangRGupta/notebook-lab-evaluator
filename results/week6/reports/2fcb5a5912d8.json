@@ -1,0 +1,57 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "2fcb5a5912d8",
+  "assignment_id": "LAB_SYN2",
+  "split": "train",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.319,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 5.67,
+  "documentation_quality": 1.5,
+  "overall_score": 9.72,
+  "max_score": 20,
+  "errors": [
+    "cell 6 (T2): SyntaxError line 8: '(' was never closed",
+    "cell 10 (T3): SyntaxError line 10: '(' was never closed",
+    "output mismatch in T2",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.594,
+      "T3": 0.977
+    },
+    "concepts_matched_semantically": {
+      "T2": [
+        "unseen bigrams"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T2": [
+        "zero probability",
+        "vocabulary size",
+        "probability mass"
+      ],
+      "T3": [
+        "surprise"
+      ]
+    }
+  }
+}

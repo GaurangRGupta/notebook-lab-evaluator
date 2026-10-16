@@ -1,0 +1,98 @@
+{
+  "v2": {
+    "notebooks": 60,
+    "groups": 30,
+    "cells": 830,
+    "cells_by_type": {
+      "markdown": 540,
+      "code": 290
+    },
+    "split_counts": {
+      "train": 36,
+      "val": 12,
+      "test": 12
+    },
+    "split_groups": {
+      "test": 6,
+      "train": 18,
+      "val": 6
+    },
+    "label_distribution": {
+      "code": {
+        "0.0": 7,
+        "1.0": 5,
+        "3.0": 12,
+        "4.0": 6,
+        "5.0": 16,
+        "7.0": 2,
+        "8.0": 12
+      },
+      "explanation": {
+        "0.0": 3,
+        "1.0": 8,
+        "2.0": 10,
+        "3.0": 5,
+        "4.0": 3,
+        "5.0": 9,
+        "6.0": 10,
+        "8.0": 12
+      },
+      "documentation": {
+        "1.0": 8,
+        "2.0": 23,
+        "3.0": 21,
+        "4.0": 8
+      }
+    },
+    "label_missing": 0,
+    "duplicate_raw_files": 0,
+    "near_duplicate_groups_merged": 0,
+    "test_explanations_seen_verbatim_in_train": "17/20",
+    "planted_vs_observed_inconsistent": 0,
+    "wrong_logic_but_output_matches": 4,
+    "label_source": "RULE-derived from planted properties (docs/week5_protocol.md)",
+    "pii_residual_matches": 0
+  },
+  "v1": {
+    "notebooks": 10,
+    "groups": 5,
+    "cells": 130,
+    "split_counts": {
+      "train": 6,
+      "test": 2,
+      "val": 2
+    },
+    "label_distribution": {
+      "code": {
+        "2.0": 2,
+        "3.0": 2,
+        "5.0": 1,
+        "7.0": 1,
+        "8.0": 4
+      },
+      "explanation": {
+        "0.0": 2,
+        "1.0": 2,
+        "2.0": 2,
+        "5.0": 1,
+        "6.0": 1,
+        "8.0": 2
+      },
+      "documentation": {
+        "0.0": 2,
+        "1.0": 1,
+        "2.0": 4,
+        "4.0": 3
+      }
+    },
+    "label_source": "SIMULATED annotators A1-A3 (authored)"
+  },
+  "feature_correlations_train_v2": {
+    "expl_tokens_log": 0.732,
+    "tfidf_cos_mean": 0.43,
+    "sem_cos_mean": 0.215,
+    "keyword_coverage": 0.607,
+    "sem_concept_coverage": 0.536
+  },
+  "md_tokens_equals_expl_tokens_v2": true
+}

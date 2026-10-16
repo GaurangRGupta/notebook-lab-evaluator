@@ -1,0 +1,67 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "notebook_id": "be370b9034b8",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.464,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 3.03,
+  "documentation_quality": 2.03,
+  "overall_score": 8.78,
+  "max_score": 20,
+  "errors": [
+    "output mismatch in T1",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.885,
+      "T3": 0.905
+    },
+    "concepts_matched_semantically": {
+      "T2": [
+        "term frequency",
+        "inverse document frequency",
+        "common words down-weighted",
+        "rare words weighted higher"
+      ],
+      "T3": [
+        "angle",
+        "dot product",
+        "norm",
+        "document length"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T2": [
+        "logarithm"
+      ],
+      "T3": [
+        "direction"
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "6990e4d0c3db",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.977,
+  "output_match": true,
+  "output_match_rate": 1.0,
+  "explanation_score": 4.73,
+  "documentation_quality": 3.52,
+  "overall_score": 16.06,
+  "max_score": 20,
+  "errors": [],
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

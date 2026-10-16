@@ -1,0 +1,42 @@
+concept_term,variants,sentence,label,split,kind
+term frequency,tf|how often,It counts how many times each word shows up in the document.,1,tune,paraphrase
+term frequency,tf|how often,The weights are computed across the whole corpus of documents.,0,tune,"related, different concept"
+term frequency,tf|how often,Term frequency is not used in this method at all.,0,tune,lexical false positive (negated)
+logarithm,log,The ratio is squashed so that it grows only slowly as the number of documents increases.,1,tune,hard paraphrase
+logarithm,log,We take the log of N divided by the document frequency.,1,tune,lexical
+logarithm,log,The vectors are compared using the angle between them.,0,tune,"related, different concept"
+norm,magnitude|normalised|normalized,Each vector is divided by its length so that it has unit size.,1,tune,paraphrase
+norm,magnitude|normalised|normalized,Sum the products of corresponding entries.,0,tune,"related, different concept"
+zero probability,probability of zero,An unseen word pair would make the whole sentence impossible under the model.,1,tune,paraphrase
+zero probability,probability of zero,Probabilities of all possible next words must sum to one.,0,tune,"related, different concept"
+add one,add-one|laplace|adding one,We pretend every word pair was observed one extra time.,1,tune,paraphrase
+add one,add-one|laplace|adding one,Laplace smoothing is applied to the counts.,1,tune,lexical
+add one,add-one|laplace|adding one,We multiply all the conditional probabilities together.,0,tune,"related, different concept"
+dynamic programming,,It stores the best partial result for each step and reuses it instead of recomputing.,1,tune,paraphrase
+dynamic programming,,It chooses the most likely tag for each word independently.,0,tune,"related, different concept"
+overfitting,overfit,The model memorises the training data and performs poorly on new examples.,1,tune,paraphrase
+overfitting,overfit,This gap between training and test accuracy is a sign of overfitting.,1,tune,lexical
+overfitting,overfit,The learning rate controls the size of each update.,0,tune,"related, different concept"
+stop words,stopwords,Very frequent function words like 'the' and 'of' are removed before analysis.,1,tune,paraphrase
+stop words,stopwords,Words are reduced to their root form.,0,tune,"related, different concept"
+inverse document frequency,idf,A word gets a lower score the more documents it appears in across the collection.,1,eval,paraphrase
+inverse document frequency,idf,The idf part is small for words that are common everywhere.,1,eval,lexical
+inverse document frequency,idf,Each document is represented as a vector of word counts.,0,eval,"related, different concept"
+dot product,inner product,Multiply the matching components of the two vectors and add them up.,1,eval,paraphrase
+dot product,inner product,Cosine similarity starts from the dot product of the two vectors.,1,eval,lexical
+dot product,inner product,Divide each vector by its length.,0,eval,"related, different concept"
+document length,longer documents,A long essay and a short note on the same topic can still score as similar.,1,eval,paraphrase
+document length,longer documents,Stop words are removed before counting.,0,eval,"related, different concept"
+unseen bigrams,unseen|never seen,Word pairs that never occurred in the training text.,1,eval,paraphrase
+unseen bigrams,unseen|never seen,The most frequent bigram in the corpus is 'the cat'.,0,eval,"related, different concept"
+lower is better,lower perplexity|lower value,"The smaller this number, the better the model predicts the text.",1,eval,paraphrase
+lower is better,lower perplexity|lower value,A lower perplexity is better.,1,eval,lexical
+lower is better,lower perplexity|lower value,"A lower perplexity is worse, because the model is more uncertain.",0,eval,"wrong relationship, same words"
+lower is better,lower perplexity|lower value,Perplexity is computed on a held-out test sentence.,0,eval,"related, different concept"
+backtracking,backpointer|back pointers|backtrack,"After the last word, it follows the saved pointers backwards to recover the best path.",1,eval,paraphrase
+backtracking,backpointer|back pointers|backtrack,It multiplies transition and emission probabilities at every step.,0,eval,"related, different concept"
+softmax,,The raw scores are exponentiated and divided by their sum to give probabilities.,1,eval,paraphrase
+softmax,,A softmax layer produces the class probabilities.,1,eval,lexical
+softmax,,The loss is averaged over the mini-batch.,0,eval,"related, different concept"
+stemming,stem,Words are reduced to their root form by chopping off suffixes.,1,eval,paraphrase
+stemming,stem,Very frequent function words are removed.,0,eval,"related, different concept"

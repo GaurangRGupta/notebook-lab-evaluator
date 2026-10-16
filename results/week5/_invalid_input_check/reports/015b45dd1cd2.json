@@ -1,0 +1,35 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "015b45dd1cd2",
+  "assignment_id": "LAB_SYN2",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.751,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 4.62,
+  "documentation_quality": 2.39,
+  "overall_score": 13.01,
+  "max_score": 20,
+  "errors": [
+    "output mismatch in T3",
+    "cell 11 was never executed"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

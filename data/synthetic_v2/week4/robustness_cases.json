@@ -1,0 +1,36 @@
+{
+  "_status": "SYNTHETIC_DEVELOPMENT_DATA: team-authored robustness cases (built from the Week 3 probe pairs)",
+  "irrelevant_sentence": "I enjoyed this lab and finished it before the deadline.",
+  "cases": [
+    {
+      "id": "viterbi",
+      "reference": "Viterbi decoding uses dynamic programming to find the most likely sequence.",
+      "correct": "The algorithm finds the best state sequence by storing the optimal previous state at every step.",
+      "incorrect_similar": "Viterbi decoding greedily picks the most likely state at each step independently to find the sequence."
+    },
+    {
+      "id": "tfidf",
+      "reference": "TF-IDF weights a word by its term frequency multiplied by its inverse document frequency; words such as 'the' that appear in most documents are down-weighted, while rare, discriminative words receive a higher weight.",
+      "correct": "Words found in nearly every text carry little information, so their importance is pushed towards zero, while terms specific to a few texts are emphasised.",
+      "incorrect_similar": "TF-IDF gives the highest weight to words that appear in most documents, because the inverse document frequency grows with the document frequency."
+    },
+    {
+      "id": "cosine",
+      "reference": "Cosine similarity is the dot product of two vectors divided by the product of their norms; it depends only on direction, so it is insensitive to document length, unlike Euclidean distance.",
+      "correct": "It looks at the angle between the two document vectors rather than how far apart their tips are, so a long and a short document on the same subject still come out close.",
+      "incorrect_similar": "Cosine similarity divides the Euclidean distance by the dot product, so it depends heavily on document length."
+    },
+    {
+      "id": "smoothing",
+      "reference": "Maximum likelihood gives zero probability to bigrams never seen in training; add-one (Laplace) smoothing adds one to every count and the vocabulary size to the denominator so no probability is zero.",
+      "correct": "If a word pair never showed up in the training text the model would call any sentence containing it impossible, so we pretend every pair was seen one extra time.",
+      "incorrect_similar": "Add-one smoothing adds one to the vocabulary size so that frequent bigrams get a higher probability than in maximum likelihood."
+    },
+    {
+      "id": "perplexity",
+      "reference": "Perplexity is the inverse probability of the test text normalised by the number of words; a lower perplexity means a better language model.",
+      "correct": "It is two raised to the per-token cross-entropy, so the less surprised the model is by held-out text, the smaller the value and the better the model.",
+      "incorrect_similar": "Perplexity is the inverse probability of the test text normalised by the number of words; a higher perplexity means a better language model."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "encoder": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+  "separation": {
+    "tfidf_cos": {
+      "pairs": 8,
+      "correct_ranked_higher": 0.25
+    },
+    "semantic_cos": {
+      "pairs": 8,
+      "correct_ranked_higher": 0.125
+    }
+  }
+}

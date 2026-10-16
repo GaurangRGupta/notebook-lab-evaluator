@@ -1,0 +1,34 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "ed7632dd4e48",
+  "assignment_id": "LAB_SYN2",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.324,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 3.77,
+  "documentation_quality": 2.0,
+  "overall_score": 8.36,
+  "max_score": 20,
+  "errors": [
+    "cell 6 (T2): SyntaxError line 8: '(' was never closed",
+    "output mismatch in T2",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

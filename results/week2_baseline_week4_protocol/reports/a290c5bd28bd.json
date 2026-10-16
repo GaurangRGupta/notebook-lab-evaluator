@@ -1,0 +1,19 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "notebook_id": "a290c5bd28bd",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.843,
+  "output_match": true,
+  "output_match_rate": 1.0,
+  "explanation_score": 7.13,
+  "documentation_quality": 4.0,
+  "overall_score": 17.86,
+  "max_score": 20,
+  "errors": [],
+  "missing_concepts": {},
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

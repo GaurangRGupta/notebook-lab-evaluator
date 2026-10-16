@@ -1,0 +1,377 @@
+notebook_id,cell_index,cell_type,source,n_lines,n_chars,execution_count,output_types,output_text,has_error,error_name,error_value,traceback,has_image,task_id,template_similarity,is_template,assignment_id,split
+a290c5bd28bd,0,markdown,"# LAB_SYN1: TF-IDF and Cosine Similarity
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,193,,,,False,,,,False,,1.0,True,LAB_SYN1,train
+a290c5bd28bd,1,markdown,"**Name:** [synthetic]
+
+**Roll No:** [synthetic]",2,47,,,,False,,,,False,,0.615,False,LAB_SYN1,train
+a290c5bd28bd,2,code,"# Given corpus (do not modify)
+docs = [""the cat sat on the mat"",
+        ""the dog sat on the log"",
+        ""cats and dogs are pets""]",4,132,1.0,,,False,,,,False,,1.0,True,LAB_SYN1,train
+a290c5bd28bd,3,markdown,"## Task 1: Tokenise each document (lowercase, whitespace split) and print the vocabulary size.",1,94,,,,False,,,,False,T1,1.0,True,LAB_SYN1,train
+a290c5bd28bd,4,code,"def tokenize(doc):
+    """"""Lowercase a document and split it on whitespace.""""""
+    return doc.lower().split()
+
+# the vocabulary is the set of unique tokens across all documents
+tokens = [tokenize(d) for d in docs]
+vocab = sorted({t for doc in tokens for t in doc})
+print(""Vocabulary size:"", len(vocab))",7,301,2.0,stream,Vocabulary size: 12,False,,,,False,T1,0.152,False,LAB_SYN1,train
+a290c5bd28bd,5,markdown,## Task 2: Build a TF-IDF matrix with scikit-learn's `TfidfVectorizer` and print its shape.,1,91,,,,False,,,,False,T2,1.0,True,LAB_SYN1,train
+a290c5bd28bd,6,code,"from sklearn.feature_extraction.text import TfidfVectorizer
+
+# fit the vectorizer on the corpus; rows = documents, columns = vocabulary terms
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(docs)
+print(""TF-IDF matrix shape:"", X.shape)",5,246,3.0,stream,"TF-IDF matrix shape: (3, 12)",False,,,,False,T2,0.233,False,LAB_SYN1,train
+a290c5bd28bd,7,markdown,"### Explain: What does TF-IDF measure, and why does it down-weight words such as 'the'?",1,87,,,,False,,,,False,T2,1.0,True,LAB_SYN1,train
+a290c5bd28bd,8,markdown,"TF-IDF combines **term frequency** (how often a word occurs in a document) with **inverse document frequency**, the log of the total number of documents over the number of documents containing the word. A word like *the* occurs in almost every document, so its IDF is close to zero and it is down-weighted; rare, distinctive words such as *pets* get a higher weight and therefore dominate the document vector.",1,409,,,,False,,,,False,T2,0.276,False,LAB_SYN1,train
+a290c5bd28bd,9,markdown,"## Task 3: Compute the cosine similarity between document 0 and document 1, rounded to 4 decimals.",1,98,,,,False,,,,False,T3,1.0,True,LAB_SYN1,train
+a290c5bd28bd,10,code,"from sklearn.metrics.pairwise import cosine_similarity
+
+def doc_similarity(i, j):
+    """"""Cosine similarity between rows i and j of the TF-IDF matrix.""""""
+    return cosine_similarity(X[i], X[j])[0, 0]
+
+print(""Cosine similarity:"", round(doc_similarity(0, 1), 4))",5,260,4.0,stream,Cosine similarity: 0.6344,False,,,,False,T3,0.191,False,LAB_SYN1,train
+a290c5bd28bd,11,markdown,"### Explain: What does cosine similarity measure, and why is it preferred over Euclidean distance for text?",1,107,,,,False,,,,False,T3,1.0,True,LAB_SYN1,train
+a290c5bd28bd,12,markdown,"Cosine similarity is the cosine of the angle between two document vectors: the dot product divided by the product of their norms. Because it only looks at the direction of the vectors, a long and a short document about the same topic can still be similar. Euclidean distance depends on magnitude, so document length would distort it.",1,333,,,,False,,,,False,T3,0.292,False,LAB_SYN1,train
+60cf8659878a,0,markdown,"# LAB_SYN1: TF-IDF and Cosine Similarity
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,193,,,,False,,,,False,,1.0,True,LAB_SYN1,test
+60cf8659878a,1,markdown,"**Name:** [synthetic]
+
+**Roll No:** [synthetic]",2,47,,,,False,,,,False,,0.615,False,LAB_SYN1,test
+60cf8659878a,2,code,"# Given corpus (do not modify)
+docs = [""the cat sat on the mat"",
+        ""the dog sat on the log"",
+        ""cats and dogs are pets""]",4,132,1.0,,,False,,,,False,,1.0,True,LAB_SYN1,test
+60cf8659878a,3,markdown,"## Task 1: Tokenise each document (lowercase, whitespace split) and print the vocabulary size.",1,94,,,,False,,,,False,T1,1.0,True,LAB_SYN1,test
+60cf8659878a,4,code,"vocab = set("" "".join(docs).split())
+print(len(vocab))",2,53,2.0,stream,12,False,,,,False,T1,0.213,False,LAB_SYN1,test
+60cf8659878a,5,markdown,## Task 2: Build a TF-IDF matrix with scikit-learn's `TfidfVectorizer` and print its shape.,1,91,,,,False,,,,False,T2,1.0,True,LAB_SYN1,test
+60cf8659878a,6,code,"from sklearn.feature_extraction.text import TfidfVectorizer
+v = TfidfVectorizer()
+X = v.fit_transform(docs)
+X.shape",4,115,3.0,execute_result,"(3, 12)",False,,,,False,T2,0.182,False,LAB_SYN1,test
+60cf8659878a,7,markdown,"### Explain: What does TF-IDF measure, and why does it down-weight words such as 'the'?",1,87,,,,False,,,,False,T2,1.0,True,LAB_SYN1,test
+60cf8659878a,8,markdown,TF-IDF is a very popular technique in NLP. It is used to convert text into numbers.,1,83,,,,False,,,,False,T2,0.343,False,LAB_SYN1,test
+60cf8659878a,9,markdown,"## Task 3: Compute the cosine similarity between document 0 and document 1, rounded to 4 decimals.",1,98,,,,False,,,,False,T3,1.0,True,LAB_SYN1,test
+60cf8659878a,10,code,"from sklearn.metrics.pairwise import cosine_similarity
+print(round(cosine_similarity(X[0], X[1])[0][0], 4))",2,107,4.0,stream,0.6344,False,,,,False,T3,0.17,False,LAB_SYN1,test
+60cf8659878a,11,markdown,"### Explain: What does cosine similarity measure, and why is it preferred over Euclidean distance for text?",1,107,,,,False,,,,False,T3,1.0,True,LAB_SYN1,test
+60cf8659878a,12,markdown,Cosine similarity tells how similar two documents are. It is better.,1,68,,,,False,,,,False,T3,0.458,False,LAB_SYN1,test
+de5aaa0b5b63,0,markdown,"# LAB_SYN1: TF-IDF and Cosine Similarity
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,193,,,,False,,,,False,,1.0,True,LAB_SYN1,val
+de5aaa0b5b63,1,markdown,"**Name:** [synthetic]
+
+**Roll No:** [synthetic]",2,47,,,,False,,,,False,,0.615,False,LAB_SYN1,val
+de5aaa0b5b63,2,code,"# Given corpus (do not modify)
+docs = [""the cat sat on the mat"",
+        ""the dog sat on the log"",
+        ""cats and dogs are pets""]",4,132,1.0,,,False,,,,False,,1.0,True,LAB_SYN1,val
+de5aaa0b5b63,3,markdown,"## Task 1: Tokenise each document (lowercase, whitespace split) and print the vocabulary size.",1,94,,,,False,,,,False,T1,1.0,True,LAB_SYN1,val
+de5aaa0b5b63,4,code,"# tokenise every document
+vocab = set()
+for d in docs
+    vocab.update(d.split())
+print(""Vocabulary size:"", len(vocab))",5,119,2.0,error,,True,SyntaxError,"expected ':' (1580297237.py, line 3)","  Cell In[2], line 3
+    for d in docs
+                 ^
+SyntaxError: expected ':'
+",False,T1,0.277,False,LAB_SYN1,val
+de5aaa0b5b63,5,markdown,## Task 2: Build a TF-IDF matrix with scikit-learn's `TfidfVectorizer` and print its shape.,1,91,,,,False,,,,False,T2,1.0,True,LAB_SYN1,val
+de5aaa0b5b63,6,code,"from sklearn.feature_extraction.text import TfidfVectorizer
+# build tf-idf features
+X = TfidfVectorizer().fit_transform(docs)
+print(""TF-IDF matrix shape:"", X.shape)",4,164,3.0,stream,"TF-IDF matrix shape: (3, 12)",False,,,,False,T2,0.2,False,LAB_SYN1,val
+de5aaa0b5b63,7,markdown,"### Explain: What does TF-IDF measure, and why does it down-weight words such as 'the'?",1,87,,,,False,,,,False,T2,1.0,True,LAB_SYN1,val
+de5aaa0b5b63,8,markdown,TF-IDF multiplies the term frequency by the inverse document frequency. Words that are in every document like 'the' get less weight.,1,132,,,,False,,,,False,T2,0.383,False,LAB_SYN1,val
+de5aaa0b5b63,9,markdown,"## Task 3: Compute the cosine similarity between document 0 and document 1, rounded to 4 decimals.",1,98,,,,False,,,,False,T3,1.0,True,LAB_SYN1,val
+de5aaa0b5b63,10,code,"from sklearn.metrics.pairwise import cosine_similarity
+# compare the first two documents
+sim = cosine_similarity(tfidf_matrix[0], tfidf_matrix[1])
+print(round(sim[0][0], 4))",4,173,4.0,error,,True,NameError,name 'tfidf_matrix' is not defined,"---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[4], line 3
+      1 from sklearn.metrics.pairwise import cosine_similarity
+      2 # compare the first two documents
+----> 3 sim = cosine_similarity(tfidf_matrix[0], tfidf_matrix[1])
+      4 print(round(sim[0][0], 4))
+
+NameError: name 'tfidf_matrix' is not defined",False,T3,0.249,False,LAB_SYN1,val
+de5aaa0b5b63,11,markdown,"### Explain: What does cosine similarity measure, and why is it preferred over Euclidean distance for text?",1,107,,,,False,,,,False,T3,1.0,True,LAB_SYN1,val
+de5aaa0b5b63,12,markdown,"Cosine similarity measures the angle between two vectors, so it does not depend on how long the documents are.",1,110,,,,False,,,,False,T3,0.452,False,LAB_SYN1,val
+be370b9034b8,0,markdown,"# LAB_SYN1: TF-IDF and Cosine Similarity
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,193,,,,False,,,,False,,1.0,True,LAB_SYN1,train
+be370b9034b8,1,markdown,"**Name:** [synthetic]
+
+**Roll No:** [synthetic]",2,47,,,,False,,,,False,,0.615,False,LAB_SYN1,train
+be370b9034b8,2,code,"# Given corpus (do not modify)
+docs = [""the cat sat on the mat"",
+        ""the dog sat on the log"",
+        ""cats and dogs are pets""]",4,132,1.0,,,False,,,,False,,1.0,True,LAB_SYN1,train
+be370b9034b8,3,markdown,"## Task 1: Tokenise each document (lowercase, whitespace split) and print the vocabulary size.",1,94,,,,False,,,,False,T1,1.0,True,LAB_SYN1,train
+be370b9034b8,4,code,"# count the words
+words = []
+for d in docs:
+    words.extend(d.split())
+print(""Vocabulary size:"", len(words))",5,109,2.0,stream,Vocabulary size: 17,False,,,,False,T1,0.217,False,LAB_SYN1,train
+be370b9034b8,5,markdown,## Task 2: Build a TF-IDF matrix with scikit-learn's `TfidfVectorizer` and print its shape.,1,91,,,,False,,,,False,T2,1.0,True,LAB_SYN1,train
+be370b9034b8,6,code,"from sklearn.feature_extraction.text import CountVectorizer
+cv = CountVectorizer()
+X = cv.fit_transform(docs)
+print(""TF-IDF matrix shape:"", X.shape)",4,148,3.0,stream,"TF-IDF matrix shape: (3, 12)",False,,,,False,T2,0.242,False,LAB_SYN1,train
+be370b9034b8,7,markdown,"### Explain: What does TF-IDF measure, and why does it down-weight words such as 'the'?",1,87,,,,False,,,,False,T2,1.0,True,LAB_SYN1,train
+be370b9034b8,8,markdown,"TF-IDF gives a higher weight to words that appear in many documents, because words like 'the' are the most important for the meaning of a document. It counts the frequency of each word.",1,185,,,,False,,,,False,T2,0.318,False,LAB_SYN1,train
+be370b9034b8,9,markdown,"## Task 3: Compute the cosine similarity between document 0 and document 1, rounded to 4 decimals.",1,98,,,,False,,,,False,T3,1.0,True,LAB_SYN1,train
+be370b9034b8,10,code,"import numpy as np
+# similarity = dot product of the two rows
+a = X[0].toarray()[0]
+b = X[1].toarray()[0]
+print(""Cosine similarity:"", np.dot(a, b))",5,147,4.0,stream,Cosine similarity: 6,False,,,,False,T3,0.281,False,LAB_SYN1,train
+be370b9034b8,11,markdown,"### Explain: What does cosine similarity measure, and why is it preferred over Euclidean distance for text?",1,107,,,,False,,,,False,T3,1.0,True,LAB_SYN1,train
+be370b9034b8,12,markdown,Cosine similarity is the Euclidean distance between the two vectors; a smaller distance means the documents are more similar.,1,125,,,,False,,,,False,T3,0.405,False,LAB_SYN1,train
+6a7732c244ad,0,markdown,"# LAB_SYN1: TF-IDF and Cosine Similarity
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,193,,,,False,,,,False,,1.0,True,LAB_SYN1,train
+6a7732c244ad,1,markdown,"**Name:** [NAME]
+
+**Roll No:** [ROLL]
+
+Contact: [EMAIL]",3,55,,,,False,,,,False,,0.565,False,LAB_SYN1,train
+6a7732c244ad,2,code,"# Given corpus (do not modify)
+docs = [""the cat sat on the mat"",
+        ""the dog sat on the log"",
+        ""cats and dogs are pets""]",4,132,1.0,,,False,,,,False,,1.0,True,LAB_SYN1,train
+6a7732c244ad,3,markdown,"## Task 1: Tokenise each document (lowercase, whitespace split) and print the vocabulary size.",1,94,,,,False,,,,False,T1,1.0,True,LAB_SYN1,train
+6a7732c244ad,4,code,"v=set("" "".join(docs).split())
+print(len(v))",2,43,7.0,stream,12,False,,,,False,T1,0.201,False,LAB_SYN1,train
+6a7732c244ad,5,markdown,## Task 2: Build a TF-IDF matrix with scikit-learn's `TfidfVectorizer` and print its shape.,1,91,,,,False,,,,False,T2,1.0,True,LAB_SYN1,train
+6a7732c244ad,6,code,"from sklearn.feature_extraction.text import TfidfVectorizer
+X=TfidfVectorizer().fit_transform(docs)
+print(X.shape)",3,114,,,,False,,,,False,T2,0.148,False,LAB_SYN1,train
+6a7732c244ad,7,markdown,"### Explain: What does TF-IDF measure, and why does it down-weight words such as 'the'?",1,87,,,,False,,,,False,T2,1.0,True,LAB_SYN1,train
+6a7732c244ad,8,markdown,-,1,1,,,,False,,,,False,T2,0.023,False,LAB_SYN1,train
+6a7732c244ad,9,markdown,"## Task 3: Compute the cosine similarity between document 0 and document 1, rounded to 4 decimals.",1,98,,,,False,,,,False,T3,1.0,True,LAB_SYN1,train
+6a7732c244ad,10,code,"from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
+X=TfidfVectorizer().fit_transform(docs)
+print(round(cosine_similarity(X[0],X[1])[0,0],4))",4,204,2.0,stream,0.6344,False,,,,False,T3,0.138,False,LAB_SYN1,train
+6a7732c244ad,11,markdown,"### Explain: What does cosine similarity measure, and why is it preferred over Euclidean distance for text?",1,107,,,,False,,,,False,T3,1.0,True,LAB_SYN1,train
+6a7732c244ad,12,markdown,Your answer here,1,16,,,,False,,,,False,T3,1.0,True,LAB_SYN1,train
+01573e2e2521,0,markdown,"# LAB_SYN2: Bigram Language Model with Add-One Smoothing
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,209,,,,False,,,,False,,1.0,True,LAB_SYN2,train
+01573e2e2521,1,markdown,"**Name:** [synthetic]
+
+**Roll No:** [synthetic]",2,47,,,,False,,,,False,,0.615,False,LAB_SYN2,train
+01573e2e2521,2,code,"# Given training corpus (do not modify)
+corpus = [""<s> the cat sat </s>"",
+          ""<s> the cat ran </s>"",
+          ""<s> the dog sat </s>""]",4,141,1.0,,,False,,,,False,,1.0,True,LAB_SYN2,train
+01573e2e2521,3,markdown,"## Task 1: Count unigrams and bigrams in the corpus and print count(the, cat).",1,78,,,,False,,,,False,T1,1.0,True,LAB_SYN2,train
+01573e2e2521,4,code,"from collections import Counter
+
+def count_ngrams(sentences):
+    """"""Return unigram and bigram Counters for a list of tokenised sentences.""""""
+    uni, bi = Counter(), Counter()
+    for sent in sentences:
+        toks = sent.split()
+        uni.update(toks)
+        # consecutive token pairs are the bigrams
+        bi.update(zip(toks[:-1], toks[1:]))
+    return uni, bi
+
+unigrams, bigrams = count_ngrams(corpus)
+print(""count(the, cat) ="", bigrams[(""the"", ""cat"")])",12,463,2.0,stream,"count(the, cat) = 2",False,,,,False,T1,0.161,False,LAB_SYN2,train
+01573e2e2521,5,markdown,"## Task 2: Implement add-one (Laplace) smoothed bigram probability and print P(cat | the), rounded to 4 decimals.",1,113,,,,False,,,,False,T2,1.0,True,LAB_SYN2,train
+01573e2e2521,6,code,"V = len(unigrams)  # vocabulary size, including <s> and </s>
+
+def p_add_one(w_prev, w):
+    """"""Laplace-smoothed P(w | w_prev).""""""
+    return (bigrams[(w_prev, w)] + 1) / (unigrams[w_prev] + V)
+
+print(""P(cat | the) ="", round(p_add_one(""the"", ""cat""), 4))",5,252,3.0,stream,P(cat | the) = 0.3,False,,,,False,T2,0.227,False,LAB_SYN2,train
+01573e2e2521,7,markdown,### Explain: Why is smoothing needed in an n-gram language model?,1,65,,,,False,,,,False,T2,1.0,True,LAB_SYN2,train
+01573e2e2521,8,markdown,"With maximum likelihood estimation, any bigram that was never seen in training gets zero probability, so a whole test sentence containing it would get probability zero. Add-one (Laplace) smoothing adds one to every count and adds the vocabulary size V to the denominator, which redistributes a little probability mass to unseen bigrams.",1,336,,,,False,,,,False,T2,0.281,False,LAB_SYN2,train
+01573e2e2521,9,markdown,"## Task 3: Compute the perplexity of the sentence `<s> the dog ran </s>` under your smoothed model, rounded to 3 decimals.",1,122,,,,False,,,,False,T3,1.0,True,LAB_SYN2,train
+01573e2e2521,10,code,"import math
+
+def perplexity(sentence):
+    """"""Perplexity of a sentence under the add-one bigram model.""""""
+    toks = sentence.split()
+    log_p = sum(math.log(p_add_one(a, b)) for a, b in zip(toks[:-1], toks[1:]))
+    return math.exp(-log_p / (len(toks) - 1))
+
+print(""Perplexity:"", round(perplexity(""<s> the dog ran </s>""), 3))",7,327,4.0,stream,Perplexity: 4.472,False,,,,False,T3,0.237,False,LAB_SYN2,train
+01573e2e2521,11,markdown,"### Explain: What does perplexity measure, and how should its value be interpreted?",1,83,,,,False,,,,False,T3,1.0,True,LAB_SYN2,train
+01573e2e2521,12,markdown,Perplexity is the inverse probability of the test sentence normalised by the number of words (the exponent of the average negative log-probability per word). It tells us how surprised the model is; a lower perplexity means a better language model.,1,247,,,,False,,,,False,T3,0.244,False,LAB_SYN2,train
+bced8ee14adb,0,markdown,"# LAB_SYN2: Bigram Language Model with Add-One Smoothing
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,209,,,,False,,,,False,,1.0,True,LAB_SYN2,test
+bced8ee14adb,1,markdown,"**Name:** [synthetic]
+
+**Roll No:** [synthetic]",2,47,,,,False,,,,False,,0.615,False,LAB_SYN2,test
+bced8ee14adb,2,code,"# Given training corpus (do not modify)
+corpus = [""<s> the cat sat </s>"",
+          ""<s> the cat ran </s>"",
+          ""<s> the dog sat </s>""]",4,141,1.0,,,False,,,,False,,1.0,True,LAB_SYN2,test
+bced8ee14adb,3,markdown,"## Task 1: Count unigrams and bigrams in the corpus and print count(the, cat).",1,78,,,,False,,,,False,T1,1.0,True,LAB_SYN2,test
+bced8ee14adb,4,code,"from collections import Counter
+# unigram and bigram counters
+unigrams, bigrams = Counter(), Counter()
+for sent in corpus:
+    toks = sent.split()  # ""#"" inside strings must not count: ""a#b""
+    unigrams.update(toks)
+    bigrams.update(zip(toks[:-1], toks[1:]))  # pairs of adjacent tokens
+print(""count(the, cat) ="", bigrams[(""the"", ""cat"")])",8,341,2.0,stream,"count(the, cat) = 2",False,,,,False,T1,0.201,False,LAB_SYN2,test
+bced8ee14adb,5,markdown,"## Task 2: Implement add-one (Laplace) smoothed bigram probability and print P(cat | the), rounded to 4 decimals.",1,113,,,,False,,,,False,T2,1.0,True,LAB_SYN2,test
+bced8ee14adb,6,code,"%time V = len(unigrams)
+def p_add_one(w_prev, w):
+    """"""Add-one smoothed conditional probability P(w | w_prev).""""""
+    # numerator: bigram count plus one
+    # denominator: history count plus vocabulary size
+    return (bigrams[(w_prev, w)] + 1) / (unigrams[w_prev] + V)
+print(""P(cat | the) ="", round(p_add_one(""the"", ""cat""), 4))",7,330,3.0,stream,"CPU times: user 2 μs, sys: 1 μs, total: 3 μs
+Wall time: 4.05 μs
+P(cat | the) = 0.3",False,,,,False,T2,0.147,False,LAB_SYN2,test
+bced8ee14adb,7,markdown,### Explain: Why is smoothing needed in an n-gram language model?,1,65,,,,False,,,,False,T2,1.0,True,LAB_SYN2,test
+bced8ee14adb,8,markdown,Smoothing is used to smooth the probabilities of the model.,1,59,,,,False,,,,False,T2,0.43,False,LAB_SYN2,test
+bced8ee14adb,9,markdown,"## Task 3: Compute the perplexity of the sentence `<s> the dog ran </s>` under your smoothed model, rounded to 3 decimals.",1,122,,,,False,,,,False,T3,1.0,True,LAB_SYN2,test
+bced8ee14adb,10,code,"import math
+def perplexity(sentence):
+    """"""Return perplexity of a whitespace-tokenised sentence.""""""
+    toks = sentence.split()
+    # sum log-probabilities to avoid underflow
+    log_p = sum(math.log(p_add_one(a, b)) for a, b in zip(toks[:-1], toks[1:]))
+    return math.exp(-log_p / (len(toks) - 1))
+print(""Perplexity:"", round(perplexity(""<s> the dog ran </s>""), 3))",8,369,4.0,stream,Perplexity: 4.472,False,,,,False,T3,0.204,False,LAB_SYN2,test
+bced8ee14adb,11,markdown,"### Explain: What does perplexity measure, and how should its value be interpreted?",1,83,,,,False,,,,False,T3,1.0,True,LAB_SYN2,test
+bced8ee14adb,12,markdown,Perplexity is a metric used for language models.,1,48,,,,False,,,,False,T3,0.531,False,LAB_SYN2,test
+c8a0c8c2e4e8,0,markdown,"# LAB_SYN2: Bigram Language Model with Add-One Smoothing
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,209,,,,False,,,,False,,1.0,True,LAB_SYN2,val
+c8a0c8c2e4e8,1,markdown,"**Name:** [synthetic]
+
+**Roll No:** [synthetic]",2,47,,,,False,,,,False,,0.615,False,LAB_SYN2,val
+c8a0c8c2e4e8,2,code,"# Given training corpus (do not modify)
+corpus = [""<s> the cat sat </s>"",
+          ""<s> the cat ran </s>"",
+          ""<s> the dog sat </s>""]",4,141,1.0,,,False,,,,False,,1.0,True,LAB_SYN2,val
+c8a0c8c2e4e8,3,markdown,"## Task 1: Count unigrams and bigrams in the corpus and print count(the, cat).",1,78,,,,False,,,,False,T1,1.0,True,LAB_SYN2,val
+c8a0c8c2e4e8,4,code,"from collections import Counter
+unigrams, bigrams = Counter(), Counter()
+for sent in corpus:
+    toks = sent.split()
+    unigrams.update(toks)
+    bigrams.update(zip(toks[:-1], toks[1:]))
+print(""count(the, cat) ="", bigrams[(""the"", ""cat"")])",7,239,2.0,stream,"count(the, cat) = 2",False,,,,False,T1,0.23,False,LAB_SYN2,val
+c8a0c8c2e4e8,5,markdown,"## Task 2: Implement add-one (Laplace) smoothed bigram probability and print P(cat | the), rounded to 4 decimals.",1,113,,,,False,,,,False,T2,1.0,True,LAB_SYN2,val
+c8a0c8c2e4e8,6,code,"V = len(unigrams)
+# add-one smoothing
+def p_add_one(w_prev, w):
+    return (bigram_counts[(w_prev, w)] + 1) / (unigrams[w_prev] + V)
+print(""P(cat | the) ="", round(p_add_one(""the"", ""cat""), 4))",5,191,3.0,error,,True,NameError,name 'bigram_counts' is not defined,"---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+Cell In[3], line 5
+      1 V = len(unigrams)
+      2 # add-one smoothing
+      3 def p_add_one(w_prev, w):
+      4     return (bigram_counts[(w_prev, w)] + 1) / (unigrams[w_prev] + V)
+----> 5 print(""P(cat | the) ="", round(p_add_one(""the"", ""cat""), 4))
+
+Cell In[3], line 4, in p_add_one(w_prev, w)
+      3 def p_add_one(w_prev, w):
+----> 4     return (bigram_counts[(w_prev, w)] + 1) / (unigrams[w_prev] + V)
+
+NameError: name 'bigram_counts' is not defined",False,T2,0.26,False,LAB_SYN2,val
+c8a0c8c2e4e8,7,markdown,### Explain: Why is smoothing needed in an n-gram language model?,1,65,,,,False,,,,False,T2,1.0,True,LAB_SYN2,val
+c8a0c8c2e4e8,8,markdown,"Without smoothing, unseen bigrams get zero probability. Add-one smoothing adds one to each count so nothing is zero.",1,116,,,,False,,,,False,T2,0.419,False,LAB_SYN2,val
+c8a0c8c2e4e8,9,markdown,"## Task 3: Compute the perplexity of the sentence `<s> the dog ran </s>` under your smoothed model, rounded to 3 decimals.",1,122,,,,False,,,,False,T3,1.0,True,LAB_SYN2,val
+c8a0c8c2e4e8,10,code,"import math
+test = ""<s> the dog ran </s>"".split()
+log_prob = sum(math.log(p_add_one(a, b)) for a, b in zip(test[:-1], test[1:])
+print(""Perplexity:"", math.exp(-log_prob / (len(test) - 1)))",4,187,4.0,error,,True,SyntaxError,"'(' was never closed (3871588896.py, line 3)","  Cell In[4], line 3
+    log_prob = sum(math.log(p_add_one(a, b)) for a, b in zip(test[:-1], test[1:])
+                  ^
+SyntaxError: '(' was never closed
+",False,T3,0.227,False,LAB_SYN2,val
+c8a0c8c2e4e8,11,markdown,"### Explain: What does perplexity measure, and how should its value be interpreted?",1,83,,,,False,,,,False,T3,1.0,True,LAB_SYN2,val
+c8a0c8c2e4e8,12,markdown,Perplexity measures how well the model predicts the sentence. Lower perplexity is better.,1,89,,,,False,,,,False,T3,0.395,False,LAB_SYN2,val
+08d1ce73b8d4,0,markdown,"# LAB_SYN2: Bigram Language Model with Add-One Smoothing
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,209,,,,False,,,,False,,1.0,True,LAB_SYN2,train
+08d1ce73b8d4,1,markdown,"**Name:** [synthetic]
+
+**Roll No:** [synthetic]",2,47,,,,False,,,,False,,0.615,False,LAB_SYN2,train
+08d1ce73b8d4,2,code,"# Given training corpus (do not modify)
+corpus = [""<s> the cat sat </s>"",
+          ""<s> the cat ran </s>"",
+          ""<s> the dog sat </s>""]",4,141,1.0,,,False,,,,False,,1.0,True,LAB_SYN2,train
+08d1ce73b8d4,3,markdown,"## Task 1: Count unigrams and bigrams in the corpus and print count(the, cat).",1,78,,,,False,,,,False,T1,1.0,True,LAB_SYN2,train
+08d1ce73b8d4,4,code,"from collections import Counter
+unigrams, bigrams = Counter(), Counter()
+for sent in corpus:
+    toks = sent.split()
+    unigrams.update(toks)
+    bigrams.update(zip(toks[:-1], toks[1:]))
+print(""count(the, cat) ="", bigrams[(""the"", ""cat"")])",7,239,2.0,stream,"count(the, cat) = 2",False,,,,False,T1,0.23,False,LAB_SYN2,train
+08d1ce73b8d4,5,markdown,"## Task 2: Implement add-one (Laplace) smoothed bigram probability and print P(cat | the), rounded to 4 decimals.",1,113,,,,False,,,,False,T2,1.0,True,LAB_SYN2,train
+08d1ce73b8d4,6,code,"# probability of w given the previous word
+def p(w_prev, w):
+    return bigrams[(w_prev, w)] / unigrams[w_prev]
+print(""P(cat | the) ="", round(p(""the"", ""cat""), 4))",4,162,3.0,stream,P(cat | the) = 0.6667,False,,,,False,T2,0.222,False,LAB_SYN2,train
+08d1ce73b8d4,7,markdown,### Explain: Why is smoothing needed in an n-gram language model?,1,65,,,,False,,,,False,T2,1.0,True,LAB_SYN2,train
+08d1ce73b8d4,8,markdown,Smoothing makes the probabilities of frequent words larger so the model is more confident.,1,90,,,,False,,,,False,T2,0.384,False,LAB_SYN2,train
+08d1ce73b8d4,9,markdown,"## Task 3: Compute the perplexity of the sentence `<s> the dog ran </s>` under your smoothed model, rounded to 3 decimals.",1,122,,,,False,,,,False,T3,1.0,True,LAB_SYN2,train
+08d1ce73b8d4,10,code,"import math
+test = ""<s> the dog ran </s>"".split()
+lp = sum(math.log(p(a, b)) for a, b in zip(test[:-1], test[1:]))
+print(""Perplexity:"", round(math.exp(-lp / (len(test) - 1)), 3))",4,178,4.0,error,,True,ValueError,math domain error,"---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[4], line 3
+      1 import math
+      2 test = ""<s> the dog ran </s>"".split()
+----> 3 lp = sum(math.log(p(a, b)) for a, b in zip(test[:-1], test[1:]))
+      4 print(""Perplexity:"", round(math.exp(-lp / (len(test) - 1)), 3))
+
+Cell In[4], line 3, in <genexpr>(.0)
+----> 3 import math
+
+ValueError: math domain error",False,T3,0.234,False,LAB_SYN2,train
+08d1ce73b8d4,11,markdown,"### Explain: What does perplexity measure, and how should its value be interpreted?",1,83,,,,False,,,,False,T3,1.0,True,LAB_SYN2,train
+08d1ce73b8d4,12,markdown,A higher perplexity means the model is better because it can handle more words.,1,79,,,,False,,,,False,T3,0.395,False,LAB_SYN2,train
+6fc55a4498be,0,markdown,"# LAB_SYN2: Bigram Language Model with Add-One Smoothing
+
+> **SYNTHETIC DEVELOPMENT DATA.** Team-authored fixture for testing the Group 3 Jupyter Notebook Lab Evaluator pipeline. Not a real student submission.",2,209,,,,False,,,,False,,1.0,True,LAB_SYN2,train
+6fc55a4498be,1,markdown,"**Name:** [NAME]
+
+**Roll No:** [ROLL]
+
+Contact: [EMAIL]",3,55,,,,False,,,,False,,0.565,False,LAB_SYN2,train
+6fc55a4498be,2,code,"# Given training corpus (do not modify)
+corpus = [""<s> the cat sat </s>"",
+          ""<s> the cat ran </s>"",
+          ""<s> the dog sat </s>""]",4,141,1.0,,,False,,,,False,,1.0,True,LAB_SYN2,train
+6fc55a4498be,3,markdown,"## Task 1: Count unigrams and bigrams in the corpus and print count(the, cat).",1,78,,,,False,,,,False,T1,1.0,True,LAB_SYN2,train
+6fc55a4498be,4,code,"from collections import Counter
+u,b=Counter(),Counter()
+for s in corpus:
+    t=s.split();u.update(t);b.update(zip(t[:-1],t[1:]))
+print(b[(""the"",""cat"")])",5,152,2.0,stream,2,False,,,,False,T1,0.193,False,LAB_SYN2,train
+6fc55a4498be,5,markdown,"## Task 2: Implement add-one (Laplace) smoothed bigram probability and print P(cat | the), rounded to 4 decimals.",1,113,,,,False,,,,False,T2,1.0,True,LAB_SYN2,train
+6fc55a4498be,6,code,"V=len(u)
+p=lambda x,y:(b[(x,y)]+1)/(u[x]+V)
+print(round(p(""the"",""cat""),4))",3,74,3.0,stream,0.3,False,,,,False,T2,0.195,False,LAB_SYN2,train
+6fc55a4498be,7,markdown,### Explain: Why is smoothing needed in an n-gram language model?,1,65,,,,False,,,,False,T2,1.0,True,LAB_SYN2,train
+6fc55a4498be,8,markdown,,0,0,,,,False,,,,False,T2,0.0,False,LAB_SYN2,train
+6fc55a4498be,9,markdown,"## Task 3: Compute the perplexity of the sentence `<s> the dog ran </s>` under your smoothed model, rounded to 3 decimals.",1,122,,,,False,,,,False,T3,1.0,True,LAB_SYN2,train
+6fc55a4498be,10,code,"import math
+t=""<s> the dog ran </s>"".split()
+print(round(math.exp(-sum(math.log(p(x,y)) for x,y in zip(t[:-1],t[1:]))/(len(t)-1)),3))",3,133,4.0,stream,4.472,False,,,,False,T3,0.244,False,LAB_SYN2,train
+6fc55a4498be,11,markdown,"### Explain: What does perplexity measure, and how should its value be interpreted?",1,83,,,,False,,,,False,T3,1.0,True,LAB_SYN2,train
+6fc55a4498be,12,markdown,,0,0,,,,False,,,,False,T3,0.0,False,LAB_SYN2,train

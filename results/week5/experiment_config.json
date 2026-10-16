@@ -1,0 +1,124 @@
+{
+  "datasets": {
+    "v2": "configs/week5_v2.yaml",
+    "v1": "configs/week5_v1.yaml"
+  },
+  "encoder": {
+    "name": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "provenance_check": {
+      "expected": {
+        "0-1": 0.666,
+        "0-2": 0.1046,
+        "1-2": 0.1411
+      },
+      "got": {
+        "0-1": 0.666,
+        "0-2": 0.1046,
+        "1-2": 0.1411
+      },
+      "tolerance": 0.0005,
+      "passed": true
+    },
+    "onnx_sha256_16": "759c3cd2b7fe7e93"
+  },
+  "week4_nli": "not evaluated: pretrained cross-encoder unavailable in this environment",
+  "split_v2": {
+    "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+    "assignment": {
+      "d82239e640ae": "test",
+      "995706211aa4": "test",
+      "a8ec8a555f88": "test",
+      "17bc93b9ea63": "test",
+      "275dc2d67d4f": "test",
+      "d654cb070885": "test",
+      "4295bfbbf35f": "test",
+      "37a41d4b1686": "test",
+      "638a1adae024": "test",
+      "f513dcfc5122": "test",
+      "f50c4563ef4f": "test",
+      "13c417e4e354": "test",
+      "07887560eb3e": "val",
+      "4f98f798e996": "val",
+      "03b085e43771": "val",
+      "4f0868de39d7": "val",
+      "f63881749038": "val",
+      "328af64e0a64": "val",
+      "bd84d0a106d8": "val",
+      "f5706affd0b6": "val",
+      "c4fe7195dc6a": "val",
+      "3a6a040944d7": "val",
+      "4fedc0f6a563": "val",
+      "478865cb4630": "val",
+      "acd20e330f94": "train",
+      "6a9038f4943c": "train",
+      "abee3bab2b74": "train",
+      "18942014af21": "train",
+      "888c2efba5c9": "train",
+      "6c519610a87f": "train",
+      "7a09442d3cde": "train",
+      "015b45dd1cd2": "train",
+      "90308cc018fe": "train",
+      "f4a6657cd55a": "train",
+      "fc088a85bac0": "train",
+      "238eecbbb1ab": "train",
+      "b728efb29a16": "train",
+      "afd98e892b3f": "train",
+      "759566080212": "train",
+      "cd04469bffbc": "train",
+      "7397bbecca46": "train",
+      "8649e5ffb9ce": "train",
+      "6362c931114e": "train",
+      "ed7632dd4e48": "train",
+      "5576d68cb097": "train",
+      "e67cd90c7e35": "train",
+      "fd73eb1e1416": "train",
+      "575202e2dda6": "train",
+      "74069b30ad64": "train",
+      "2fcb5a5912d8": "train",
+      "cd66ddaa92dc": "train",
+      "57c463a68dfc": "train",
+      "b106afb115b0": "train",
+      "a5d58273f776": "train",
+      "2877f0512916": "train",
+      "204c4d98c092": "train",
+      "6990e4d0c3db": "train",
+      "20e6a4d01061": "train",
+      "e5d62855fd65": "train",
+      "b3e4ac3a2f87": "train"
+    },
+    "realised": {
+      "train": 0.6,
+      "val": 0.2,
+      "test": 0.2
+    },
+    "target": {
+      "train": 0.6,
+      "val": 0.2,
+      "test": 0.2
+    },
+    "method": "StratifiedGroupKFold(k=5, seed=42), strata=assignment/source",
+    "n_notebooks": 60,
+    "n_groups": 30,
+    "merged_groups": 0
+  },
+  "alpha_selected_v2": {
+    "week2_tfidf": {
+      "code": 0.1,
+      "explanation": 1.0,
+      "documentation": 0.1
+    },
+    "week3_semantic": {
+      "code": 0.1,
+      "explanation": 10.0,
+      "documentation": 0.1
+    },
+    "week3_combined": {
+      "code": 0.1,
+      "explanation": 10.0,
+      "documentation": 0.1
+    }
+  },
+  "concept_threshold_v2": 0.275,
+  "python": "3.11.15",
+  "git_free_snapshot": true
+}

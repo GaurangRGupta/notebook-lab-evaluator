@@ -1,0 +1,11 @@
+notebook_id,code,code_range,code_needs_discussion,code_source,explanation,explanation_range,explanation_needs_discussion,explanation_source,documentation,documentation_range,documentation_needs_discussion,documentation_source
+01573e2e2521,8.0,0.0,False,median,8.0,1.0,False,median,4.0,1.0,False,median
+08d1ce73b8d4,2.0,1.0,False,median,1.0,1.0,False,median,2.0,0.0,False,median
+60cf8659878a,7.0,1.0,False,median,2.0,1.0,False,median,1.0,1.0,False,median
+6a7732c244ad,5.0,2.0,True,median,0.0,0.0,False,median,0.0,1.0,False,median
+6fc55a4498be,8.0,1.0,False,median,0.0,0.0,False,median,0.0,0.0,False,median
+a290c5bd28bd,8.0,1.0,False,median,8.0,1.0,False,median,4.0,0.0,False,median
+bced8ee14adb,8.0,1.0,False,median,2.0,1.0,False,median,4.0,1.0,False,median
+be370b9034b8,2.0,1.0,False,median,1.0,1.0,False,median,2.0,1.0,False,median
+c8a0c8c2e4e8,3.0,1.0,False,median,6.0,1.0,False,median,2.0,0.0,False,median
+de5aaa0b5b63,3.0,2.0,True,median,5.0,1.0,False,median,2.0,1.0,False,median

@@ -1,0 +1,37 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "notebook_id": "6a7732c244ad",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.668,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 0.0,
+  "documentation_quality": 0.01,
+  "overall_score": 5.36,
+  "max_score": 20,
+  "errors": [
+    "output mismatch in T2",
+    "cell 6 was never executed"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

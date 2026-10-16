@@ -1,0 +1,46 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "6a9038f4943c",
+  "assignment_id": "LAB_SYN2",
+  "split": "train",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.68,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 6.79,
+  "documentation_quality": 2.9,
+  "overall_score": 15.13,
+  "max_score": 20,
+  "errors": [
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.822,
+      "T3": 0.41
+    },
+    "concepts_matched_semantically": {
+      "T3": [
+        "normalised per word",
+        "lower is better"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T3": [
+        "inverse probability"
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "a8ec8a555f88",
+  "assignment_id": "LAB_SYN1",
+  "split": "test",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.616,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 3.06,
+  "documentation_quality": 2.83,
+  "overall_score": 10.81,
+  "max_score": 20,
+  "errors": [
+    "cell 11 (T3): NameError [code error] name 'tfidf_matrix' is not defined",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.316,
+      "T3": 0.0
+    },
+    "concepts_matched_semantically": {
+      "T2": [
+        "term frequency",
+        "common words down-weighted",
+        "rare words weighted higher"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T2": [
+        "inverse document frequency",
+        "logarithm"
+      ],
+      "T3": [
+        "angle",
+        "dot product",
+        "norm",
+        "document length",
+        "direction"
+      ]
+    }
+  }
+}

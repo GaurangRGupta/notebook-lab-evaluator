@@ -1,0 +1,1852 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "n_labelled": 60,
+  "split_sizes": {
+    "train": 36,
+    "val": 12,
+    "test": 12
+  },
+  "primary_variant": "week3_combined",
+  "variant_labels": {
+    "week2_tfidf": "Week 2 Baseline",
+    "week3_semantic": "Week 3 Semantic-only (ablation)",
+    "week3_combined": "Week 3 Semantic Model"
+  },
+  "results": {
+    "code": {
+      "features": [
+        "frac_syntax_ok",
+        "frac_executed",
+        "error_cell_rate",
+        "out_of_order",
+        "output_match_rate",
+        "construct_coverage"
+      ],
+      "estimator": "ridge",
+      "alpha": 0.1,
+      "alpha_selection": [
+        {
+          "alpha": 0.1,
+          "val_MAE": 0.6577571147137825
+        },
+        {
+          "alpha": 1.0,
+          "val_MAE": 0.6879054769968714
+        },
+        {
+          "alpha": 10.0,
+          "val_MAE": 0.8824402056924243
+        }
+      ],
+      "coefficients": {
+        "frac_syntax_ok": -0.16128322435649298,
+        "frac_executed": -0.31375832237824264,
+        "error_cell_rate": -0.37214773243062904,
+        "out_of_order": 0.0,
+        "output_match_rate": 2.4671625889916737,
+        "construct_coverage": -0.08404969381622124,
+        "_intercept": 4.13888888888889
+      },
+      "val": {
+        "model": {
+          "n": 12,
+          "MAE": 0.6577571147137825,
+          "RMSE": 1.0105744843253135,
+          "pearson_r": 0.9243230352267569,
+          "spearman_rho": 0.895068805162074,
+          "within_1": 0.8333333333333334,
+          "exact": 0.5,
+          "MAE_as_fraction_of_max": 0.08221963933922281
+        },
+        "mean_predictor": {
+          "n": 12,
+          "MAE": 1.962962962962963,
+          "RMSE": 2.450592017159915,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "within_1": 0.5833333333333334,
+          "exact": 0.16666666666666666,
+          "MAE_as_fraction_of_max": 0.24537037037037038
+        },
+        "MAE_95CI": [
+          0.28003009766754394,
+          1.1359903573638206
+        ],
+        "ridge": {
+          "n": 12,
+          "MAE": 0.6577571147137825,
+          "RMSE": 1.0105744843253135,
+          "pearson_r": 0.9243230352267569,
+          "spearman_rho": 0.895068805162074,
+          "within_1": 0.8333333333333334,
+          "exact": 0.5,
+          "MAE_as_fraction_of_max": 0.08221963933922281
+        }
+      },
+      "test": {
+        "model": {
+          "n": 12,
+          "MAE": 0.25181903572073533,
+          "RMSE": 0.33456752442633275,
+          "pearson_r": 0.9888668453329608,
+          "spearman_rho": 0.9293203772845853,
+          "within_1": 1.0,
+          "exact": 0.9166666666666666,
+          "MAE_as_fraction_of_max": 0.031477379465091916
+        },
+        "mean_predictor": {
+          "n": 12,
+          "MAE": 1.847222222222222,
+          "RMSE": 2.373821995053026,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "within_1": 0.6666666666666666,
+          "exact": 0.08333333333333333,
+          "MAE_as_fraction_of_max": 0.23090277777777776
+        },
+        "MAE_95CI": [
+          0.13608504619566694,
+          0.38270741193107544
+        ],
+        "ridge": {
+          "n": 12,
+          "MAE": 0.25181903572073533,
+          "RMSE": 0.33456752442633275,
+          "pearson_r": 0.9888668453329608,
+          "spearman_rho": 0.9293203772845853,
+          "within_1": 1.0,
+          "exact": 0.9166666666666666,
+          "MAE_as_fraction_of_max": 0.031477379465091916
+        }
+      },
+      "human_variability_mean_pairwise_MAE": null
+    },
+    "explanation": {
+      "features": [
+        "tfidf_cos_mean",
+        "tfidf_cos_max",
+        "expl_tokens_log",
+        "frac_tasks_explained",
+        "keyword_coverage",
+        "sem_cos_mean",
+        "sem_cos_max",
+        "sem_concept_coverage"
+      ],
+      "estimator": "ridge",
+      "alpha": 10.0,
+      "alpha_selection": [
+        {
+          "alpha": 0.1,
+          "val_MAE": 1.3869747706829083
+        },
+        {
+          "alpha": 1.0,
+          "val_MAE": 1.3320984631196213
+        },
+        {
+          "alpha": 10.0,
+          "val_MAE": 1.2172032083119122
+        }
+      ],
+      "coefficients": {
+        "tfidf_cos_mean": 0.2393517874559283,
+        "tfidf_cos_max": 0.18649051485007306,
+        "expl_tokens_log": 1.0467798636373353,
+        "frac_tasks_explained": 0.11309829469343319,
+        "keyword_coverage": 0.6971759298746703,
+        "sem_cos_mean": -0.5247752742020826,
+        "sem_cos_max": -0.3828065070523498,
+        "sem_concept_coverage": 0.2886206664172054,
+        "_intercept": 4.8055555555555545
+      },
+      "val": {
+        "model": {
+          "n": 12,
+          "MAE": 1.2172032083119122,
+          "RMSE": 1.420961492959479,
+          "pearson_r": 0.8037520004627978,
+          "spearman_rho": 0.7887787685411909,
+          "within_1": 0.5833333333333334,
+          "exact": 0.25,
+          "MAE_as_fraction_of_max": 0.15215040103898902
+        },
+        "mean_predictor": {
+          "n": 12,
+          "MAE": 2.5370370370370376,
+          "RMSE": 2.718392998414166,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "within_1": 0.16666666666666666,
+          "exact": 0.0,
+          "MAE_as_fraction_of_max": 0.3171296296296297
+        },
+        "MAE_95CI": [
+          0.8139050521504193,
+          1.6204327059244
+        ],
+        "ridge": {
+          "n": 12,
+          "MAE": 1.2172032083119122,
+          "RMSE": 1.420961492959479,
+          "pearson_r": 0.8037520004627978,
+          "spearman_rho": 0.7887787685411909,
+          "within_1": 0.5833333333333334,
+          "exact": 0.25,
+          "MAE_as_fraction_of_max": 0.15215040103898902
+        }
+      },
+      "test": {
+        "model": {
+          "n": 12,
+          "MAE": 1.345899936997382,
+          "RMSE": 1.7789863832160724,
+          "pearson_r": 0.8479586712553898,
+          "spearman_rho": 0.8399906373297635,
+          "within_1": 0.5833333333333334,
+          "exact": 0.25,
+          "MAE_as_fraction_of_max": 0.16823749212467276
+        },
+        "mean_predictor": {
+          "n": 12,
+          "MAE": 3.050925925925926,
+          "RMSE": 3.3020522986040137,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "within_1": 0.16666666666666666,
+          "exact": 0.08333333333333333,
+          "MAE_as_fraction_of_max": 0.38136574074074076
+        },
+        "MAE_95CI": [
+          0.7377963877926683,
+          2.0428226823285267
+        ],
+        "ridge": {
+          "n": 12,
+          "MAE": 1.345899936997382,
+          "RMSE": 1.7789863832160724,
+          "pearson_r": 0.8479586712553898,
+          "spearman_rho": 0.8399906373297635,
+          "within_1": 0.5833333333333334,
+          "exact": 0.25,
+          "MAE_as_fraction_of_max": 0.16823749212467276
+        }
+      },
+      "human_variability_mean_pairwise_MAE": null
+    },
+    "documentation": {
+      "features": [
+        "comment_density",
+        "docstring_rate",
+        "md_tokens_log",
+        "md_to_code_ratio"
+      ],
+      "estimator": "ridge",
+      "alpha": 0.1,
+      "alpha_selection": [
+        {
+          "alpha": 0.1,
+          "val_MAE": 0.5162753370873072
+        },
+        {
+          "alpha": 1.0,
+          "val_MAE": 0.5233205773295327
+        },
+        {
+          "alpha": 10.0,
+          "val_MAE": 0.5960407433018938
+        }
+      ],
+      "coefficients": {
+        "comment_density": 0.512858143366842,
+        "docstring_rate": 0.3936546958751219,
+        "md_tokens_log": 0.036611556610804924,
+        "md_to_code_ratio": -0.024519359575398934,
+        "_intercept": 2.4444444444444446
+      },
+      "val": {
+        "model": {
+          "n": 12,
+          "MAE": 0.5162753370873072,
+          "RMSE": 0.6805771757610332,
+          "pearson_r": 0.7778994981785241,
+          "spearman_rho": 0.7424123494599495,
+          "within_1": 0.9166666666666666,
+          "exact": 0.5,
+          "MAE_as_fraction_of_max": 0.1290688342718268
+        },
+        "mean_predictor": {
+          "n": 12,
+          "MAE": 1.0185185185185184,
+          "RMSE": 1.1358360166811596,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "within_1": 0.6666666666666666,
+          "exact": 0.16666666666666666,
+          "MAE_as_fraction_of_max": 0.2546296296296296
+        },
+        "MAE_95CI": [
+          0.27551889307344446,
+          0.7784225091487712
+        ],
+        "ridge": {
+          "n": 12,
+          "MAE": 0.5162753370873072,
+          "RMSE": 0.6805771757610332,
+          "pearson_r": 0.7778994981785241,
+          "spearman_rho": 0.7424123494599495,
+          "within_1": 0.9166666666666666,
+          "exact": 0.5,
+          "MAE_as_fraction_of_max": 0.1290688342718268
+        }
+      },
+      "test": {
+        "model": {
+          "n": 12,
+          "MAE": 0.46267826558361574,
+          "RMSE": 0.5682729549109353,
+          "pearson_r": 0.6465909783944964,
+          "spearman_rho": 0.5855522302066536,
+          "within_1": 1.0,
+          "exact": 0.4166666666666667,
+          "MAE_as_fraction_of_max": 0.11566956639590394
+        },
+        "mean_predictor": {
+          "n": 12,
+          "MAE": 0.6574074074074074,
+          "RMSE": 0.7474235581707617,
+          "pearson_r": null,
+          "spearman_rho": null,
+          "within_1": 1.0,
+          "exact": 0.4166666666666667,
+          "MAE_as_fraction_of_max": 0.16435185185185186
+        },
+        "MAE_95CI": [
+          0.2749059961174129,
+          0.6402518488427942
+        ],
+        "ridge": {
+          "n": 12,
+          "MAE": 0.46267826558361574,
+          "RMSE": 0.5682729549109353,
+          "pearson_r": 0.6465909783944964,
+          "spearman_rho": 0.5855522302066536,
+          "within_1": 1.0,
+          "exact": 0.4166666666666667,
+          "MAE_as_fraction_of_max": 0.11566956639590394
+        }
+      },
+      "human_variability_mean_pairwise_MAE": null
+    }
+  },
+  "variants": {
+    "week2_tfidf": {
+      "holdout": {
+        "code": {
+          "features": [
+            "frac_syntax_ok",
+            "frac_executed",
+            "error_cell_rate",
+            "out_of_order",
+            "output_match_rate",
+            "construct_coverage"
+          ],
+          "estimator": "ridge",
+          "alpha": 0.1,
+          "alpha_selection": [
+            {
+              "alpha": 0.1,
+              "val_MAE": 0.6577571147137825
+            },
+            {
+              "alpha": 1.0,
+              "val_MAE": 0.6879054769968714
+            },
+            {
+              "alpha": 10.0,
+              "val_MAE": 0.8824402056924243
+            }
+          ],
+          "coefficients": {
+            "frac_syntax_ok": -0.16128322435649298,
+            "frac_executed": -0.31375832237824264,
+            "error_cell_rate": -0.37214773243062904,
+            "out_of_order": 0.0,
+            "output_match_rate": 2.4671625889916737,
+            "construct_coverage": -0.08404969381622124,
+            "_intercept": 4.13888888888889
+          },
+          "val": {
+            "model": {
+              "n": 12,
+              "MAE": 0.6577571147137825,
+              "RMSE": 1.0105744843253135,
+              "pearson_r": 0.9243230352267569,
+              "spearman_rho": 0.895068805162074,
+              "within_1": 0.8333333333333334,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.08221963933922281
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 1.962962962962963,
+              "RMSE": 2.450592017159915,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.5833333333333334,
+              "exact": 0.16666666666666666,
+              "MAE_as_fraction_of_max": 0.24537037037037038
+            },
+            "MAE_95CI": [
+              0.28003009766754394,
+              1.1359903573638206
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.6577571147137825,
+              "RMSE": 1.0105744843253135,
+              "pearson_r": 0.9243230352267569,
+              "spearman_rho": 0.895068805162074,
+              "within_1": 0.8333333333333334,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.08221963933922281
+            }
+          },
+          "test": {
+            "model": {
+              "n": 12,
+              "MAE": 0.25181903572073533,
+              "RMSE": 0.33456752442633275,
+              "pearson_r": 0.9888668453329608,
+              "spearman_rho": 0.9293203772845853,
+              "within_1": 1.0,
+              "exact": 0.9166666666666666,
+              "MAE_as_fraction_of_max": 0.031477379465091916
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 1.847222222222222,
+              "RMSE": 2.373821995053026,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.6666666666666666,
+              "exact": 0.08333333333333333,
+              "MAE_as_fraction_of_max": 0.23090277777777776
+            },
+            "MAE_95CI": [
+              0.13608504619566694,
+              0.38270741193107544
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.25181903572073533,
+              "RMSE": 0.33456752442633275,
+              "pearson_r": 0.9888668453329608,
+              "spearman_rho": 0.9293203772845853,
+              "within_1": 1.0,
+              "exact": 0.9166666666666666,
+              "MAE_as_fraction_of_max": 0.031477379465091916
+            }
+          },
+          "human_variability_mean_pairwise_MAE": null
+        },
+        "explanation": {
+          "features": [
+            "tfidf_cos_mean",
+            "tfidf_cos_max",
+            "expl_tokens_log",
+            "frac_tasks_explained",
+            "keyword_coverage"
+          ],
+          "estimator": "ridge",
+          "alpha": 1.0,
+          "alpha_selection": [
+            {
+              "alpha": 0.1,
+              "val_MAE": 1.2585210475236461
+            },
+            {
+              "alpha": 1.0,
+              "val_MAE": 1.222621321392151
+            },
+            {
+              "alpha": 10.0,
+              "val_MAE": 1.253283337893629
+            }
+          ],
+          "coefficients": {
+            "tfidf_cos_mean": -0.029257543752075323,
+            "tfidf_cos_max": -0.4490027006847893,
+            "expl_tokens_log": 1.4095882248421412,
+            "frac_tasks_explained": -0.14701414284873143,
+            "keyword_coverage": 1.028746926020625,
+            "_intercept": 4.8055555555555545
+          },
+          "val": {
+            "model": {
+              "n": 12,
+              "MAE": 1.222621321392151,
+              "RMSE": 1.4954485326305893,
+              "pearson_r": 0.7994765554494689,
+              "spearman_rho": 0.7457544720753078,
+              "within_1": 0.6666666666666666,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.15282766517401888
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 2.5370370370370376,
+              "RMSE": 2.718392998414166,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.16666666666666666,
+              "exact": 0.0,
+              "MAE_as_fraction_of_max": 0.3171296296296297
+            },
+            "MAE_95CI": [
+              0.7646396338191691,
+              1.711816016147349
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 1.222621321392151,
+              "RMSE": 1.4954485326305893,
+              "pearson_r": 0.7994765554494689,
+              "spearman_rho": 0.7457544720753078,
+              "within_1": 0.6666666666666666,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.15282766517401888
+            }
+          },
+          "test": {
+            "model": {
+              "n": 12,
+              "MAE": 1.5118149671459735,
+              "RMSE": 2.0219002978812077,
+              "pearson_r": 0.77585679242027,
+              "spearman_rho": 0.7972792489909618,
+              "within_1": 0.5833333333333334,
+              "exact": 0.16666666666666666,
+              "MAE_as_fraction_of_max": 0.1889768708932467
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 3.050925925925926,
+              "RMSE": 3.3020522986040137,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.16666666666666666,
+              "exact": 0.08333333333333333,
+              "MAE_as_fraction_of_max": 0.38136574074074076
+            },
+            "MAE_95CI": [
+              0.8135105079818121,
+              2.3213899702596814
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 1.5118149671459735,
+              "RMSE": 2.0219002978812077,
+              "pearson_r": 0.77585679242027,
+              "spearman_rho": 0.7972792489909618,
+              "within_1": 0.5833333333333334,
+              "exact": 0.16666666666666666,
+              "MAE_as_fraction_of_max": 0.1889768708932467
+            }
+          },
+          "human_variability_mean_pairwise_MAE": null
+        },
+        "documentation": {
+          "features": [
+            "comment_density",
+            "docstring_rate",
+            "md_tokens_log",
+            "md_to_code_ratio"
+          ],
+          "estimator": "ridge",
+          "alpha": 0.1,
+          "alpha_selection": [
+            {
+              "alpha": 0.1,
+              "val_MAE": 0.5162753370873072
+            },
+            {
+              "alpha": 1.0,
+              "val_MAE": 0.5233205773295327
+            },
+            {
+              "alpha": 10.0,
+              "val_MAE": 0.5960407433018938
+            }
+          ],
+          "coefficients": {
+            "comment_density": 0.512858143366842,
+            "docstring_rate": 0.3936546958751219,
+            "md_tokens_log": 0.036611556610804924,
+            "md_to_code_ratio": -0.024519359575398934,
+            "_intercept": 2.4444444444444446
+          },
+          "val": {
+            "model": {
+              "n": 12,
+              "MAE": 0.5162753370873072,
+              "RMSE": 0.6805771757610332,
+              "pearson_r": 0.7778994981785241,
+              "spearman_rho": 0.7424123494599495,
+              "within_1": 0.9166666666666666,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.1290688342718268
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 1.0185185185185184,
+              "RMSE": 1.1358360166811596,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.6666666666666666,
+              "exact": 0.16666666666666666,
+              "MAE_as_fraction_of_max": 0.2546296296296296
+            },
+            "MAE_95CI": [
+              0.27551889307344446,
+              0.7784225091487712
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.5162753370873072,
+              "RMSE": 0.6805771757610332,
+              "pearson_r": 0.7778994981785241,
+              "spearman_rho": 0.7424123494599495,
+              "within_1": 0.9166666666666666,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.1290688342718268
+            }
+          },
+          "test": {
+            "model": {
+              "n": 12,
+              "MAE": 0.46267826558361574,
+              "RMSE": 0.5682729549109353,
+              "pearson_r": 0.6465909783944964,
+              "spearman_rho": 0.5855522302066536,
+              "within_1": 1.0,
+              "exact": 0.4166666666666667,
+              "MAE_as_fraction_of_max": 0.11566956639590394
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 0.6574074074074074,
+              "RMSE": 0.7474235581707617,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 1.0,
+              "exact": 0.4166666666666667,
+              "MAE_as_fraction_of_max": 0.16435185185185186
+            },
+            "MAE_95CI": [
+              0.2749059961174129,
+              0.6402518488427942
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.46267826558361574,
+              "RMSE": 0.5682729549109353,
+              "pearson_r": 0.6465909783944964,
+              "spearman_rho": 0.5855522302066536,
+              "within_1": 1.0,
+              "exact": 0.4166666666666667,
+              "MAE_as_fraction_of_max": 0.11566956639590394
+            }
+          },
+          "human_variability_mean_pairwise_MAE": null
+        }
+      },
+      "holdout_overall": {
+        "val": {
+          "model": {
+            "n": 12,
+            "MAE": 2.1192231963205166,
+            "RMSE": 2.4323532267228067,
+            "pearson_r": 0.7628332162220519,
+            "spearman_rho": 0.7276023802541561,
+            "within_1": 0.3333333333333333,
+            "exact": 0.08333333333333333,
+            "MAE_as_fraction_of_max": 0.10596115981602583
+          },
+          "mean_predictor": {
+            "n": 12,
+            "MAE": 3.2129629629629632,
+            "RMSE": 3.8614108596678096,
+            "pearson_r": null,
+            "spearman_rho": null,
+            "within_1": 0.3333333333333333,
+            "exact": 0.16666666666666666,
+            "MAE_as_fraction_of_max": 0.16064814814814815
+          }
+        },
+        "test": {
+          "model": {
+            "n": 12,
+            "MAE": 1.665607593911418,
+            "RMSE": 2.124530823172003,
+            "pearson_r": 0.8178598878121882,
+            "spearman_rho": 0.6549175224217366,
+            "within_1": 0.4166666666666667,
+            "exact": 0.25,
+            "MAE_as_fraction_of_max": 0.08328037969557091
+          },
+          "mean_predictor": {
+            "n": 12,
+            "MAE": 2.75,
+            "RMSE": 3.5542532337162918,
+            "pearson_r": null,
+            "spearman_rho": null,
+            "within_1": 0.4166666666666667,
+            "exact": 0.0,
+            "MAE_as_fraction_of_max": 0.1375
+          }
+        }
+      },
+      "grouped_cv_train_val": {
+        "code": {
+          "model": {
+            "n": 48,
+            "MAE": 0.5434990186978474,
+            "RMSE": 0.8256439736926331,
+            "pearson_r": 0.9482420976942063,
+            "spearman_rho": 0.9251720944965721,
+            "within_1": 0.9166666666666666,
+            "exact": 0.7708333333333334,
+            "MAE_as_fraction_of_max": 0.06793737733723093
+          },
+          "mean_predictor": {
+            "n": 48,
+            "MAE": 2.1947463768115942,
+            "RMSE": 2.6742517754104744,
+            "pearson_r": -0.8202166410815973,
+            "spearman_rho": -0.8129689867296578,
+            "within_1": 0.5416666666666666,
+            "exact": 0.10416666666666667,
+            "MAE_as_fraction_of_max": 0.2743432971014493
+          },
+          "n_folds": 24,
+          "alpha": 1.0,
+          "estimator": "ridge",
+          "ridge": {
+            "n": 48,
+            "MAE": 0.5434990186978474,
+            "RMSE": 0.8256439736926331,
+            "pearson_r": 0.9482420976942063,
+            "spearman_rho": 0.9251720944965721,
+            "within_1": 0.9166666666666666,
+            "exact": 0.7708333333333334,
+            "MAE_as_fraction_of_max": 0.06793737733723093
+          }
+        },
+        "explanation": {
+          "model": {
+            "n": 48,
+            "MAE": 1.3053849382066036,
+            "RMSE": 1.6217103974276268,
+            "pearson_r": 0.744375582399893,
+            "spearman_rho": 0.7609660813327549,
+            "within_1": 0.625,
+            "exact": 0.20833333333333334,
+            "MAE_as_fraction_of_max": 0.16317311727582545
+          },
+          "mean_predictor": {
+            "n": 48,
+            "MAE": 2.1956521739130435,
+            "RMSE": 2.5168266431375055,
+            "pearson_r": -0.9424561278352495,
+            "spearman_rho": -0.9322194844622653,
+            "within_1": 0.22916666666666666,
+            "exact": 0.08333333333333333,
+            "MAE_as_fraction_of_max": 0.27445652173913043
+          },
+          "n_folds": 24,
+          "alpha": 1.0,
+          "estimator": "ridge",
+          "ridge": {
+            "n": 48,
+            "MAE": 1.3053849382066036,
+            "RMSE": 1.6217103974276268,
+            "pearson_r": 0.744375582399893,
+            "spearman_rho": 0.7609660813327549,
+            "within_1": 0.625,
+            "exact": 0.20833333333333334,
+            "MAE_as_fraction_of_max": 0.16317311727582545
+          }
+        },
+        "documentation": {
+          "model": {
+            "n": 48,
+            "MAE": 0.5791191399605436,
+            "RMSE": 0.6851539735613559,
+            "pearson_r": 0.6610143188200095,
+            "spearman_rho": 0.6073853454907328,
+            "within_1": 0.9583333333333334,
+            "exact": 0.3333333333333333,
+            "MAE_as_fraction_of_max": 0.1447797849901359
+          },
+          "mean_predictor": {
+            "n": 48,
+            "MAE": 0.8260869565217391,
+            "RMSE": 0.9515682012277951,
+            "pearson_r": -1.0,
+            "spearman_rho": -1.0,
+            "within_1": 0.7083333333333334,
+            "exact": 0.3333333333333333,
+            "MAE_as_fraction_of_max": 0.20652173913043478
+          },
+          "n_folds": 24,
+          "alpha": 1.0,
+          "estimator": "ridge",
+          "ridge": {
+            "n": 48,
+            "MAE": 0.5791191399605436,
+            "RMSE": 0.6851539735613559,
+            "pearson_r": 0.6610143188200095,
+            "spearman_rho": 0.6073853454907328,
+            "within_1": 0.9583333333333334,
+            "exact": 0.3333333333333333,
+            "MAE_as_fraction_of_max": 0.1447797849901359
+          }
+        }
+      },
+      "grouped_cv_overall": {
+        "model": {
+          "n": 48,
+          "MAE": 1.6698071752988675,
+          "RMSE": 2.1716159740395837,
+          "pearson_r": 0.8302970055048493,
+          "spearman_rho": 0.8174538918007936,
+          "within_1": 0.4583333333333333,
+          "exact": 0.2708333333333333,
+          "MAE_as_fraction_of_max": 0.08349035876494337
+        },
+        "mean_predictor": {
+          "n": 48,
+          "MAE": 3.3550724637681157,
+          "RMSE": 4.022094089310197,
+          "pearson_r": -0.9128682986469523,
+          "spearman_rho": -0.9083005802094026,
+          "within_1": 0.2708333333333333,
+          "exact": 0.125,
+          "MAE_as_fraction_of_max": 0.16775362318840578
+        }
+      }
+    },
+    "week3_semantic": {
+      "holdout": {
+        "code": {
+          "features": [
+            "frac_syntax_ok",
+            "frac_executed",
+            "error_cell_rate",
+            "out_of_order",
+            "output_match_rate",
+            "construct_coverage"
+          ],
+          "estimator": "ridge",
+          "alpha": 0.1,
+          "alpha_selection": [
+            {
+              "alpha": 0.1,
+              "val_MAE": 0.6577571147137825
+            },
+            {
+              "alpha": 1.0,
+              "val_MAE": 0.6879054769968714
+            },
+            {
+              "alpha": 10.0,
+              "val_MAE": 0.8824402056924243
+            }
+          ],
+          "coefficients": {
+            "frac_syntax_ok": -0.16128322435649298,
+            "frac_executed": -0.31375832237824264,
+            "error_cell_rate": -0.37214773243062904,
+            "out_of_order": 0.0,
+            "output_match_rate": 2.4671625889916737,
+            "construct_coverage": -0.08404969381622124,
+            "_intercept": 4.13888888888889
+          },
+          "val": {
+            "model": {
+              "n": 12,
+              "MAE": 0.6577571147137825,
+              "RMSE": 1.0105744843253135,
+              "pearson_r": 0.9243230352267569,
+              "spearman_rho": 0.895068805162074,
+              "within_1": 0.8333333333333334,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.08221963933922281
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 1.962962962962963,
+              "RMSE": 2.450592017159915,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.5833333333333334,
+              "exact": 0.16666666666666666,
+              "MAE_as_fraction_of_max": 0.24537037037037038
+            },
+            "MAE_95CI": [
+              0.28003009766754394,
+              1.1359903573638206
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.6577571147137825,
+              "RMSE": 1.0105744843253135,
+              "pearson_r": 0.9243230352267569,
+              "spearman_rho": 0.895068805162074,
+              "within_1": 0.8333333333333334,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.08221963933922281
+            }
+          },
+          "test": {
+            "model": {
+              "n": 12,
+              "MAE": 0.25181903572073533,
+              "RMSE": 0.33456752442633275,
+              "pearson_r": 0.9888668453329608,
+              "spearman_rho": 0.9293203772845853,
+              "within_1": 1.0,
+              "exact": 0.9166666666666666,
+              "MAE_as_fraction_of_max": 0.031477379465091916
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 1.847222222222222,
+              "RMSE": 2.373821995053026,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.6666666666666666,
+              "exact": 0.08333333333333333,
+              "MAE_as_fraction_of_max": 0.23090277777777776
+            },
+            "MAE_95CI": [
+              0.13608504619566694,
+              0.38270741193107544
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.25181903572073533,
+              "RMSE": 0.33456752442633275,
+              "pearson_r": 0.9888668453329608,
+              "spearman_rho": 0.9293203772845853,
+              "within_1": 1.0,
+              "exact": 0.9166666666666666,
+              "MAE_as_fraction_of_max": 0.031477379465091916
+            }
+          },
+          "human_variability_mean_pairwise_MAE": null
+        },
+        "explanation": {
+          "features": [
+            "sem_cos_mean",
+            "sem_cos_max",
+            "expl_tokens_log",
+            "frac_tasks_explained",
+            "sem_concept_coverage"
+          ],
+          "estimator": "ridge",
+          "alpha": 10.0,
+          "alpha_selection": [
+            {
+              "alpha": 0.1,
+              "val_MAE": 1.5128621026433595
+            },
+            {
+              "alpha": 1.0,
+              "val_MAE": 1.4752129216594287
+            },
+            {
+              "alpha": 10.0,
+              "val_MAE": 1.4244835591270715
+            }
+          ],
+          "coefficients": {
+            "sem_cos_mean": -0.21525479838613595,
+            "sem_cos_max": -0.07870311554928364,
+            "expl_tokens_log": 1.1859005052399,
+            "frac_tasks_explained": 0.02519711211859149,
+            "sem_concept_coverage": 0.4942816847992932,
+            "_intercept": 4.805555555555555
+          },
+          "val": {
+            "model": {
+              "n": 12,
+              "MAE": 1.4244835591270715,
+              "RMSE": 1.6435622021037732,
+              "pearson_r": 0.7686101905430861,
+              "spearman_rho": 0.7959494846188381,
+              "within_1": 0.5,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.17806044489088393
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 2.5370370370370376,
+              "RMSE": 2.718392998414166,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.16666666666666666,
+              "exact": 0.0,
+              "MAE_as_fraction_of_max": 0.3171296296296297
+            },
+            "MAE_95CI": [
+              0.9848623977494624,
+              1.8749345720885982
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 1.4244835591270715,
+              "RMSE": 1.6435622021037732,
+              "pearson_r": 0.7686101905430861,
+              "spearman_rho": 0.7959494846188381,
+              "within_1": 0.5,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.17806044489088393
+            }
+          },
+          "test": {
+            "model": {
+              "n": 12,
+              "MAE": 1.6177596162964711,
+              "RMSE": 1.9786945201812558,
+              "pearson_r": 0.8028359653551123,
+              "spearman_rho": 0.8079570960756622,
+              "within_1": 0.3333333333333333,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.2022199520370589
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 3.050925925925926,
+              "RMSE": 3.3020522986040137,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.16666666666666666,
+              "exact": 0.08333333333333333,
+              "MAE_as_fraction_of_max": 0.38136574074074076
+            },
+            "MAE_95CI": [
+              1.0455550973768382,
+              2.2620535949639167
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 1.6177596162964711,
+              "RMSE": 1.9786945201812558,
+              "pearson_r": 0.8028359653551123,
+              "spearman_rho": 0.8079570960756622,
+              "within_1": 0.3333333333333333,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.2022199520370589
+            }
+          },
+          "human_variability_mean_pairwise_MAE": null
+        },
+        "documentation": {
+          "features": [
+            "comment_density",
+            "docstring_rate",
+            "md_tokens_log",
+            "md_to_code_ratio"
+          ],
+          "estimator": "ridge",
+          "alpha": 0.1,
+          "alpha_selection": [
+            {
+              "alpha": 0.1,
+              "val_MAE": 0.5162753370873072
+            },
+            {
+              "alpha": 1.0,
+              "val_MAE": 0.5233205773295327
+            },
+            {
+              "alpha": 10.0,
+              "val_MAE": 0.5960407433018938
+            }
+          ],
+          "coefficients": {
+            "comment_density": 0.512858143366842,
+            "docstring_rate": 0.3936546958751219,
+            "md_tokens_log": 0.036611556610804924,
+            "md_to_code_ratio": -0.024519359575398934,
+            "_intercept": 2.4444444444444446
+          },
+          "val": {
+            "model": {
+              "n": 12,
+              "MAE": 0.5162753370873072,
+              "RMSE": 0.6805771757610332,
+              "pearson_r": 0.7778994981785241,
+              "spearman_rho": 0.7424123494599495,
+              "within_1": 0.9166666666666666,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.1290688342718268
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 1.0185185185185184,
+              "RMSE": 1.1358360166811596,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.6666666666666666,
+              "exact": 0.16666666666666666,
+              "MAE_as_fraction_of_max": 0.2546296296296296
+            },
+            "MAE_95CI": [
+              0.27551889307344446,
+              0.7784225091487712
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.5162753370873072,
+              "RMSE": 0.6805771757610332,
+              "pearson_r": 0.7778994981785241,
+              "spearman_rho": 0.7424123494599495,
+              "within_1": 0.9166666666666666,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.1290688342718268
+            }
+          },
+          "test": {
+            "model": {
+              "n": 12,
+              "MAE": 0.46267826558361574,
+              "RMSE": 0.5682729549109353,
+              "pearson_r": 0.6465909783944964,
+              "spearman_rho": 0.5855522302066536,
+              "within_1": 1.0,
+              "exact": 0.4166666666666667,
+              "MAE_as_fraction_of_max": 0.11566956639590394
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 0.6574074074074074,
+              "RMSE": 0.7474235581707617,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 1.0,
+              "exact": 0.4166666666666667,
+              "MAE_as_fraction_of_max": 0.16435185185185186
+            },
+            "MAE_95CI": [
+              0.2749059961174129,
+              0.6402518488427942
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.46267826558361574,
+              "RMSE": 0.5682729549109353,
+              "pearson_r": 0.6465909783944964,
+              "spearman_rho": 0.5855522302066536,
+              "within_1": 1.0,
+              "exact": 0.4166666666666667,
+              "MAE_as_fraction_of_max": 0.11566956639590394
+            }
+          },
+          "human_variability_mean_pairwise_MAE": null
+        }
+      },
+      "holdout_overall": {
+        "val": {
+          "model": {
+            "n": 12,
+            "MAE": 2.2426052514192807,
+            "RMSE": 2.4865199287774797,
+            "pearson_r": 0.7584153932789197,
+            "spearman_rho": 0.7029974688445954,
+            "within_1": 0.25,
+            "exact": 0.08333333333333333,
+            "MAE_as_fraction_of_max": 0.11213026257096403
+          },
+          "mean_predictor": {
+            "n": 12,
+            "MAE": 3.2129629629629632,
+            "RMSE": 3.8614108596678096,
+            "pearson_r": null,
+            "spearman_rho": null,
+            "within_1": 0.3333333333333333,
+            "exact": 0.16666666666666666,
+            "MAE_as_fraction_of_max": 0.16064814814814815
+          }
+        },
+        "test": {
+          "model": {
+            "n": 12,
+            "MAE": 1.7982584491227218,
+            "RMSE": 2.1641006609292597,
+            "pearson_r": 0.8165705533772063,
+            "spearman_rho": 0.6973986590112546,
+            "within_1": 0.4166666666666667,
+            "exact": 0.25,
+            "MAE_as_fraction_of_max": 0.0899129224561361
+          },
+          "mean_predictor": {
+            "n": 12,
+            "MAE": 2.75,
+            "RMSE": 3.5542532337162918,
+            "pearson_r": null,
+            "spearman_rho": null,
+            "within_1": 0.4166666666666667,
+            "exact": 0.0,
+            "MAE_as_fraction_of_max": 0.1375
+          }
+        }
+      },
+      "grouped_cv_train_val": {
+        "code": {
+          "model": {
+            "n": 48,
+            "MAE": 0.5434990186978474,
+            "RMSE": 0.8256439736926331,
+            "pearson_r": 0.9482420976942063,
+            "spearman_rho": 0.9251720944965721,
+            "within_1": 0.9166666666666666,
+            "exact": 0.7708333333333334,
+            "MAE_as_fraction_of_max": 0.06793737733723093
+          },
+          "mean_predictor": {
+            "n": 48,
+            "MAE": 2.1947463768115942,
+            "RMSE": 2.6742517754104744,
+            "pearson_r": -0.8202166410815973,
+            "spearman_rho": -0.8129689867296578,
+            "within_1": 0.5416666666666666,
+            "exact": 0.10416666666666667,
+            "MAE_as_fraction_of_max": 0.2743432971014493
+          },
+          "n_folds": 24,
+          "alpha": 1.0,
+          "estimator": "ridge",
+          "ridge": {
+            "n": 48,
+            "MAE": 0.5434990186978474,
+            "RMSE": 0.8256439736926331,
+            "pearson_r": 0.9482420976942063,
+            "spearman_rho": 0.9251720944965721,
+            "within_1": 0.9166666666666666,
+            "exact": 0.7708333333333334,
+            "MAE_as_fraction_of_max": 0.06793737733723093
+          }
+        },
+        "explanation": {
+          "model": {
+            "n": 48,
+            "MAE": 1.3773606588306702,
+            "RMSE": 1.7039168752020264,
+            "pearson_r": 0.7120939692994614,
+            "spearman_rho": 0.7396511203482682,
+            "within_1": 0.5833333333333334,
+            "exact": 0.20833333333333334,
+            "MAE_as_fraction_of_max": 0.17217008235383377
+          },
+          "mean_predictor": {
+            "n": 48,
+            "MAE": 2.1956521739130435,
+            "RMSE": 2.5168266431375055,
+            "pearson_r": -0.9424561278352495,
+            "spearman_rho": -0.9322194844622653,
+            "within_1": 0.22916666666666666,
+            "exact": 0.08333333333333333,
+            "MAE_as_fraction_of_max": 0.27445652173913043
+          },
+          "n_folds": 24,
+          "alpha": 1.0,
+          "estimator": "ridge",
+          "ridge": {
+            "n": 48,
+            "MAE": 1.3773606588306702,
+            "RMSE": 1.7039168752020264,
+            "pearson_r": 0.7120939692994614,
+            "spearman_rho": 0.7396511203482682,
+            "within_1": 0.5833333333333334,
+            "exact": 0.20833333333333334,
+            "MAE_as_fraction_of_max": 0.17217008235383377
+          }
+        },
+        "documentation": {
+          "model": {
+            "n": 48,
+            "MAE": 0.5791191399605436,
+            "RMSE": 0.6851539735613559,
+            "pearson_r": 0.6610143188200095,
+            "spearman_rho": 0.6073853454907328,
+            "within_1": 0.9583333333333334,
+            "exact": 0.3333333333333333,
+            "MAE_as_fraction_of_max": 0.1447797849901359
+          },
+          "mean_predictor": {
+            "n": 48,
+            "MAE": 0.8260869565217391,
+            "RMSE": 0.9515682012277951,
+            "pearson_r": -1.0,
+            "spearman_rho": -1.0,
+            "within_1": 0.7083333333333334,
+            "exact": 0.3333333333333333,
+            "MAE_as_fraction_of_max": 0.20652173913043478
+          },
+          "n_folds": 24,
+          "alpha": 1.0,
+          "estimator": "ridge",
+          "ridge": {
+            "n": 48,
+            "MAE": 0.5791191399605436,
+            "RMSE": 0.6851539735613559,
+            "pearson_r": 0.6610143188200095,
+            "spearman_rho": 0.6073853454907328,
+            "within_1": 0.9583333333333334,
+            "exact": 0.3333333333333333,
+            "MAE_as_fraction_of_max": 0.1447797849901359
+          }
+        }
+      },
+      "grouped_cv_overall": {
+        "model": {
+          "n": 48,
+          "MAE": 1.8625477847173706,
+          "RMSE": 2.31976649940663,
+          "pearson_r": 0.8034965158645965,
+          "spearman_rho": 0.7836522769604247,
+          "within_1": 0.5,
+          "exact": 0.125,
+          "MAE_as_fraction_of_max": 0.09312738923586852
+        },
+        "mean_predictor": {
+          "n": 48,
+          "MAE": 3.3550724637681157,
+          "RMSE": 4.022094089310197,
+          "pearson_r": -0.9128682986469523,
+          "spearman_rho": -0.9083005802094026,
+          "within_1": 0.2708333333333333,
+          "exact": 0.125,
+          "MAE_as_fraction_of_max": 0.16775362318840578
+        }
+      }
+    },
+    "week3_combined": {
+      "holdout": {
+        "code": {
+          "features": [
+            "frac_syntax_ok",
+            "frac_executed",
+            "error_cell_rate",
+            "out_of_order",
+            "output_match_rate",
+            "construct_coverage"
+          ],
+          "estimator": "ridge",
+          "alpha": 0.1,
+          "alpha_selection": [
+            {
+              "alpha": 0.1,
+              "val_MAE": 0.6577571147137825
+            },
+            {
+              "alpha": 1.0,
+              "val_MAE": 0.6879054769968714
+            },
+            {
+              "alpha": 10.0,
+              "val_MAE": 0.8824402056924243
+            }
+          ],
+          "coefficients": {
+            "frac_syntax_ok": -0.16128322435649298,
+            "frac_executed": -0.31375832237824264,
+            "error_cell_rate": -0.37214773243062904,
+            "out_of_order": 0.0,
+            "output_match_rate": 2.4671625889916737,
+            "construct_coverage": -0.08404969381622124,
+            "_intercept": 4.13888888888889
+          },
+          "val": {
+            "model": {
+              "n": 12,
+              "MAE": 0.6577571147137825,
+              "RMSE": 1.0105744843253135,
+              "pearson_r": 0.9243230352267569,
+              "spearman_rho": 0.895068805162074,
+              "within_1": 0.8333333333333334,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.08221963933922281
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 1.962962962962963,
+              "RMSE": 2.450592017159915,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.5833333333333334,
+              "exact": 0.16666666666666666,
+              "MAE_as_fraction_of_max": 0.24537037037037038
+            },
+            "MAE_95CI": [
+              0.28003009766754394,
+              1.1359903573638206
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.6577571147137825,
+              "RMSE": 1.0105744843253135,
+              "pearson_r": 0.9243230352267569,
+              "spearman_rho": 0.895068805162074,
+              "within_1": 0.8333333333333334,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.08221963933922281
+            }
+          },
+          "test": {
+            "model": {
+              "n": 12,
+              "MAE": 0.25181903572073533,
+              "RMSE": 0.33456752442633275,
+              "pearson_r": 0.9888668453329608,
+              "spearman_rho": 0.9293203772845853,
+              "within_1": 1.0,
+              "exact": 0.9166666666666666,
+              "MAE_as_fraction_of_max": 0.031477379465091916
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 1.847222222222222,
+              "RMSE": 2.373821995053026,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.6666666666666666,
+              "exact": 0.08333333333333333,
+              "MAE_as_fraction_of_max": 0.23090277777777776
+            },
+            "MAE_95CI": [
+              0.13608504619566694,
+              0.38270741193107544
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.25181903572073533,
+              "RMSE": 0.33456752442633275,
+              "pearson_r": 0.9888668453329608,
+              "spearman_rho": 0.9293203772845853,
+              "within_1": 1.0,
+              "exact": 0.9166666666666666,
+              "MAE_as_fraction_of_max": 0.031477379465091916
+            }
+          },
+          "human_variability_mean_pairwise_MAE": null
+        },
+        "explanation": {
+          "features": [
+            "tfidf_cos_mean",
+            "tfidf_cos_max",
+            "expl_tokens_log",
+            "frac_tasks_explained",
+            "keyword_coverage",
+            "sem_cos_mean",
+            "sem_cos_max",
+            "sem_concept_coverage"
+          ],
+          "estimator": "ridge",
+          "alpha": 10.0,
+          "alpha_selection": [
+            {
+              "alpha": 0.1,
+              "val_MAE": 1.3869747706829083
+            },
+            {
+              "alpha": 1.0,
+              "val_MAE": 1.3320984631196213
+            },
+            {
+              "alpha": 10.0,
+              "val_MAE": 1.2172032083119122
+            }
+          ],
+          "coefficients": {
+            "tfidf_cos_mean": 0.2393517874559283,
+            "tfidf_cos_max": 0.18649051485007306,
+            "expl_tokens_log": 1.0467798636373353,
+            "frac_tasks_explained": 0.11309829469343319,
+            "keyword_coverage": 0.6971759298746703,
+            "sem_cos_mean": -0.5247752742020826,
+            "sem_cos_max": -0.3828065070523498,
+            "sem_concept_coverage": 0.2886206664172054,
+            "_intercept": 4.8055555555555545
+          },
+          "val": {
+            "model": {
+              "n": 12,
+              "MAE": 1.2172032083119122,
+              "RMSE": 1.420961492959479,
+              "pearson_r": 0.8037520004627978,
+              "spearman_rho": 0.7887787685411909,
+              "within_1": 0.5833333333333334,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.15215040103898902
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 2.5370370370370376,
+              "RMSE": 2.718392998414166,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.16666666666666666,
+              "exact": 0.0,
+              "MAE_as_fraction_of_max": 0.3171296296296297
+            },
+            "MAE_95CI": [
+              0.8139050521504193,
+              1.6204327059244
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 1.2172032083119122,
+              "RMSE": 1.420961492959479,
+              "pearson_r": 0.8037520004627978,
+              "spearman_rho": 0.7887787685411909,
+              "within_1": 0.5833333333333334,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.15215040103898902
+            }
+          },
+          "test": {
+            "model": {
+              "n": 12,
+              "MAE": 1.345899936997382,
+              "RMSE": 1.7789863832160724,
+              "pearson_r": 0.8479586712553898,
+              "spearman_rho": 0.8399906373297635,
+              "within_1": 0.5833333333333334,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.16823749212467276
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 3.050925925925926,
+              "RMSE": 3.3020522986040137,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.16666666666666666,
+              "exact": 0.08333333333333333,
+              "MAE_as_fraction_of_max": 0.38136574074074076
+            },
+            "MAE_95CI": [
+              0.7377963877926683,
+              2.0428226823285267
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 1.345899936997382,
+              "RMSE": 1.7789863832160724,
+              "pearson_r": 0.8479586712553898,
+              "spearman_rho": 0.8399906373297635,
+              "within_1": 0.5833333333333334,
+              "exact": 0.25,
+              "MAE_as_fraction_of_max": 0.16823749212467276
+            }
+          },
+          "human_variability_mean_pairwise_MAE": null
+        },
+        "documentation": {
+          "features": [
+            "comment_density",
+            "docstring_rate",
+            "md_tokens_log",
+            "md_to_code_ratio"
+          ],
+          "estimator": "ridge",
+          "alpha": 0.1,
+          "alpha_selection": [
+            {
+              "alpha": 0.1,
+              "val_MAE": 0.5162753370873072
+            },
+            {
+              "alpha": 1.0,
+              "val_MAE": 0.5233205773295327
+            },
+            {
+              "alpha": 10.0,
+              "val_MAE": 0.5960407433018938
+            }
+          ],
+          "coefficients": {
+            "comment_density": 0.512858143366842,
+            "docstring_rate": 0.3936546958751219,
+            "md_tokens_log": 0.036611556610804924,
+            "md_to_code_ratio": -0.024519359575398934,
+            "_intercept": 2.4444444444444446
+          },
+          "val": {
+            "model": {
+              "n": 12,
+              "MAE": 0.5162753370873072,
+              "RMSE": 0.6805771757610332,
+              "pearson_r": 0.7778994981785241,
+              "spearman_rho": 0.7424123494599495,
+              "within_1": 0.9166666666666666,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.1290688342718268
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 1.0185185185185184,
+              "RMSE": 1.1358360166811596,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 0.6666666666666666,
+              "exact": 0.16666666666666666,
+              "MAE_as_fraction_of_max": 0.2546296296296296
+            },
+            "MAE_95CI": [
+              0.27551889307344446,
+              0.7784225091487712
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.5162753370873072,
+              "RMSE": 0.6805771757610332,
+              "pearson_r": 0.7778994981785241,
+              "spearman_rho": 0.7424123494599495,
+              "within_1": 0.9166666666666666,
+              "exact": 0.5,
+              "MAE_as_fraction_of_max": 0.1290688342718268
+            }
+          },
+          "test": {
+            "model": {
+              "n": 12,
+              "MAE": 0.46267826558361574,
+              "RMSE": 0.5682729549109353,
+              "pearson_r": 0.6465909783944964,
+              "spearman_rho": 0.5855522302066536,
+              "within_1": 1.0,
+              "exact": 0.4166666666666667,
+              "MAE_as_fraction_of_max": 0.11566956639590394
+            },
+            "mean_predictor": {
+              "n": 12,
+              "MAE": 0.6574074074074074,
+              "RMSE": 0.7474235581707617,
+              "pearson_r": null,
+              "spearman_rho": null,
+              "within_1": 1.0,
+              "exact": 0.4166666666666667,
+              "MAE_as_fraction_of_max": 0.16435185185185186
+            },
+            "MAE_95CI": [
+              0.2749059961174129,
+              0.6402518488427942
+            ],
+            "ridge": {
+              "n": 12,
+              "MAE": 0.46267826558361574,
+              "RMSE": 0.5682729549109353,
+              "pearson_r": 0.6465909783944964,
+              "spearman_rho": 0.5855522302066536,
+              "within_1": 1.0,
+              "exact": 0.4166666666666667,
+              "MAE_as_fraction_of_max": 0.11566956639590394
+            }
+          },
+          "human_variability_mean_pairwise_MAE": null
+        }
+      },
+      "holdout_overall": {
+        "val": {
+          "model": {
+            "n": 12,
+            "MAE": 2.1138050832402784,
+            "RMSE": 2.3213801131429275,
+            "pearson_r": 0.775711373302399,
+            "spearman_rho": 0.7205724055657101,
+            "within_1": 0.25,
+            "exact": 0.08333333333333333,
+            "MAE_as_fraction_of_max": 0.10569025416201391
+          },
+          "mean_predictor": {
+            "n": 12,
+            "MAE": 3.2129629629629632,
+            "RMSE": 3.8614108596678096,
+            "pearson_r": null,
+            "spearman_rho": null,
+            "within_1": 0.3333333333333333,
+            "exact": 0.16666666666666666,
+            "MAE_as_fraction_of_max": 0.16064814814814815
+          }
+        },
+        "test": {
+          "model": {
+            "n": 12,
+            "MAE": 1.476784516437568,
+            "RMSE": 1.9141407942609543,
+            "pearson_r": 0.8524693043962845,
+            "spearman_rho": 0.7505000797481521,
+            "within_1": 0.6666666666666666,
+            "exact": 0.25,
+            "MAE_as_fraction_of_max": 0.0738392258218784
+          },
+          "mean_predictor": {
+            "n": 12,
+            "MAE": 2.75,
+            "RMSE": 3.5542532337162918,
+            "pearson_r": null,
+            "spearman_rho": null,
+            "within_1": 0.4166666666666667,
+            "exact": 0.0,
+            "MAE_as_fraction_of_max": 0.1375
+          }
+        }
+      },
+      "grouped_cv_train_val": {
+        "code": {
+          "model": {
+            "n": 48,
+            "MAE": 0.5434990186978474,
+            "RMSE": 0.8256439736926331,
+            "pearson_r": 0.9482420976942063,
+            "spearman_rho": 0.9251720944965721,
+            "within_1": 0.9166666666666666,
+            "exact": 0.7708333333333334,
+            "MAE_as_fraction_of_max": 0.06793737733723093
+          },
+          "mean_predictor": {
+            "n": 48,
+            "MAE": 2.1947463768115942,
+            "RMSE": 2.6742517754104744,
+            "pearson_r": -0.8202166410815973,
+            "spearman_rho": -0.8129689867296578,
+            "within_1": 0.5416666666666666,
+            "exact": 0.10416666666666667,
+            "MAE_as_fraction_of_max": 0.2743432971014493
+          },
+          "n_folds": 24,
+          "alpha": 1.0,
+          "estimator": "ridge",
+          "ridge": {
+            "n": 48,
+            "MAE": 0.5434990186978474,
+            "RMSE": 0.8256439736926331,
+            "pearson_r": 0.9482420976942063,
+            "spearman_rho": 0.9251720944965721,
+            "within_1": 0.9166666666666666,
+            "exact": 0.7708333333333334,
+            "MAE_as_fraction_of_max": 0.06793737733723093
+          }
+        },
+        "explanation": {
+          "model": {
+            "n": 48,
+            "MAE": 1.245155596805678,
+            "RMSE": 1.4695834900273836,
+            "pearson_r": 0.7965228956011178,
+            "spearman_rho": 0.8126603552667805,
+            "within_1": 0.5625,
+            "exact": 0.22916666666666666,
+            "MAE_as_fraction_of_max": 0.15564444960070975
+          },
+          "mean_predictor": {
+            "n": 48,
+            "MAE": 2.1956521739130435,
+            "RMSE": 2.5168266431375055,
+            "pearson_r": -0.9424561278352495,
+            "spearman_rho": -0.9322194844622653,
+            "within_1": 0.22916666666666666,
+            "exact": 0.08333333333333333,
+            "MAE_as_fraction_of_max": 0.27445652173913043
+          },
+          "n_folds": 24,
+          "alpha": 1.0,
+          "estimator": "ridge",
+          "ridge": {
+            "n": 48,
+            "MAE": 1.245155596805678,
+            "RMSE": 1.4695834900273836,
+            "pearson_r": 0.7965228956011178,
+            "spearman_rho": 0.8126603552667805,
+            "within_1": 0.5625,
+            "exact": 0.22916666666666666,
+            "MAE_as_fraction_of_max": 0.15564444960070975
+          }
+        },
+        "documentation": {
+          "model": {
+            "n": 48,
+            "MAE": 0.5791191399605436,
+            "RMSE": 0.6851539735613559,
+            "pearson_r": 0.6610143188200095,
+            "spearman_rho": 0.6073853454907328,
+            "within_1": 0.9583333333333334,
+            "exact": 0.3333333333333333,
+            "MAE_as_fraction_of_max": 0.1447797849901359
+          },
+          "mean_predictor": {
+            "n": 48,
+            "MAE": 0.8260869565217391,
+            "RMSE": 0.9515682012277951,
+            "pearson_r": -1.0,
+            "spearman_rho": -1.0,
+            "within_1": 0.7083333333333334,
+            "exact": 0.3333333333333333,
+            "MAE_as_fraction_of_max": 0.20652173913043478
+          },
+          "n_folds": 24,
+          "alpha": 1.0,
+          "estimator": "ridge",
+          "ridge": {
+            "n": 48,
+            "MAE": 0.5791191399605436,
+            "RMSE": 0.6851539735613559,
+            "pearson_r": 0.6610143188200095,
+            "spearman_rho": 0.6073853454907328,
+            "within_1": 0.9583333333333334,
+            "exact": 0.3333333333333333,
+            "MAE_as_fraction_of_max": 0.1447797849901359
+          }
+        }
+      },
+      "grouped_cv_overall": {
+        "model": {
+          "n": 48,
+          "MAE": 1.625920616921335,
+          "RMSE": 2.0670275279144907,
+          "pearson_r": 0.8515859680873294,
+          "spearman_rho": 0.8365899672991316,
+          "within_1": 0.4583333333333333,
+          "exact": 0.2708333333333333,
+          "MAE_as_fraction_of_max": 0.08129603084606675
+        },
+        "mean_predictor": {
+          "n": 48,
+          "MAE": 3.3550724637681157,
+          "RMSE": 4.022094089310197,
+          "pearson_r": -0.9128682986469523,
+          "spearman_rho": -0.9083005802094026,
+          "within_1": 0.2708333333333333,
+          "exact": 0.125,
+          "MAE_as_fraction_of_max": 0.16775362318840578
+        }
+      }
+    }
+  },
+  "estimator_selection": null,
+  "semantic_model": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "revision": "onnx:C:\\Users\\gaura\\Documents\\grok_build_trial\\speech_and_natural_language_processing_project\\J016_work\\J016_Submission_5_nb_lab_evaluator 2\\nb_lab_evaluator 2\\models\\all-MiniLM-L6-v2-onnx",
+    "dim": 384,
+    "max_tokens": 256,
+    "is_stub": false,
+    "concept_threshold": 0.275,
+    "frozen": true
+  },
+  "nli_model": null,
+  "WARNING": "Synthetic development run: results are not evidence of real student performance. Computed on SYNTHETIC development fixtures with SIMULATED labels: demonstrates that the pipeline runs end to end, NOT how the evaluator performs on real submissions."
+}

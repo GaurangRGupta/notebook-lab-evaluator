@@ -1,0 +1,28 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "2877f0512916",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.68,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 7.28,
+  "documentation_quality": 2.61,
+  "overall_score": 15.34,
+  "max_score": 20,
+  "errors": [
+    "output mismatch in T1"
+  ],
+  "missing_concepts": {
+    "T3": [
+      "angle",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

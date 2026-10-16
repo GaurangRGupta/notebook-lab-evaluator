@@ -1,0 +1,48 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "2877f0512916",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.68,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 6.32,
+  "documentation_quality": 2.61,
+  "overall_score": 14.37,
+  "max_score": 20,
+  "errors": [
+    "output mismatch in T1"
+  ],
+  "missing_concepts": {
+    "T3": [
+      "angle",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.895,
+      "T3": 0.552
+    },
+    "concepts_matched_semantically": {
+      "T3": [
+        "norm",
+        "document length"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T3": [
+        "angle",
+        "direction"
+      ]
+    }
+  }
+}

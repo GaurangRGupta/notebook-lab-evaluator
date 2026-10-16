@@ -1,0 +1,50 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "n_notebooks": 10,
+  "n_cells": 130,
+  "cells_by_type": {
+    "markdown": 90,
+    "code": 40
+  },
+  "template_cells": 71,
+  "student_code_cells": 30,
+  "student_markdown_cells": 19,
+  "notebooks_by_assignment": {
+    "LAB_SYN1": 5,
+    "LAB_SYN2": 5
+  },
+  "notebooks_by_source": {
+    "synthetic": 10
+  },
+  "notebooks_by_split": {
+    "train": 6,
+    "test": 2,
+    "val": 2
+  },
+  "cells_with_error_output": 5,
+  "unexecuted_code_cells": 1,
+  "label_distribution": {
+    "code": {
+      "2.0": 2,
+      "3.0": 2,
+      "5.0": 1,
+      "7.0": 1,
+      "8.0": 4
+    },
+    "explanation": {
+      "0.0": 2,
+      "1.0": 2,
+      "2.0": 2,
+      "5.0": 1,
+      "6.0": 1,
+      "8.0": 2
+    },
+    "documentation": {
+      "0.0": 2,
+      "1.0": 1,
+      "2.0": 4,
+      "4.0": 3
+    }
+  },
+  "pii_residual_matches": 0
+}

@@ -1,0 +1,32 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "fd73eb1e1416",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.435,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 6.24,
+  "documentation_quality": 3.42,
+  "overall_score": 13.13,
+  "max_score": 20,
+  "errors": [
+    "cell 11 (T3): SyntaxError line 4: invalid syntax. Perhaps you forgot a comma?",
+    "output mismatch in T2",
+    "output mismatch in T3",
+    "cell 7 was never executed"
+  ],
+  "missing_concepts": {
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

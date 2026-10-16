@@ -1,0 +1,60 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "37a41d4b1686",
+  "assignment_id": "LAB_SYN2",
+  "split": "test",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.647,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 1.7,
+  "documentation_quality": 2.09,
+  "overall_score": 8.96,
+  "max_score": 20,
+  "errors": [
+    "cell 5 (T1): NameError [code error] name 'bigram_counts' is not defined",
+    "output mismatch in T1"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.425,
+      "T3": 0.0
+    },
+    "concepts_matched_semantically": {},
+    "missing_concepts_after_semantic": {
+      "T2": [
+        "zero probability",
+        "unseen bigrams",
+        "add one",
+        "vocabulary size",
+        "probability mass"
+      ],
+      "T3": [
+        "inverse probability",
+        "normalised per word",
+        "lower is better",
+        "surprise"
+      ]
+    }
+  }
+}

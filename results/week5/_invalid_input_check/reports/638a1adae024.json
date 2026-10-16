@@ -1,0 +1,39 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "638a1adae024",
+  "assignment_id": "LAB_SYN1",
+  "split": "test",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.398,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 5.6,
+  "documentation_quality": 3.51,
+  "overall_score": 12.29,
+  "max_score": 20,
+  "errors": [
+    "cell 5 (T1): NameError [code error] name 'documents' is not defined",
+    "output mismatch in T1",
+    "output mismatch in T3",
+    "cell 11 was never executed"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

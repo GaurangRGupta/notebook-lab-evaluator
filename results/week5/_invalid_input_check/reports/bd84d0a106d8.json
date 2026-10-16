@@ -1,0 +1,32 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "bd84d0a106d8",
+  "assignment_id": "LAB_SYN1",
+  "split": "val",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.308,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 7.42,
+  "documentation_quality": 3.21,
+  "overall_score": 13.09,
+  "max_score": 20,
+  "errors": [
+    "cell 5 (T1): NameError [code error] name 'documents' is not defined",
+    "cell 11 (T3): SyntaxError line 4: invalid syntax. Perhaps you forgot a comma?",
+    "output mismatch in T1",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

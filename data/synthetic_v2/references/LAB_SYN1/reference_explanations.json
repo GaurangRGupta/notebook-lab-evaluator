@@ -1,0 +1,95 @@
+{
+  "_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "tasks": {
+    "T2": {
+      "text": "TF-IDF (term frequency-inverse document frequency) weights a word by how often it occurs in a document (term frequency) multiplied by its inverse document frequency, the log of the number of documents divided by the number of documents that contain the word. Words such as 'the' appear in most documents, so their IDF is low and they are down-weighted, while rare, discriminative words receive a higher weight.",
+      "concepts": [
+        {
+          "term": "term frequency",
+          "variants": [
+            "tf",
+            "how often",
+            "frequency of the word",
+            "frequency of a word"
+          ]
+        },
+        {
+          "term": "inverse document frequency",
+          "variants": [
+            "idf"
+          ]
+        },
+        {
+          "term": "logarithm",
+          "variants": [
+            "log"
+          ]
+        },
+        {
+          "term": "common words down-weighted",
+          "variants": [
+            "down-weighted",
+            "down-weight",
+            "downweight",
+            "lower weight",
+            "low weight",
+            "less weight",
+            "less important",
+            "penalise",
+            "penalize"
+          ]
+        },
+        {
+          "term": "rare words weighted higher",
+          "variants": [
+            "rare",
+            "discriminative",
+            "distinctive",
+            "unique words"
+          ]
+        }
+      ]
+    },
+    "T3": {
+      "text": "Cosine similarity is the cosine of the angle between two vectors: their dot product divided by the product of their norms (magnitudes). It depends only on the direction of the vectors, so it is insensitive to document length, whereas Euclidean distance grows with vector magnitude and would make two documents on the same topic but of different lengths look far apart.",
+      "concepts": [
+        {
+          "term": "angle",
+          "variants": [
+            "angle between"
+          ]
+        },
+        {
+          "term": "dot product",
+          "variants": [
+            "inner product"
+          ]
+        },
+        {
+          "term": "norm",
+          "variants": [
+            "norms",
+            "magnitude",
+            "magnitudes",
+            "normalised",
+            "normalized"
+          ]
+        },
+        {
+          "term": "document length",
+          "variants": [
+            "length",
+            "longer documents",
+            "size of the document"
+          ]
+        },
+        {
+          "term": "direction",
+          "variants": [
+            "orientation"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "assignment": {
+    "60cf8659878a": "test",
+    "bced8ee14adb": "test",
+    "de5aaa0b5b63": "val",
+    "c8a0c8c2e4e8": "val",
+    "a290c5bd28bd": "train",
+    "be370b9034b8": "train",
+    "6a7732c244ad": "train",
+    "01573e2e2521": "train",
+    "08d1ce73b8d4": "train",
+    "6fc55a4498be": "train"
+  },
+  "realised": {
+    "train": 0.6,
+    "val": 0.2,
+    "test": 0.2
+  },
+  "target": {
+    "train": 0.6,
+    "val": 0.2,
+    "test": 0.2
+  },
+  "method": "StratifiedGroupKFold(k=5, seed=42), strata=assignment/source",
+  "n_notebooks": 10,
+  "n_groups": 5,
+  "merged_groups": 0
+}

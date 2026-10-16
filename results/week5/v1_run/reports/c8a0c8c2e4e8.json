@@ -1,0 +1,57 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "notebook_id": "c8a0c8c2e4e8",
+  "assignment_id": "LAB_SYN2",
+  "split": "val",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.207,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 3.98,
+  "documentation_quality": 2.01,
+  "overall_score": 7.65,
+  "max_score": 20,
+  "errors": [
+    "cell 6 (T2): NameError [code error] name 'bigram_counts' is not defined",
+    "cell 10 (T3): SyntaxError line 3: '(' was never closed",
+    "output mismatch in T2",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.706,
+      "T3": 0.76
+    },
+    "concepts_matched_semantically": {
+      "T3": [
+        "normalised per word"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T2": [
+        "vocabulary size",
+        "probability mass"
+      ],
+      "T3": [
+        "inverse probability",
+        "surprise"
+      ]
+    }
+  }
+}

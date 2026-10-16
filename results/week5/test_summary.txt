@@ -1,0 +1,10 @@
+$ python -m pytest -q -rs tests
+
+.............................................sss..............s......... [ 97%]
+..                                                                       [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_semantic_similarity.py:194: MiniLM not available here: Could not load sentence-transformers/all-MiniLM-L6-v2. Run once with internet ac
+SKIPPED [1] tests/test_semantic_similarity.py:200: MiniLM not available here: Could not load sentence-transformers/all-MiniLM-L6-v2. Run once with internet ac
+SKIPPED [1] tests/test_semantic_similarity.py:204: MiniLM not available here: Could not load sentence-transformers/all-MiniLM-L6-v2. Run once with internet ac
+SKIPPED [1] tests/test_week4.py:154: NLI model not available here: Could not load cross-encoder/nli-deberta-v3-xsmall. Run once with internet acces
+70 passed, 4 skipped in 18.36s

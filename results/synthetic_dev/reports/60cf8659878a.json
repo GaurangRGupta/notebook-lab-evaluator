@@ -1,0 +1,40 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "notebook_id": "60cf8659878a",
+  "assignment_id": "LAB_SYN1",
+  "split": "test",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 6.74,
+  "output_match": true,
+  "output_match_rate": 1.0,
+  "explanation_score": 0.94,
+  "documentation_quality": 2.05,
+  "overall_score": 9.74,
+  "max_score": 20,
+  "errors": [],
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": "The saved output matches. The write-up does not cover the reference ideas named below. The write-up for T2 does not cover: term frequency, inverse document frequency, logarithm, common words down-weighted, rare words weighted higher. The write-up for T3 does not cover: angle, dot product, norm, document length, direction.",
+  "confidence": {
+    "code": 1.0,
+    "explanation": 0.0,
+    "documentation": 1.0,
+    "overall": 0.667,
+    "method": "Diagnostics only: syntax errors, unexecuted cells, output mismatch, and empty explanation. The Week 3 encoder was not loaded, so agreement between models is not available. This is not a calibrated probability."
+  },
+  "flag_output_ok_explanation_weak": true
+}

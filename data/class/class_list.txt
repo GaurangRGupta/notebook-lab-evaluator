@@ -1,0 +1,3 @@
+# One student name per line, added when anonymising.
+# Lines that start with # are ignored.
+# This template has no names and is tracked. Do not commit a copy that contains student names.

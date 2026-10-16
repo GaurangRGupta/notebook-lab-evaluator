@@ -1,0 +1,105 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "iaa": {
+    "code": {
+      "dimension": "code",
+      "n_items": 10,
+      "annotators": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "krippendorff_alpha_ordinal": 0.8453877423389619,
+      "krippendorff_alpha_interval": 0.9359823399558499,
+      "icc_2_1": 0.9402146142054164,
+      "mean_pairwise_qwk": 0.9335984589573106,
+      "mean_pairwise_mae": 0.7333333333333334,
+      "mean_pairwise_within_1": 0.9333333333333332,
+      "pairwise": {
+        "A1-A2": {
+          "qwk": 0.9421487603305785,
+          "mae": 0.7,
+          "within_1": 1.0
+        },
+        "A1-A3": {
+          "qwk": 0.9714285714285714,
+          "mae": 0.4,
+          "within_1": 1.0
+        },
+        "A2-A3": {
+          "qwk": 0.8872180451127819,
+          "mae": 1.1,
+          "within_1": 0.8
+        }
+      },
+      "note": "mean_pairwise_mae estimates human annotation variability; it is not a hard ceiling for the model."
+    },
+    "explanation": {
+      "dimension": "explanation",
+      "n_items": 10,
+      "annotators": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "krippendorff_alpha_ordinal": 0.9511050353155617,
+      "krippendorff_alpha_interval": 0.9693486590038314,
+      "icc_2_1": 0.9713831478537361,
+      "mean_pairwise_qwk": 0.9678873550126182,
+      "mean_pairwise_mae": 0.5333333333333333,
+      "mean_pairwise_within_1": 1.0,
+      "pairwise": {
+        "A1-A2": {
+          "qwk": 0.9829351535836177,
+          "mae": 0.3,
+          "within_1": 1.0
+        },
+        "A1-A3": {
+          "qwk": 0.9699879951980792,
+          "mae": 0.5,
+          "within_1": 1.0
+        },
+        "A2-A3": {
+          "qwk": 0.9507389162561577,
+          "mae": 0.8,
+          "within_1": 1.0
+        }
+      },
+      "note": "mean_pairwise_mae estimates human annotation variability; it is not a hard ceiling for the model."
+    },
+    "documentation": {
+      "dimension": "documentation",
+      "n_items": 10,
+      "annotators": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "krippendorff_alpha_ordinal": 0.9124852071005917,
+      "krippendorff_alpha_interval": 0.9016393442622951,
+      "icc_2_1": 0.9076923076923078,
+      "mean_pairwise_qwk": 0.8977260644430597,
+      "mean_pairwise_mae": 0.4000000000000001,
+      "mean_pairwise_within_1": 1.0,
+      "pairwise": {
+        "A1-A2": {
+          "qwk": 0.949748743718593,
+          "mae": 0.2,
+          "within_1": 1.0
+        },
+        "A1-A3": {
+          "qwk": 0.900497512437811,
+          "mae": 0.4,
+          "within_1": 1.0
+        },
+        "A2-A3": {
+          "qwk": 0.8429319371727748,
+          "mae": 0.6,
+          "within_1": 1.0
+        }
+      },
+      "note": "mean_pairwise_mae estimates human annotation variability; it is not a hard ceiling for the model."
+    }
+  },
+  "items_flagged_for_discussion": 2
+}

@@ -1,0 +1,36 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "b3e4ac3a2f87",
+  "assignment_id": "LAB_SYN2",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.631,
+  "output_match": false,
+  "output_match_rate": 0.6666666666666666,
+  "explanation_score": 0.63,
+  "documentation_quality": 1.5,
+  "overall_score": 7.19,
+  "max_score": 20,
+  "errors": [
+    "cell 7 (T2): NameError [code error] name 'vocab_size' is not defined",
+    "output mismatch in T2"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

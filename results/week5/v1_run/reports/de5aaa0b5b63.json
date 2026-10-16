@@ -1,0 +1,61 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "notebook_id": "de5aaa0b5b63",
+  "assignment_id": "LAB_SYN1",
+  "split": "val",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.31,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 4.2,
+  "documentation_quality": 1.81,
+  "overall_score": 8.48,
+  "max_score": 20,
+  "errors": [
+    "cell 4 (T1): SyntaxError line 3: expected ':'",
+    "cell 10 (T3): NameError [code error] name 'tfidf_matrix' is not defined",
+    "output mismatch in T1",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "logarithm",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.917,
+      "T3": 0.801
+    },
+    "concepts_matched_semantically": {
+      "T2": [
+        "rare words weighted higher"
+      ],
+      "T3": [
+        "document length"
+      ]
+    },
+    "missing_concepts_after_semantic": {
+      "T2": [
+        "logarithm"
+      ],
+      "T3": [
+        "dot product",
+        "norm",
+        "direction"
+      ]
+    }
+  }
+}

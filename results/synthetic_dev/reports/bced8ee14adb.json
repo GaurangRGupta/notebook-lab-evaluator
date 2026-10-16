@@ -1,0 +1,39 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "notebook_id": "bced8ee14adb",
+  "assignment_id": "LAB_SYN2",
+  "split": "test",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 6.74,
+  "output_match": true,
+  "output_match_rate": 1.0,
+  "explanation_score": 1.14,
+  "documentation_quality": 3.27,
+  "overall_score": 11.15,
+  "max_score": 20,
+  "errors": [],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": "The saved output matches. The write-up does not cover the reference ideas named below. The write-up for T2 does not cover: zero probability, unseen bigrams, add one, vocabulary size, probability mass. The write-up for T3 does not cover: inverse probability, normalised per word, lower is better, surprise.",
+  "confidence": {
+    "code": 1.0,
+    "explanation": 0.0,
+    "documentation": 1.0,
+    "overall": 0.667,
+    "method": "Diagnostics only: syntax errors, unexecuted cells, output mismatch, and empty explanation. The Week 3 encoder was not loaded, so agreement between models is not available. This is not a calibrated probability."
+  },
+  "flag_output_ok_explanation_weak": true
+}

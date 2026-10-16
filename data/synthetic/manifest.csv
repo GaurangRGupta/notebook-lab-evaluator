@@ -1,0 +1,11 @@
+raw_path,assignment_id,group_key,source,license,synthetic,profile
+raw/LAB_SYN1/SYN_S01_LAB_SYN1.ipynb,LAB_SYN1,SYN_S01,synthetic,team-authored synthetic fixture,True,"excellent: correct code, docstrings/comments, complete correct explanations"
+raw/LAB_SYN1/SYN_S02_LAB_SYN1.ipynb,LAB_SYN1,SYN_S02,synthetic,team-authored synthetic fixture,True,"correct code, no comments, weak/vague explanations"
+raw/LAB_SYN1/SYN_S03_LAB_SYN1.ipynb,LAB_SYN1,SYN_S03,synthetic,team-authored synthetic fixture,True,"syntax error (T1), runtime NameError (T3), partly correct explanations"
+raw/LAB_SYN1/SYN_S04_LAB_SYN1.ipynb,LAB_SYN1,SYN_S04,synthetic,team-authored synthetic fixture,True,"output mismatches (T1, T3), wrong construct (CountVectorizer), conceptually wrong explanations"
+raw/LAB_SYN1/SYN_S05_LAB_SYN1.ipynb,LAB_SYN1,SYN_S05,synthetic,team-authored synthetic fixture,True,"minimal: no explanations, no comments, T2 never executed, out-of-order execution, contains fake PII"
+raw/LAB_SYN2/SYN_S01_LAB_SYN2.ipynb,LAB_SYN2,SYN_S01,synthetic,team-authored synthetic fixture,True,"excellent: correct code, docstrings/comments, complete correct explanations"
+raw/LAB_SYN2/SYN_S02_LAB_SYN2.ipynb,LAB_SYN2,SYN_S02,synthetic,team-authored synthetic fixture,True,"correct code with good comments/docstrings and an IPython magic, but weak explanations"
+raw/LAB_SYN2/SYN_S03_LAB_SYN2.ipynb,LAB_SYN2,SYN_S03,synthetic,team-authored synthetic fixture,True,"runtime NameError (T2), syntax error (T3), mostly correct explanations"
+raw/LAB_SYN2/SYN_S04_LAB_SYN2.ipynb,LAB_SYN2,SYN_S04,synthetic,team-authored synthetic fixture,True,"no smoothing (output mismatch), downstream ValueError, conceptually wrong explanations"
+raw/LAB_SYN2/SYN_S05_LAB_SYN2.ipynb,LAB_SYN2,SYN_S05,synthetic,team-authored synthetic fixture,True,"correct code, no comments, no explanations, contains fake PII"

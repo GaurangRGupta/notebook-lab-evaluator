@@ -1,0 +1,403 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "encoder": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+  "threshold": 0.275,
+  "chosen_on": "tune split of concept pairs only",
+  "n_tune": 20,
+  "n_eval": 21,
+  "tune_curve": [
+    {
+      "threshold": 0.2,
+      "n": 20,
+      "precision": 0.6363636363636364,
+      "recall": 0.6363636363636364,
+      "f1": 0.6363636363636364,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.225,
+      "n": 20,
+      "precision": 0.7,
+      "recall": 0.6363636363636364,
+      "f1": 0.6666666666666666,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.25,
+      "n": 20,
+      "precision": 0.7,
+      "recall": 0.6363636363636364,
+      "f1": 0.6666666666666666,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.275,
+      "n": 20,
+      "precision": 0.7,
+      "recall": 0.6363636363636364,
+      "f1": 0.6666666666666666,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.3,
+      "n": 20,
+      "precision": 0.7,
+      "recall": 0.6363636363636364,
+      "f1": 0.6666666666666666,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.325,
+      "n": 20,
+      "precision": 0.7,
+      "recall": 0.6363636363636364,
+      "f1": 0.6666666666666666,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.35,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.5454545454545454,
+      "f1": 0.631578947368421,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.375,
+      "n": 20,
+      "precision": 0.6666666666666666,
+      "recall": 0.36363636363636365,
+      "f1": 0.47058823529411764,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.4,
+      "n": 20,
+      "precision": 0.6,
+      "recall": 0.2727272727272727,
+      "f1": 0.375,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.425,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.45,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.475,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.5,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.525,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.55,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.575,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.6,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.625,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.65,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.675,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.7,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.725,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.75,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.775,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    },
+    {
+      "threshold": 0.8,
+      "n": 20,
+      "precision": 0.75,
+      "recall": 0.2727272727272727,
+      "f1": 0.4,
+      "support_positive": 11
+    }
+  ],
+  "eval": {
+    "lexical_only": {
+      "n": 21,
+      "precision": 0.8,
+      "recall": 0.3333333333333333,
+      "f1": 0.47058823529411764,
+      "support_positive": 12
+    },
+    "semantic_only": {
+      "n": 21,
+      "precision": 0.5789473684210527,
+      "recall": 0.9166666666666666,
+      "f1": 0.7096774193548387,
+      "support_positive": 12
+    },
+    "lexical_or_semantic": {
+      "n": 21,
+      "precision": 0.5789473684210527,
+      "recall": 0.9166666666666666,
+      "f1": 0.7096774193548387,
+      "support_positive": 12
+    }
+  },
+  "eval_rows": [
+    {
+      "concept": "inverse document frequency",
+      "sentence": "A word gets a lower score the more documents it appears in across the collection.",
+      "label": 1,
+      "lexical": 0,
+      "semantic_score": 0.436,
+      "semantic": 1
+    },
+    {
+      "concept": "inverse document frequency",
+      "sentence": "The idf part is small for words that are common everywhere.",
+      "label": 1,
+      "lexical": 1,
+      "semantic_score": 0.74,
+      "semantic": 1
+    },
+    {
+      "concept": "inverse document frequency",
+      "sentence": "Each document is represented as a vector of word counts.",
+      "label": 0,
+      "lexical": 0,
+      "semantic_score": 0.552,
+      "semantic": 1
+    },
+    {
+      "concept": "dot product",
+      "sentence": "Multiply the matching components of the two vectors and add them up.",
+      "label": 1,
+      "lexical": 0,
+      "semantic_score": 0.36,
+      "semantic": 1
+    },
+    {
+      "concept": "dot product",
+      "sentence": "Cosine similarity starts from the dot product of the two vectors.",
+      "label": 1,
+      "lexical": 1,
+      "semantic_score": 0.437,
+      "semantic": 1
+    },
+    {
+      "concept": "dot product",
+      "sentence": "Divide each vector by its length.",
+      "label": 0,
+      "lexical": 0,
+      "semantic_score": 0.408,
+      "semantic": 1
+    },
+    {
+      "concept": "document length",
+      "sentence": "A long essay and a short note on the same topic can still score as similar.",
+      "label": 1,
+      "lexical": 0,
+      "semantic_score": 0.358,
+      "semantic": 1
+    },
+    {
+      "concept": "document length",
+      "sentence": "Stop words are removed before counting.",
+      "label": 0,
+      "lexical": 0,
+      "semantic_score": 0.318,
+      "semantic": 1
+    },
+    {
+      "concept": "unseen bigrams",
+      "sentence": "Word pairs that never occurred in the training text.",
+      "label": 1,
+      "lexical": 0,
+      "semantic_score": 0.178,
+      "semantic": 0
+    },
+    {
+      "concept": "unseen bigrams",
+      "sentence": "The most frequent bigram in the corpus is 'the cat'.",
+      "label": 0,
+      "lexical": 0,
+      "semantic_score": 0.41,
+      "semantic": 1
+    },
+    {
+      "concept": "lower is better",
+      "sentence": "The smaller this number, the better the model predicts the text.",
+      "label": 1,
+      "lexical": 0,
+      "semantic_score": 0.417,
+      "semantic": 1
+    },
+    {
+      "concept": "lower is better",
+      "sentence": "A lower perplexity is better.",
+      "label": 1,
+      "lexical": 1,
+      "semantic_score": 0.864,
+      "semantic": 1
+    },
+    {
+      "concept": "lower is better",
+      "sentence": "A lower perplexity is worse, because the model is more uncertain.",
+      "label": 0,
+      "lexical": 1,
+      "semantic_score": 0.733,
+      "semantic": 1
+    },
+    {
+      "concept": "lower is better",
+      "sentence": "Perplexity is computed on a held-out test sentence.",
+      "label": 0,
+      "lexical": 0,
+      "semantic_score": 0.712,
+      "semantic": 1
+    },
+    {
+      "concept": "backtracking",
+      "sentence": "After the last word, it follows the saved pointers backwards to recover the best path.",
+      "label": 1,
+      "lexical": 0,
+      "semantic_score": 0.369,
+      "semantic": 1
+    },
+    {
+      "concept": "backtracking",
+      "sentence": "It multiplies transition and emission probabilities at every step.",
+      "label": 0,
+      "lexical": 0,
+      "semantic_score": 0.212,
+      "semantic": 0
+    },
+    {
+      "concept": "softmax",
+      "sentence": "The raw scores are exponentiated and divided by their sum to give probabilities.",
+      "label": 1,
+      "lexical": 0,
+      "semantic_score": 0.291,
+      "semantic": 1
+    },
+    {
+      "concept": "softmax",
+      "sentence": "A softmax layer produces the class probabilities.",
+      "label": 1,
+      "lexical": 1,
+      "semantic_score": 0.632,
+      "semantic": 1
+    },
+    {
+      "concept": "softmax",
+      "sentence": "The loss is averaged over the mini-batch.",
+      "label": 0,
+      "lexical": 0,
+      "semantic_score": 0.292,
+      "semantic": 1
+    },
+    {
+      "concept": "stemming",
+      "sentence": "Words are reduced to their root form by chopping off suffixes.",
+      "label": 1,
+      "lexical": 0,
+      "semantic_score": 0.535,
+      "semantic": 1
+    },
+    {
+      "concept": "stemming",
+      "sentence": "Very frequent function words are removed.",
+      "label": 0,
+      "lexical": 0,
+      "semantic_score": 0.282,
+      "semantic": 1
+    }
+  ]
+}

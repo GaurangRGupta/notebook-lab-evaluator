@@ -1,0 +1,9 @@
+variant,tfidf_cos,semantic_cos,expected_if_meaning_tracked
+correct_paraphrase,0.049,0.424,high (anchor)
+sentence_order_reversed,0.048,0.425,about the same as anchor
+words_scrambled,0.045,0.374,much lower than anchor
+irrelevant_appended,0.043,0.392,about the same or slightly lower
+short,0.017,0.232,lower
+empty,0.0,0.0,zero
+incorrect_similar,0.489,0.861,lower than anchor; contradiction should rise
+reference_copy,1.0,1.0,maximal

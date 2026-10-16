@@ -1,0 +1,31 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "328af64e0a64",
+  "assignment_id": "LAB_SYN2",
+  "split": "val",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.984,
+  "output_match": true,
+  "output_match_rate": 1.0,
+  "explanation_score": 3.53,
+  "documentation_quality": 2.83,
+  "overall_score": 14.23,
+  "max_score": 20,
+  "errors": [],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

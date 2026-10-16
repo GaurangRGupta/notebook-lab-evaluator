@@ -1,0 +1,20 @@
+{
+  "_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "tasks": {
+    "T1": {
+      "value": "count(the, cat) = 2",
+      "match": "numeric",
+      "tol": 0.001
+    },
+    "T2": {
+      "value": "P(cat | the) = 0.3",
+      "match": "numeric",
+      "tol": 0.001
+    },
+    "T3": {
+      "value": "Perplexity: 4.472",
+      "match": "numeric",
+      "tol": 0.001
+    }
+  }
+}

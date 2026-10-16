@@ -1,0 +1,51 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "iaa": {
+    "code": {
+      "dimension": "code",
+      "n_items": 60,
+      "annotators": [
+        "RULE"
+      ],
+      "krippendorff_alpha_ordinal": null,
+      "krippendorff_alpha_interval": null,
+      "icc_2_1": null,
+      "mean_pairwise_qwk": null,
+      "mean_pairwise_mae": null,
+      "mean_pairwise_within_1": null,
+      "pairwise": {},
+      "note": "mean_pairwise_mae estimates human annotation variability; it is not a hard ceiling for the model."
+    },
+    "explanation": {
+      "dimension": "explanation",
+      "n_items": 60,
+      "annotators": [
+        "RULE"
+      ],
+      "krippendorff_alpha_ordinal": null,
+      "krippendorff_alpha_interval": null,
+      "icc_2_1": null,
+      "mean_pairwise_qwk": null,
+      "mean_pairwise_mae": null,
+      "mean_pairwise_within_1": null,
+      "pairwise": {},
+      "note": "mean_pairwise_mae estimates human annotation variability; it is not a hard ceiling for the model."
+    },
+    "documentation": {
+      "dimension": "documentation",
+      "n_items": 60,
+      "annotators": [
+        "RULE"
+      ],
+      "krippendorff_alpha_ordinal": null,
+      "krippendorff_alpha_interval": null,
+      "icc_2_1": null,
+      "mean_pairwise_qwk": null,
+      "mean_pairwise_mae": null,
+      "mean_pairwise_within_1": null,
+      "pairwise": {},
+      "note": "mean_pairwise_mae estimates human annotation variability; it is not a hard ceiling for the model."
+    }
+  },
+  "items_flagged_for_discussion": 0
+}

@@ -1,0 +1,37 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "7a09442d3cde",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.992,
+  "output_match": true,
+  "output_match_rate": 1.0,
+  "explanation_score": 7.81,
+  "documentation_quality": 2.43,
+  "overall_score": 18.17,
+  "max_score": 20,
+  "errors": [],
+  "missing_concepts": {
+    "T3": [
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.955,
+      "T3": 0.953
+    },
+    "concepts_matched_semantically": {
+      "T3": [
+        "direction"
+      ]
+    },
+    "missing_concepts_after_semantic": {}
+  }
+}

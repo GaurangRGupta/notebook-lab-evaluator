@@ -1,0 +1,29 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA",
+  "notebook_id": "01573e2e2521",
+  "assignment_id": "LAB_SYN2",
+  "split": "train",
+  "scoring_variant": "week3_combined",
+  "code_correctness": 0.843,
+  "output_match": true,
+  "output_match_rate": 1.0,
+  "explanation_score": 6.57,
+  "documentation_quality": 3.97,
+  "overall_score": 17.27,
+  "max_score": 20,
+  "errors": [],
+  "missing_concepts": {},
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components.",
+  "semantic": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2 (ONNX export)",
+    "is_stub": false,
+    "per_task_similarity": {
+      "T2": 0.944,
+      "T3": 0.979
+    },
+    "concepts_matched_semantically": {},
+    "missing_concepts_after_semantic": {}
+  }
+}

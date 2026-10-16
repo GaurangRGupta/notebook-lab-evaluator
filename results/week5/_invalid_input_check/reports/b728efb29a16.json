@@ -1,0 +1,35 @@
+{
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "notebook_id": "b728efb29a16",
+  "assignment_id": "LAB_SYN1",
+  "split": "train",
+  "scoring_variant": "week2_tfidf",
+  "code_correctness": 0.3,
+  "output_match": false,
+  "output_match_rate": 0.3333333333333333,
+  "explanation_score": 6.69,
+  "documentation_quality": 2.31,
+  "overall_score": 11.4,
+  "max_score": 20,
+  "errors": [
+    "cell 7 (T2): NameError [code error] name 'doc' is not defined",
+    "cell 11 (T3): SyntaxError line 4: invalid syntax. Perhaps you forgot a comma?",
+    "output mismatch in T2",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "direction"
+    ]
+  },
+  "feedback": null,
+  "confidence": null,
+  "_note": "Feedback text and confidence are later-week components."
+}

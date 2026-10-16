@@ -1,0 +1,11 @@
+=== data_status: SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS ===
+[anonymise] SKIPPED 1 unreadable notebook(s): see skipped_notebooks.csv
+[anonymise] 60 notebooks, residual PII pattern matches after scrub: 0
+[parse] 830 cell records (290 code, 540 markdown), 423 template cells flagged
+[labels] 60 labelled notebooks, 0 flagged for discussion
+[split] StratifiedGroupKFold(k=5, seed=42), strata=assignment/source; realised {'train': 0.6, 'val': 0.2, 'test': 0.2} (target {'train': 0.6, 'val': 0.2, 'test': 0.2})
+[robustness] 40 variant/scorer rows written
+[eval:week2_tfidf:code:val] n=12 model MAE=0.66 | mean-predictor MAE=1.96
+[eval:week2_tfidf:explanation:val] n=12 model MAE=1.22 | mean-predictor MAE=2.54
+[eval:week2_tfidf:documentation:val] n=12 model MAE=0.52 | mean-predictor MAE=1.02
+[reports] wrote 60 per-notebook reports
