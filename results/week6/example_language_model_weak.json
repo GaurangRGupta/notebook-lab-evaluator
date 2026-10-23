@@ -1,0 +1,39 @@
+{
+  "assignment_id": "LAB_SYN2",
+  "scoring_variant": "week3_combined",
+  "code": 0.14,
+  "explanation": 4.77,
+  "documentation": 2.37,
+  "overall": 7.28,
+  "max_score": 20,
+  "output_match_rate": 0.0,
+  "errors": [
+    "cell 7 (T2): SyntaxError line 8: '(' was never closed",
+    "cell 11 (T3): SyntaxError line 10: '(' was never closed",
+    "output mismatch in T1",
+    "output mismatch in T2",
+    "output mismatch in T3"
+  ],
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability"
+    ]
+  },
+  "feedback": "The write-up for T2 does not cover: zero probability, unseen bigrams, add one, vocabulary size, probability mass. The write-up for T3 does not cover: inverse probability.",
+  "confidence": {
+    "code": null,
+    "explanation": 0.928,
+    "documentation": null,
+    "overall": 0.928,
+    "method": "Agreement between week2_tfidf and week3_combined is computed only where their feature lists differ. This is not a calibrated probability."
+  },
+  "flag_output_ok_explanation_weak": false,
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS"
+}

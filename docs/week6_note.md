@@ -2,12 +2,21 @@
 
 Group 3. Rolls J013, J015, J016, J017, J018.
 
-This page is the Week 6 hand-in note. The callable asset is documented in `docs/API.md`.
+The usage manual is `docs/manual.md`. The same manual in Word is `results/week6/Group3_Week6_Asset.docx`. It has the function signatures, the arguments, the return fields, and runnable examples. This page is the short cover.
 
-The asset scores one `.ipynb` file against a lab card. The call is `evaluate_notebook(notebook_bytes, assignment_id)` or `POST /evaluate-notebook` on `127.0.0.1:8000`. The body is the notebook file plus `assignment_id` (`LAB_SYN1` or `LAB_SYN2`). The response is JSON: code, explanation, and documentation as marks, overall out of 20, output match, errors, missing ideas, a short feedback sentence, and a confidence object.
+Send one `.ipynb` file and a lab id. Leave the answer card in the package. The student's code is not executed.
 
-The served score is `week3_combined`. Confidence is the agreement between that model and `week2_tfidf` on dimensions whose feature lists differ. Code and documentation use the same features in both, so those confidences are null. Overall confidence is the explanation value. It is not a calibrated probability.
+`LAB_SYN2` is the language-model lab (add-one smoothing and perplexity). `LAB_SYN1` is the TF-IDF lab. The example file for the first is `examples/language_model_lab.ipynb`.
 
-Feedback names reference ideas the write-up does not cover. When the encoder is loaded, the list is the semantic one. For `data/synthetic_v2/raw/LAB_SYN1/V2_S06_LAB_SYN1.ipynb` the live response is code 7.94, explanation 7.81, documentation 2.43, overall 18.17, and explanation confidence 0.976. The lexical check still names "direction" for task T3. The encoder accepts that idea, so the served missing list is empty and the flag is false.
+```bash
+python -m src.api.app
+curl.exe -s -X POST http://127.0.0.1:8000/evaluate-notebook ^
+  -F "assignment_id=LAB_SYN2" ^
+  -F "file=@examples/language_model_lab.ipynb"
+```
 
-The Week 6 refit matches the Week 5 predictions. The largest absolute difference across 216 cells is 0.000001 marks. `results/week5/` was not rewritten. The Week 4 NLI model is not in this asset. The notebooks are team-written and the marks are rule labels, not faculty marks. Student code is not executed.
+For that file the live marks are code 7.87, explanation 5.13, documentation 2.14, overall 15.14 out of 20. The saved output matches. The write-up for task T3 does not cover "inverse probability" or "surprise", so the flag is true. Explanation confidence is 0.986. Code and documentation confidence are null. Overall confidence is 0.986.
+
+The manual also scores `examples/tfidf_lab.ipynb` (overall 18.17, flag false) and `examples/language_model_weak.ipynb` (overall 7.28, output match 0, with syntax errors in the file).
+
+The two cards in this package were prepared for the project. The marks follow that rubric. A new lab of the same shape is a new card folder. Scoring one notebook does not retrain the model.

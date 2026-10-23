@@ -1,0 +1,22 @@
+{
+  "assignment_id": "LAB_SYN1",
+  "scoring_variant": "week3_combined",
+  "code": 7.94,
+  "explanation": 7.81,
+  "documentation": 2.43,
+  "overall": 18.17,
+  "max_score": 20,
+  "output_match_rate": 1.0,
+  "errors": [],
+  "missing_concepts": {},
+  "feedback": "The saved output matches, and the write-up covers the reference ideas this check looks for.",
+  "confidence": {
+    "code": null,
+    "explanation": 0.976,
+    "documentation": null,
+    "overall": 0.976,
+    "method": "Agreement between week2_tfidf and week3_combined is computed only where their feature lists differ. This is not a calibrated probability."
+  },
+  "flag_output_ok_explanation_weak": false,
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS"
+}

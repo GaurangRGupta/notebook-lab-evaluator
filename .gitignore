@@ -20,6 +20,9 @@ models/*
 models/**/*
 !models/README.md
 
+# Hand-in archives. They contain the encoder weights.
+/*.zip
+
 # Class notebooks once they exist. The empty layout notes stay tracked.
 data/class/raw/**/*.ipynb
 data/class/interim/*.ipynb

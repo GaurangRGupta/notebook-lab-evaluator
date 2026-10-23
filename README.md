@@ -1,20 +1,43 @@
 # Group 3: Jupyter Notebook Lab Evaluator
 
-The repository root is the notebook lab evaluator. Retired notebooks, the hello package, faculty handouts, and the Foundations of Machine Learning folder are in `local_archive/`. That folder is gitignored. The record of the move and the code corrections is `docs/cleanup_log.md`. Limits of the data and the frozen models are in `docs/limitations.md`.
+Score one Jupyter notebook by sending the `.ipynb` file and a lab id. The reply is JSON: code, explanation, and documentation marks, overall out of 20, output match, errors, missing ideas, a short feedback sentence, and confidence. The student's code is not executed. The answer card stays in this package. You do not send it with the call.
 
-## Week 6
-The fitted models are served by a Python function and a local HTTP route. Documentation: `docs/API.md`. One-page note: `results/week6/Group3_Week6_Asset.docx`.
+The usage manual is `docs/manual.md`. The same manual in Word is `results/week6/Group3_Week6_Asset.docx`. Both have the function signatures, the arguments, the return fields, and runnable examples. `docs/API.md` is the short call.
+
+## Call it
+
+`LAB_SYN2` is the language-model lab (add-one smoothing and perplexity). The example file is `examples/language_model_lab.ipynb`. `LAB_SYN1` is the TF-IDF lab.
+
+If `results/week6/asset/` and `models/all-MiniLM-L6-v2-onnx/` are already in the folder, install and start:
 
 ```bash
 python -m venv .venv
-.venv\Scripts\pip install -r requirements.txt   # Windows; use .venv/bin/pip on other systems
-python scripts/fetch_models.py                   # verified ONNX export, skipped if already checked
-python scripts/fit_week6_asset.py                # writes results/week6 and does not rewrite results/week5
-python -m src.api.app                            # http://127.0.0.1:8000  POST /evaluate-notebook
-python -m pytest -q tests/test_week6_asset.py
+.venv\Scripts\pip install -r requirements.txt
+python -m src.api.app
 ```
 
-Week 6 scoring uses the ONNX encoder. It does not call an external language model. Student notebooks are not executed.
+On Windows the call from a second window is:
+
+```bash
+curl.exe -s -X POST http://127.0.0.1:8000/evaluate-notebook -F "assignment_id=LAB_SYN2" -F "file=@examples/language_model_lab.ipynb"
+```
+
+From Python, in this folder:
+
+```python
+from src.asset import evaluate_notebook, load_asset
+asset = load_asset()
+notebook = open("examples/language_model_lab.ipynb", "rb").read()
+report = evaluate_notebook(notebook, "LAB_SYN2", asset)
+```
+
+The server listens on `127.0.0.1:8000` only. For that example the live marks are code 7.87, explanation 5.13, documentation 2.14, overall 15.14. The saved output matches, and the write-up for task T3 does not cover "inverse probability" or "surprise".
+
+If the asset folder or the encoder folder is missing, run `python scripts/fetch_models.py` and then `python scripts/fit_week6_asset.py` before starting the server. The asset check is `python -m pytest -q tests/test_week6_asset.py`.
+
+A new lab is a new folder of five files (handout, solution, explanations, expected outputs, rubric) under `data/synthetic_v2/references/<lab id>/`. Restart the server and pass that id. Scoring one notebook does not retrain the model. The two cards in this package were prepared for the project, and the marks follow that rubric.
+
+The repository also keeps earlier notes. Retired material is in `local_archive/`, which is gitignored. `docs/cleanup_log.md` records the cleanup. `docs/limitations.md` records the limits of the fitted models.
 
 ## Week 5
 Protocol: `docs/week5_protocol.md` (written before any v2 model run). Report: `results/week5/Group3_Week5_Evaluation_Report.docx`. Addendum: `results/week5/Group3_Week5_Addendum.docx`.
