@@ -27,6 +27,7 @@ class AssignmentReference:
     explanations: dict = field(default_factory=dict)       # task -> {"text", "concepts"}
     expected_outputs: dict = field(default_factory=dict)   # task -> spec
     required: dict = field(default_factory=dict)           # task -> set of call names
+    solution_cells: list = field(default_factory=list)    # parsed reference notebook
     rubric: dict = field(default_factory=lambda: {"code": 8, "explanation": 8, "documentation": 4})
     warnings: list[str] = field(default_factory=list)
 
@@ -54,6 +55,7 @@ def load_reference(ref_root, assignment_id: str) -> AssignmentReference:
             if c["cell_type"] == "code":
                 s = ast_summary(c["source"])
                 own |= set(s["functions"]) | set(s["classes"])
+        ref.solution_cells = sol
         for c in sol:
             if c["cell_type"] == "code" and c["task_id"] and c["source"] not in tmpl_code:
                 ref.required.setdefault(c["task_id"], set()).update(required_constructs(c["source"]) - own)

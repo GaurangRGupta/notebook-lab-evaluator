@@ -8,15 +8,20 @@ Start it only after the asset has been fitted:
 """
 from __future__ import annotations
 
+import html
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 import nbformat
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi.responses import HTMLResponse
 
 from ..asset import evaluate_notebook, load_asset
+from ..integration import support_signal
 
 HOST = "127.0.0.1"
 PORT = 8000
+_DEMO_TEMPLATE = Path(__file__).with_name("demo.html").read_text(encoding="utf-8")
 
 
 @asynccontextmanager
@@ -29,6 +34,25 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Jupyter notebook lab evaluator", lifespan=lifespan)
+
+
+@app.get("/", response_class=HTMLResponse)
+def demo_page():
+    ids = sorted(app.state.asset.refs)
+    options = "\n".join(
+        f'<option value="{html.escape(lab_id)}">{html.escape(lab_id)}</option>'
+        for lab_id in ids
+    )
+    page = _DEMO_TEMPLATE.replace("<!-- LAB_OPTIONS -->", options)
+    return HTMLResponse(page)
+
+
+@app.post("/support-signal")
+def support_signal_route(report: dict):
+    try:
+        return support_signal(report)
+    except TypeError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
 
 
 @app.get("/health")

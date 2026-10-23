@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Jupyter notebook lab evaluator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 46rem; line-height: 1.45; color: #111; }
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.1rem; margin-top: 1.6rem; }
+    label { display: block; margin-top: 0.8rem; }
+    button { margin-top: 1rem; font: inherit; padding: 0.3rem 0.8rem; }
+    pre { white-space: pre-wrap; font-family: Consolas, monospace; background: #f6f6f6; padding: 0.8rem; }
+    .note { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Jupyter notebook lab evaluator</h1>
+  <p>Choose a notebook and a lab id. This page sends the file to <code>POST /evaluate-notebook</code>, then sends that JSON to <code>POST /support-signal</code>. The second call does not score the notebook again.</p>
+  <p class="note">The student's code is not executed. The mark is a suggestion for the instructor.</p>
+  <form id="form">
+    <label>Notebook file <input id="file" name="file" type="file" accept=".ipynb,application/json" required></label>
+    <label>Lab id
+      <select id="lab" name="assignment_id" required>
+        <!-- LAB_OPTIONS -->
+      </select>
+    </label>
+    <button type="submit">Score notebook</button>
+  </form>
+  <p id="status"></p>
+  <h2>Score</h2>
+  <pre id="score">No notebook has been scored in this page yet.</pre>
+  <h2>Student-support signal</h2>
+  <pre id="signal">The support signal appears after a score.</pre>
+  <script>
+    const form = document.getElementById("form");
+    const status = document.getElementById("status");
+    const scoreBox = document.getElementById("score");
+    const signalBox = document.getElementById("signal");
+
+    function showFields(report) {
+      const lines = [
+        "assignment_id: " + report.assignment_id,
+        "code: " + report.code,
+        "explanation: " + report.explanation,
+        "documentation: " + report.documentation,
+        "overall: " + report.overall + " / " + report.max_score,
+        "output_match_rate: " + report.output_match_rate,
+        "flag_output_ok_explanation_weak: " + report.flag_output_ok_explanation_weak,
+        "errors: " + JSON.stringify(report.errors),
+        "missing_concepts: " + JSON.stringify(report.missing_concepts),
+        "feedback: " + report.feedback,
+        "confidence: " + JSON.stringify(report.confidence)
+      ];
+      scoreBox.textContent = lines.join("\n");
+    }
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      status.textContent = "Scoring the saved notebook.";
+      scoreBox.textContent = "";
+      signalBox.textContent = "";
+      const data = new FormData(form);
+      let response;
+      try {
+        response = await fetch("/evaluate-notebook", { method: "POST", body: data });
+      } catch (err) {
+        status.textContent = "The server did not answer.";
+        return;
+      }
+      const payload = await response.json().catch(function () { return {}; });
+      if (!response.ok) {
+        status.textContent = "The score was not produced.";
+        scoreBox.textContent = payload.detail || response.statusText;
+        signalBox.textContent = "No support signal, because there is no score.";
+        return;
+      }
+      showFields(payload);
+      let signalResponse;
+      try {
+        signalResponse = await fetch("/support-signal", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        status.textContent = "The score is shown. The support signal did not answer.";
+        return;
+      }
+      const signal = await signalResponse.json().catch(function () { return {}; });
+      if (!signalResponse.ok) {
+        status.textContent = "The score is shown. The support signal was refused.";
+        signalBox.textContent = signal.detail || signalResponse.statusText;
+        return;
+      }
+      status.textContent = "Score and support signal are ready.";
+      signalBox.textContent = JSON.stringify(signal, null, 2);
+    });
+  </script>
+</body>
+</html>

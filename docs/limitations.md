@@ -33,3 +33,7 @@ Feedback uses the semantic missing-idea list when the encoder is loaded. With th
 `results/week5/` is the submitted evaluation. Its report, addendum, and `metrics.csv` stay as they were. Per-notebook JSON already in `results/week5/` and the fit-time copies in `results/week6/reports/` still store code as a fraction of 8 and leave feedback and confidence empty. A new call to `evaluate_notebook`, and a future pipeline run, store code as a mark from 0 to 8.
 
 Student code is not executed. Scoring reads the outputs saved in the file.
+
+## Optional Grok grader
+
+`NB_EVAL_LLM=1` adds an `llm` object from `grok-4.7` through the xAI API. The OpenAI Python package is only the client. The key is `XAI_API_KEY` in a gitignored `.env`. A SuperGrok subscription does not pay for the call. The prompt's only standard is the reference notebook stored for that lab, `reference_solution.ipynb`, plus that card's written explanation and expected output. The model is told not to grade from its own knowledge of the subject. With the switch off, notebook text stays on this machine. The Ridge marks are unchanged either way. The two included reference notebooks were prepared for this project. A faculty notebook replaces the file for that lab.

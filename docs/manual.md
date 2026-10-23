@@ -200,6 +200,37 @@ These three uploads return HTTP 400:
 
 A successful call returns HTTP 200 and the same JSON object as `evaluate_notebook`.
 
+### 6.1 Demo page
+
+With the server running, open `http://127.0.0.1:8000/` in a browser on this machine. Choose the notebook file and the lab id, then submit. The page sends the file to `POST /evaluate-notebook` and shows the marks, the feedback, the flag, and the confidence. It then sends that JSON to `POST /support-signal`. The second call does not score the notebook again.
+
+`POST /support-signal` returns a short record for a student-support reader:
+
+| Field | Meaning |
+| --- | --- |
+| source | `notebook-lab-evaluator` |
+| assignment_id | The lab id from the score |
+| overall | The overall mark |
+| max_score | 20 for the cards in this package |
+| needs_human_review | True when a person should read the notebook |
+| reason | The feedback sentence already on the score |
+
+`needs_human_review` is true when the weak-explanation flag is true, or the saved output does not fully match, or the errors list is not empty. A body with no output match also asks for a review.
+
+For `examples/language_model_lab.ipynb` with `LAB_SYN2` the flag is true, so `needs_human_review` is true. For `examples/tfidf_lab.ipynb` with `LAB_SYN1` the flag is false, the output match is 1.0, and the errors list is empty, so `needs_human_review` is false. For `examples/language_model_weak.ipynb` the output match is 0, so `needs_human_review` is true.
+
+The page uses the served marks. It does not turn on the optional Grok grader. The page says the student's code is not executed and the mark is a suggestion for the instructor.
+
+The same handoff from Python, using a score you already have in `report`:
+
+```python
+import httpx
+
+signal = httpx.post("http://127.0.0.1:8000/support-signal", json=report)
+signal.raise_for_status()
+print(signal.json()["needs_human_review"])
+```
+
 ## 7. What you send, and what you do not send
 
 Send the notebook file and the lab id.
@@ -522,7 +553,24 @@ python -m pytest -q tests/test_week6_asset.py
 
 That check uses a TF-IDF notebook already in the package. It confirms the server address is `127.0.0.1`, the call returns marks, and an unknown lab id is rejected.
 
-## 18. Limits
+## 18. Optional Grok grader
+
+The marks in the sections above stay as they are. This call adds a separate `llm` object. It does not replace `code`, `explanation`, `documentation`, or `overall`.
+
+The client library is the OpenAI Python package, with `base_url` set to `https://api.x.ai/v1` and the model set to `grok-4.7`. The key is an xAI API key from the xAI console. That package speaks the OpenAI request shape, so it can call a vendor that offers the same shape. xAI does. Anthropic's own API uses a different request shape, so this setting does not send the notebook to Claude. A SuperGrok subscription does not pay for these calls. Put the key in a file named `.env` in the package directory. That file is gitignored.
+
+```text
+XAI_API_KEY=your-key-here
+NB_EVAL_LLM=1
+```
+
+Leave `NB_EVAL_LLM` unset when you do not want the extra call. With the switch off, no notebook text leaves this machine.
+
+The Grok grader scores the student notebook against the reference notebook stored for that lab id, `reference_solution.ipynb`, together with the written explanation and the expected output in the same card folder. The prompt tells the model that this reference is the only standard. It is told not to add requirements from its own knowledge of the subject. The two cards in this package were prepared for the project. A faculty reference notebook replaces `reference_solution.ipynb` for that lab. The student's code is still not executed.
+
+A lab with no reference notebook does not call the API. The `llm` object then says there is no standard to apply. A missing key or a failed call leaves the Ridge marks in place and records the failure on `llm.status`.
+
+## 19. Limits
 
 - The server binds to this machine. Do not put it on an open address if the notebooks are student work.
 - A kernel is not started. A notebook with no saved output cannot show a passing output match.

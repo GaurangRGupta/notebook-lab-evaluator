@@ -6,6 +6,7 @@ from fastapi.testclient import TestClient
 
 from src.api.app import HOST, app
 from src.asset import evaluate_notebook, load_asset
+from src.models import llm_evaluator
 
 ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOK = ROOT / "data" / "synthetic_v2" / "raw" / "LAB_SYN1" / "V2_S01_LAB_SYN1.ipynb"
@@ -27,7 +28,9 @@ def test_asset_does_not_import_a_kernel():
         assert "ExecutePreprocessor" not in source
 
 
-def test_response_ranges_and_feedback(asset):
+def test_response_ranges_and_feedback(asset, monkeypatch):
+    monkeypatch.setattr(llm_evaluator, "ENV_FILE", ROOT / "missing.env")
+    monkeypatch.delenv("NB_EVAL_LLM", raising=False)
     report = evaluate_notebook(NOTEBOOK.read_bytes(), "LAB_SYN1", asset)
     assert report["assignment_id"] == "LAB_SYN1"
     assert report["scoring_variant"] in {"week3_combined", "week2_tfidf"}
@@ -46,6 +49,7 @@ def test_response_ranges_and_feedback(asset):
     assert "not a calibrated probability" in report["confidence"]["method"]
     assert report["data_status"].startswith("SYNTHETIC")
     assert isinstance(report["flag_output_ok_explanation_weak"], bool)
+    assert "llm" not in report
 
 
 def test_unknown_assignment(asset):
@@ -53,7 +57,9 @@ def test_unknown_assignment(asset):
         evaluate_notebook(NOTEBOOK.read_bytes(), "NO_SUCH_LAB", asset)
 
 
-def test_http_evaluate_and_reject():
+def test_http_evaluate_and_reject(monkeypatch):
+    monkeypatch.setattr(llm_evaluator, "ENV_FILE", ROOT / "missing.env")
+    monkeypatch.delenv("NB_EVAL_LLM", raising=False)
     with TestClient(app) as client:
         _http_checks(client)
 

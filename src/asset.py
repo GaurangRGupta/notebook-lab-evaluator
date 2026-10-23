@@ -18,6 +18,7 @@ from .models.semantic_similarity import SemanticSimilarity, build_encoder
 from .preprocessing.align_tasks import assign_tasks, flag_template_cells
 from .preprocessing.anonymize import Scrubber
 from .preprocessing.parse_notebook import parse_cells
+from .models.llm_evaluator import maybe_grade
 from .reporting import (
     AGREEMENT_METHOD,
     _finite,
@@ -129,7 +130,7 @@ def evaluate_notebook(notebook, assignment_id: str, asset: Asset | None = None) 
         + [f"output mismatch in {task}" for task in diag["output_mismatch"]]
         + [f"cell {index} was never executed" for index in diag["unexecuted_cells"]]
     )
-    return {
+    report = {
         "assignment_id": assignment_id,
         "scoring_variant": asset.primary,
         "code": scored["code"],
@@ -145,3 +146,7 @@ def evaluate_notebook(notebook, assignment_id: str, asset: Asset | None = None) 
         "flag_output_ok_explanation_weak": flag,
         "data_status": asset.data_status,
     }
+    llm_report = maybe_grade(cells, ref, errors)
+    if llm_report is not None:
+        report["llm"] = llm_report
+    return report

@@ -23,6 +23,12 @@ models/**/*
 # Hand-in archives. They contain the encoder weights.
 /*.zip
 
+# Local secrets. .env.example stays tracked.
+.env
+
+# Optional Grok-grader cache. It can be rebuilt from the same notebook.
+results/week7/llm_cache/
+
 # Class notebooks once they exist. The empty layout notes stay tracked.
 data/class/raw/**/*.ipynb
 data/class/interim/*.ipynb

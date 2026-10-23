@@ -14,3 +14,4 @@ fastapi>=0.115             # Week 6 local API
 uvicorn>=0.32
 httpx>=0.27                # TestClient
 python-multipart>=0.0.9    # form upload on POST /evaluate-notebook
+openai>=1.40               # optional Grok grader: OpenAI-compatible client for api.x.ai

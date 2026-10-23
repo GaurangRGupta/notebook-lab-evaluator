@@ -31,7 +31,9 @@ notebook = open("examples/language_model_lab.ipynb", "rb").read()
 report = evaluate_notebook(notebook, "LAB_SYN2", asset)
 ```
 
-The server listens on `127.0.0.1:8000` only. For that example the live marks are code 7.87, explanation 5.13, documentation 2.14, overall 15.14. The saved output matches, and the write-up for task T3 does not cover "inverse probability" or "surprise".
+The server listens on `127.0.0.1:8000` only. Open `http://127.0.0.1:8000/` in a browser on this machine. That page uploads a notebook to the same route, then asks `POST /support-signal` whether a person should review it. The Week 7 note is `docs/week7_note.md`. For the language-model example the live marks are code 7.87, explanation 5.13, documentation 2.14, overall 15.14.
+
+An optional second opinion is off unless `.env` sets `NB_EVAL_LLM=1` and `XAI_API_KEY`. That call uses the xAI API and grades against the lab's reference notebook. The marks above stay the served marks. See `docs/manual.md`. The saved output matches, and the write-up for task T3 does not cover "inverse probability" or "surprise".
 
 If the asset folder or the encoder folder is missing, run `python scripts/fetch_models.py` and then `python scripts/fit_week6_asset.py` before starting the server. The asset check is `python -m pytest -q tests/test_week6_asset.py`.
 

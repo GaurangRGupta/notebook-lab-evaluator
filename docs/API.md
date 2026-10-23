@@ -16,7 +16,7 @@ pip install -r requirements.txt
 python -m src.api.app
 ```
 
-The server listens on `127.0.0.1:8000` only.
+The server listens on `127.0.0.1:8000` only. Open `http://127.0.0.1:8000/` for the demo page. The page calls the route below, then `POST /support-signal`.
 
 ```python
 from src.asset import evaluate_notebook, load_asset
@@ -35,3 +35,5 @@ curl.exe -s -X POST http://127.0.0.1:8000/evaluate-notebook ^
 ```
 
 An empty file, a file that is not a notebook, or an unknown lab id returns HTTP 400. The worked responses, including a notebook whose output does not match, are in `docs/manual.md`.
+
+`GET /` returns the demo page. `POST /support-signal` takes the JSON from `POST /evaluate-notebook` and returns `source`, `assignment_id`, `overall`, `max_score`, `needs_human_review`, and `reason`. It does not score the notebook again. See section 6.1 of `docs/manual.md`.
