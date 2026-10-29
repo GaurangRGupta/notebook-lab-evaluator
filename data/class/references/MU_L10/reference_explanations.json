@@ -1,0 +1,40 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L10",
+  "_title": "Lab 10: Two-sample t-tests",
+  "tasks": {
+    "T2": {
+      "text": "The absolute t statistic (about 7.8) is far above the two-tailed critical value at alpha = 0.01, so we reject the null hypothesis that the machines have equal means. With a pooled variance two means are estimated from the data, so the degrees of freedom are n1 + n2 - 2 = 48.",
+      "concepts": [
+        {
+          "term": "reject null",
+          "variants": [
+            "reject"
+          ]
+        },
+        {
+          "term": "critical value",
+          "variants": [
+            "critical",
+            "p-value",
+            "p value"
+          ]
+        },
+        {
+          "term": "pooled variance",
+          "variants": [
+            "pooled"
+          ]
+        },
+        {
+          "term": "degrees of freedom",
+          "variants": [
+            "n1 + n2 - 2",
+            "48",
+            "df"
+          ]
+        }
+      ]
+    }
+  }
+}

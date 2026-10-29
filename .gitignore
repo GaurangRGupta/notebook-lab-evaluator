@@ -34,3 +34,10 @@ data/class/raw/**/*.ipynb
 data/class/interim/*.ipynb
 data/class/interim/id_map.csv
 *.salt
+data/class/class_list.local.txt
+demo/samples/class/
+
+# All raw class material and any archive.
+data/class/raw/*
+!data/class/raw/README.md
+*.zip

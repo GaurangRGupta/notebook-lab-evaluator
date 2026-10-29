@@ -1,0 +1,65 @@
+{
+  "assignment_id": "MU_L07_08",
+  "scoring_variant": "week3_combined",
+  "code": 7.75,
+  "explanation": 0.0,
+  "documentation": 3.44,
+  "overall": 11.19,
+  "max_score": 20,
+  "output_match_rate": 1.0,
+  "errors": [],
+  "missing_concepts": {
+    "T3": [
+      "fixed interval",
+      "independent events",
+      "constant rate",
+      "complement",
+      "pmf versus cdf"
+    ]
+  },
+  "feedback": "The saved output matches. The write-up does not cover the reference ideas named below. The write-up for T3 does not cover: fixed interval, independent events, constant rate, complement, pmf versus cdf.",
+  "confidence": {
+    "code": null,
+    "explanation": 1.0,
+    "documentation": null,
+    "overall": 1.0,
+    "method": "Agreement between week2_tfidf and week3_combined is computed only where their feature lists differ. This is not a calibrated probability."
+  },
+  "flag_output_ok_explanation_weak": true,
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "reference_status": "team-authored reference, not faculty-issued",
+  "alignment": {
+    "method": "loose",
+    "marker": 1,
+    "q_header": 1,
+    "output": 2,
+    "similarity": 0,
+    "inherited": 0,
+    "nearest": 1,
+    "unaligned": 1
+  },
+  "variant_marks": {
+    "week2_tfidf": {
+      "code": 7.75,
+      "explanation": 0.0,
+      "documentation": 3.44,
+      "overall": 11.19,
+      "max_score": 20
+    },
+    "week3_semantic": {
+      "code": 7.75,
+      "explanation": 0.0,
+      "documentation": 3.44,
+      "overall": 11.19,
+      "max_score": 20
+    },
+    "week3_combined": {
+      "code": 7.75,
+      "explanation": 0.0,
+      "documentation": 3.44,
+      "overall": 11.19,
+      "max_score": 20
+    }
+  },
+  "prediction_status": "out-of-domain, unvalidated prediction: models were trained on synthetic labs only"
+}

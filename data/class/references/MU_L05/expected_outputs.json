@@ -1,0 +1,17 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L05",
+  "_title": "Lab 5: Exploratory data analysis on the Titanic training data",
+  "tasks": {
+    "T1": {
+      "value": "549 342",
+      "match": "numeric",
+      "tol": 0
+    },
+    "T2": {
+      "value": "491 216 184",
+      "match": "numeric",
+      "tol": 0
+    }
+  }
+}

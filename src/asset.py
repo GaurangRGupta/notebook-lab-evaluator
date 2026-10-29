@@ -15,7 +15,7 @@ import pandas as pd
 from .data.references import load_reference
 from .models.features import explanation_texts, static_features, variant_features
 from .models.semantic_similarity import SemanticSimilarity, build_encoder
-from .preprocessing.align_tasks import assign_tasks, flag_template_cells
+from .preprocessing.align_tasks import align_for_reference, flag_template_cells
 from .preprocessing.anonymize import Scrubber
 from .preprocessing.parse_notebook import parse_cells
 from .models.llm_evaluator import maybe_grade
@@ -73,6 +73,12 @@ def load_asset(asset_dir: Path | None = None) -> Asset:
     if ref_root.is_dir():
         for path in sorted(p for p in ref_root.iterdir() if p.is_dir()):
             refs[path.name] = load_reference(ref_root, path.name)
+    # Team-authored references for the real class labs (MU_*). They are scored with the same
+    # frozen synthetic-trained models, so their marks are out-of-domain, unvalidated predictions.
+    class_root = ROOT / meta.get("class_references_dir", "data/class/references")
+    if class_root.is_dir():
+        for path in sorted(p for p in class_root.iterdir() if p.is_dir() and (p / "rubric.json").is_file()):
+            refs.setdefault(path.name, load_reference(class_root, path.name))
     return Asset(meta, tfidf, models, sem, refs, folder)
 
 
@@ -93,8 +99,9 @@ def evaluate_notebook(notebook, assignment_id: str, asset: Asset | None = None) 
         raise ValueError(f"Unknown assignment_id {assignment_id!r}. Known ids: {known}.")
     ref = asset.refs[assignment_id]
     nb = Scrubber(asset.roll_pattern).scrub_notebook(_notebook_from_upload(notebook))
+    aligned, alignment = align_for_reference(parse_cells(nb, "request"), ref)
     cells = flag_template_cells(
-        assign_tasks(parse_cells(nb, "request")),
+        aligned,
         ref.template_cells,
         asset.template_threshold,
     )
@@ -146,6 +153,17 @@ def evaluate_notebook(notebook, assignment_id: str, asset: Asset | None = None) 
         "flag_output_ok_explanation_weak": flag,
         "data_status": asset.data_status,
     }
+    if ref.status:
+        # Class lab (team-authored reference). Extra fields are additive; synthetic reports are
+        # unchanged. The optional LLM grader is never called here: real student work must not
+        # leave the machine without recorded consent.
+        report["reference_status"] = ref.status
+        report["alignment"] = alignment
+        report["variant_marks"] = {v: marks(r, asset.rubric_max) for v, r in raw.items()}
+        report["prediction_status"] = (
+            "out-of-domain, unvalidated prediction: models were trained on synthetic labs only"
+        )
+        return report
     llm_report = maybe_grade(cells, ref, errors)
     if llm_report is not None:
         report["llm"] = llm_report

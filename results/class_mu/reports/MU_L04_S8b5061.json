@@ -1,0 +1,63 @@
+{
+  "assignment_id": "MU_L04",
+  "scoring_variant": "week3_combined",
+  "code": 4.35,
+  "explanation": 0.0,
+  "documentation": 1.64,
+  "overall": 5.98,
+  "max_score": 20,
+  "output_match_rate": null,
+  "errors": [],
+  "missing_concepts": {
+    "T2": [
+      "36 outcomes",
+      "seven most likely",
+      "law of large numbers"
+    ]
+  },
+  "feedback": "The write-up for T2 does not cover: 36 outcomes, seven most likely, law of large numbers.",
+  "confidence": {
+    "code": null,
+    "explanation": 1.0,
+    "documentation": null,
+    "overall": 1.0,
+    "method": "Agreement between week2_tfidf and week3_combined is computed only where their feature lists differ. This is not a calibrated probability."
+  },
+  "flag_output_ok_explanation_weak": false,
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "reference_status": "team-authored reference, not faculty-issued",
+  "alignment": {
+    "method": "loose",
+    "marker": 0,
+    "q_header": 0,
+    "output": 0,
+    "similarity": 0,
+    "inherited": 0,
+    "nearest": 2,
+    "unaligned": 0
+  },
+  "variant_marks": {
+    "week2_tfidf": {
+      "code": 4.35,
+      "explanation": 0.0,
+      "documentation": 1.64,
+      "overall": 5.98,
+      "max_score": 20
+    },
+    "week3_semantic": {
+      "code": 4.35,
+      "explanation": 0.0,
+      "documentation": 1.64,
+      "overall": 5.98,
+      "max_score": 20
+    },
+    "week3_combined": {
+      "code": 4.35,
+      "explanation": 0.0,
+      "documentation": 1.64,
+      "overall": 5.98,
+      "max_score": 20
+    }
+  },
+  "prediction_status": "out-of-domain, unvalidated prediction: models were trained on synthetic labs only"
+}

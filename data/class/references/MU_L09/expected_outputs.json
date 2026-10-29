@@ -1,0 +1,19 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L09",
+  "_title": "Lab 9: One-sample t-tests",
+  "tasks": {
+    "T1": {
+      "value": "(?<!fail to )(?<!do not )(?<!don't )(?<!not )reject",
+      "match": "regex"
+    },
+    "T2": {
+      "value": "(?<!fail to )(?<!do not )(?<!don't )(?<!not )reject",
+      "match": "regex"
+    },
+    "T3": {
+      "value": "(?<!fail to )(?<!do not )(?<!don't )(?<!not )reject",
+      "match": "regex"
+    }
+  }
+}

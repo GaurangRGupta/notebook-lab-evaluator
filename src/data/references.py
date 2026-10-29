@@ -6,7 +6,9 @@ Expected layout (identical for synthetic and real data):
       reference_solution.ipynb        instructor/team solution, same task headers
       reference_explanations.json     {"tasks": {"T2": {"text": str, "concepts": [{"term", "variants"}]}}}
       expected_outputs.json           {"tasks": {"T1": {"value": str, "match": "numeric|contains|exact", "tol": float}}}
-      rubric.json                     {"code": 8, "explanation": 8, "documentation": 4}
+      rubric.json                     {"code": 8, "explanation": 8, "documentation": 4,
+                                       optional "alignment": {"mode": "loose", "markers": [[regex, task]],
+                                       "generic_q": true, "min_similarity": 0.3}}
 Missing optional files degrade gracefully (the corresponding features become NaN/0 and are logged).
 """
 from __future__ import annotations
@@ -30,6 +32,8 @@ class AssignmentReference:
     solution_cells: list = field(default_factory=list)    # parsed reference notebook
     rubric: dict = field(default_factory=lambda: {"code": 8, "explanation": 8, "documentation": 4})
     warnings: list[str] = field(default_factory=list)
+    alignment: dict = field(default_factory=dict)          # {} = strict '## Task N' headers
+    status: str = ""                                       # provenance label from rubric.json
 
 
 def _load_json(p: Path):
@@ -73,4 +77,10 @@ def load_reference(ref_root, assignment_id: str) -> AssignmentReference:
     rb = _load_json(d / "rubric.json")
     if rb:
         ref.rubric = {k: rb[k] for k in ("code", "explanation", "documentation") if k in rb}
+        ref.alignment = dict(rb.get("alignment") or {})
+        ref.status = str(rb.get("_status", ""))
+        # calls that are just the reference author's style (e.g. default_rng, matplotlib.use)
+        drop = set(rb.get("not_required") or [])
+        if drop:
+            ref.required = {t: req - drop for t, req in ref.required.items()}
     return ref

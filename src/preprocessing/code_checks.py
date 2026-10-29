@@ -118,16 +118,22 @@ def _numbers(text: str) -> list[float]:
 
 
 def compare_output(student_text: str, spec: dict) -> bool:
-    """spec = {"value": str, "match": "exact"|"contains"|"numeric", "tol": float}"""
+    """spec = {"value": str, "match": "exact"|"contains"|"numeric"|"regex", "tol": float}"""
     expected = spec["value"]
     mode = spec.get("match", "contains")
     s, e = normalize_output(student_text), normalize_output(expected)
+    if mode == "regex":
+        e = expected
     if not s:
         return False
     if mode == "exact":
         return s == e
     if mode == "contains":
         return e in s
+    if mode == "regex":
+        # value is a regular expression searched in the normalised (lower-case) output,
+        # e.g. "(?<!fail to )reject the null" so that "fail to reject" does not count.
+        return re.search(expected, s) is not None
     if mode == "numeric":
         tol = float(spec.get("tol", 1e-3))
         got = _numbers(student_text)

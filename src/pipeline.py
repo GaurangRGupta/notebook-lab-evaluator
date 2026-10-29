@@ -30,7 +30,7 @@ from .models.features import (
     variant_features,
 )
 from .reporting import _finite, choose_missing, confidence_from_variants, feedback_and_flag, marks
-from .preprocessing.align_tasks import assign_tasks, flag_template_cells
+from .preprocessing.align_tasks import align_for_reference, assign_tasks, flag_template_cells
 from .preprocessing.anonymize import EMAIL_RE, Scrubber, load_class_list, notebook_hash
 from .preprocessing.parse_notebook import parse_notebook_file
 
@@ -125,7 +125,8 @@ class Pipeline:
         all_cells, self.nb_cells = [], {}
         for _, r in self.manifest.iterrows():
             meta, cells = parse_notebook_file(self.interim / f"{r.notebook_id}.ipynb", r.notebook_id)
-            cells = flag_template_cells(assign_tasks(cells), self.refs[r.assignment_id].template_cells, thr)
+            cells = flag_template_cells(align_for_reference(cells, self.refs[r.assignment_id])[0],
+                                        self.refs[r.assignment_id].template_cells, thr)
             for c in cells:
                 c["assignment_id"] = r.assignment_id
             self.nb_cells[r.notebook_id] = cells
@@ -437,7 +438,7 @@ class Pipeline:
         nid = "stress"
         from .preprocessing.parse_notebook import parse_cells
         ref = self.refs[assignment_id]
-        cells = flag_template_cells(assign_tasks(parse_cells(nb, nid)), ref.template_cells,
+        cells = flag_template_cells(align_for_reference(parse_cells(nb, nid), ref)[0], ref.template_cells,
                                     self.cfg["preprocessing"]["template_similarity_threshold"])
         f, diag = _static(cells, ref)
         expl = _expl(cells, ref)

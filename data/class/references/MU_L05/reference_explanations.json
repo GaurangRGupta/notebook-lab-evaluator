@@ -1,0 +1,41 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L05",
+  "_title": "Lab 5: Exploratory data analysis on the Titanic training data",
+  "tasks": {
+    "T3": {
+      "text": "Women survived far more often than men (about 74% against 19%), and first class passengers survived more often than third class passengers (about 63% against 24%). Survival depends on sex and class, so these are conditional probabilities that differ from the overall rate of 38%.",
+      "concepts": [
+        {
+          "term": "women more likely",
+          "variants": [
+            "female",
+            "women"
+          ]
+        },
+        {
+          "term": "first class higher",
+          "variants": [
+            "first class",
+            "pclass 1",
+            "class 1"
+          ]
+        },
+        {
+          "term": "third class lower",
+          "variants": [
+            "third class",
+            "class 3"
+          ]
+        },
+        {
+          "term": "conditional",
+          "variants": [
+            "rate",
+            "depends on"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L01",
+  "_title": "Lab 1: Car rental billing (Python control flow and functions)",
+  "tasks": {
+    "T2": {
+      "value": "10300 4900",
+      "match": "numeric",
+      "tol": 0.5
+    }
+  }
+}

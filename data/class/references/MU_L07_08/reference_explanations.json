@@ -1,0 +1,49 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L07_08",
+  "_title": "Labs 7-8: Binomial and Poisson distributions",
+  "tasks": {
+    "T3": {
+      "text": "The Poisson distribution models the number of events in a fixed interval when events occur independently at a constant average rate. P(X >= 5) is the complement of P(X <= 4), so it is 1 minus the cumulative distribution function at 4. P(X = 8) needs the probability mass function, not the cdf.",
+      "concepts": [
+        {
+          "term": "fixed interval",
+          "variants": [
+            "interval",
+            "per unit time"
+          ]
+        },
+        {
+          "term": "independent events",
+          "variants": [
+            "independently",
+            "independent"
+          ]
+        },
+        {
+          "term": "constant rate",
+          "variants": [
+            "average rate",
+            "mean rate",
+            "lambda"
+          ]
+        },
+        {
+          "term": "complement",
+          "variants": [
+            "1 -",
+            "1 minus"
+          ]
+        },
+        {
+          "term": "pmf versus cdf",
+          "variants": [
+            "pmf",
+            "mass function",
+            "cdf"
+          ]
+        }
+      ]
+    }
+  }
+}

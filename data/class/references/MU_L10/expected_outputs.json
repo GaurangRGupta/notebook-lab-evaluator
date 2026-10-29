@@ -1,0 +1,16 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L10",
+  "_title": "Lab 10: Two-sample t-tests",
+  "tasks": {
+    "T1": {
+      "value": "(?<!fail to )(?<!do not )(?<!don't )(?<!not )reject",
+      "match": "regex"
+    },
+    "T2": {
+      "value": "-7.8087",
+      "match": "numeric",
+      "tol": 0.001
+    }
+  }
+}

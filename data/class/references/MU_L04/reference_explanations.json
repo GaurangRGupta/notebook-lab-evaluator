@@ -1,0 +1,34 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L04",
+  "_title": "Lab 4: Dice simulation (empirical vs theoretical probability)",
+  "tasks": {
+    "T2": {
+      "text": "Seven can be made in six of the 36 equally likely outcomes, more than any other sum, so it has probability 6/36. By the law of large numbers the relative frequencies get closer to the theoretical probabilities as the number of rolls grows.",
+      "concepts": [
+        {
+          "term": "36 outcomes",
+          "variants": [
+            "36",
+            "equally likely"
+          ]
+        },
+        {
+          "term": "seven most likely",
+          "variants": [
+            "7",
+            "six ways"
+          ]
+        },
+        {
+          "term": "law of large numbers",
+          "variants": [
+            "large number of trials",
+            "more rolls",
+            "converge"
+          ]
+        }
+      ]
+    }
+  }
+}

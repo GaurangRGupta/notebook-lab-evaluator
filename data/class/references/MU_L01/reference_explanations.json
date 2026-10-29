@@ -1,0 +1,42 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L01",
+  "_title": "Lab 1: Car rental billing (Python control flow and functions)",
+  "tasks": {
+    "T2": {
+      "text": "The SUV and the Sedan are each rented for 12 days, which is more than the 10 day threshold, so a 10% discount is applied to their gross amount. The Hatchback is rented for only 4 days, so no discount applies. The refundable deposit of 500 is deducted from each payable amount. Writing the bill as a function lets the same rule be reused for every car.",
+      "concepts": [
+        {
+          "term": "more than 10 days",
+          "variants": [
+            "10 days",
+            "threshold",
+            "greater than 10"
+          ]
+        },
+        {
+          "term": "10% discount",
+          "variants": [
+            "10 percent",
+            "ten percent",
+            "discount"
+          ]
+        },
+        {
+          "term": "deposit deducted",
+          "variants": [
+            "deposit",
+            "refundable"
+          ]
+        },
+        {
+          "term": "function reuse",
+          "variants": [
+            "function",
+            "reuse"
+          ]
+        }
+      ]
+    }
+  }
+}

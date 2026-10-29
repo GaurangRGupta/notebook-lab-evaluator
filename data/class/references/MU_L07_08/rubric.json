@@ -1,0 +1,47 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L07_08",
+  "_title": "Labs 7-8: Binomial and Poisson distributions",
+  "code": 8,
+  "explanation": 8,
+  "documentation": 4,
+  "alignment": {
+    "mode": "loose",
+    "generic_q": true,
+    "min_similarity": 0.15,
+    "markers": [
+      [
+        "poisson",
+        "T3"
+      ]
+    ]
+  },
+  "not_required": [
+    "use",
+    "default_rng",
+    "show",
+    "legend",
+    "bar",
+    "plot",
+    "Counter",
+    "multimode",
+    "ttest_1samp",
+    "integers",
+    "random",
+    "astype",
+    "array",
+    "std",
+    "round",
+    "contains"
+  ],
+  "criteria": {
+    "code": "Each task attempted, runs without error, uses the required functions, and its printed output matches expected_outputs.json.",
+    "explanation": "Markdown or comment explanation covers the reference concepts for tasks that ask to explain.",
+    "documentation": "Headings or comments label each task; outputs are shown; no stale errors."
+  },
+  "tasks": {
+    "T1": "X ~ Binomial(n=12, p=0.45). Find P(X = 8), P(X > 4) and P(X <= 10).",
+    "T2": "For n = 10 trials find: (a) P(X = 4) with p = 0.3, (b) P(X = 0) with p = 0.55, (c) P(X = 2) with p = 0.15, (d) P(X >= 8) with p = 0.3.",
+    "T3": "Arrivals follow a Poisson distribution with mean 4.2. Find P(X <= 2), P(X >= 5) and P(X = 8)."
+  }
+}

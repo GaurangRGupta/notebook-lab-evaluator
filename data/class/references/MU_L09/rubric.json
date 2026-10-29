@@ -1,0 +1,41 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L09",
+  "_title": "Lab 9: One-sample t-tests",
+  "code": 8,
+  "explanation": 8,
+  "documentation": 4,
+  "alignment": {
+    "mode": "loose",
+    "generic_q": true,
+    "min_similarity": 0.15
+  },
+  "not_required": [
+    "use",
+    "default_rng",
+    "show",
+    "legend",
+    "bar",
+    "plot",
+    "Counter",
+    "multimode",
+    "ttest_1samp",
+    "integers",
+    "random",
+    "astype",
+    "array",
+    "std",
+    "round",
+    "contains"
+  ],
+  "criteria": {
+    "code": "Each task attempted, runs without error, uses the required functions, and its printed output matches expected_outputs.json.",
+    "explanation": "Markdown or comment explanation covers the reference concepts for tasks that ask to explain.",
+    "documentation": "Headings or comments label each task; outputs are shown; no stale errors."
+  },
+  "tasks": {
+    "T1": "A machine should fill 12 oz. A sample of n = 10 has mean 11.8 and s = 0.15. Test H0: mu = 12 against a two-tailed alternative at alpha = 0.05.",
+    "T2": "A new method claims to raise the mean above 100. A sample of n = 25 has mean 130 and s = 15. Test at alpha = 0.05, one-tailed.",
+    "T3": "Scores [62, 92, 75, 68, 83, 95]. Test whether the mean exceeds 70 at the 90% confidence level (one-tailed)."
+  }
+}

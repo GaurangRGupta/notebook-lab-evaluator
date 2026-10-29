@@ -1,0 +1,17 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L06",
+  "_title": "Lab 6: Conditional probability with Kerala rainfall and floods",
+  "tasks": {
+    "T2": {
+      "value": "0.5806",
+      "match": "numeric",
+      "tol": 0.001
+    },
+    "T3": {
+      "value": "0.5938 0.95",
+      "match": "numeric",
+      "tol": 0.001
+    }
+  }
+}

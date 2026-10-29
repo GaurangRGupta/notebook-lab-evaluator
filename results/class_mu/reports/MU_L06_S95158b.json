@@ -1,0 +1,64 @@
+{
+  "assignment_id": "MU_L06",
+  "scoring_variant": "week3_combined",
+  "code": 7.83,
+  "explanation": 0.0,
+  "documentation": 1.59,
+  "overall": 9.42,
+  "max_score": 20,
+  "output_match_rate": 1.0,
+  "errors": [],
+  "missing_concepts": {
+    "T2": [
+      "conditional probability",
+      "compare with unconditional",
+      "independence",
+      "slightly higher"
+    ]
+  },
+  "feedback": "The saved output matches. The write-up does not cover the reference ideas named below. The write-up for T2 does not cover: conditional probability, compare with unconditional, independence, slightly higher.",
+  "confidence": {
+    "code": null,
+    "explanation": 1.0,
+    "documentation": null,
+    "overall": 1.0,
+    "method": "Agreement between week2_tfidf and week3_combined is computed only where their feature lists differ. This is not a calibrated probability."
+  },
+  "flag_output_ok_explanation_weak": true,
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "reference_status": "team-authored reference, not faculty-issued",
+  "alignment": {
+    "method": "loose",
+    "marker": 2,
+    "q_header": 0,
+    "output": 1,
+    "similarity": 3,
+    "inherited": 6,
+    "nearest": 0,
+    "unaligned": 0
+  },
+  "variant_marks": {
+    "week2_tfidf": {
+      "code": 7.83,
+      "explanation": 0.0,
+      "documentation": 1.59,
+      "overall": 9.42,
+      "max_score": 20
+    },
+    "week3_semantic": {
+      "code": 7.83,
+      "explanation": 0.0,
+      "documentation": 1.59,
+      "overall": 9.42,
+      "max_score": 20
+    },
+    "week3_combined": {
+      "code": 7.83,
+      "explanation": 0.0,
+      "documentation": 1.59,
+      "overall": 9.42,
+      "max_score": 20
+    }
+  },
+  "prediction_status": "out-of-domain, unvalidated prediction: models were trained on synthetic labs only"
+}

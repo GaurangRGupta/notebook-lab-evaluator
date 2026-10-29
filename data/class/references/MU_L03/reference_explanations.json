@@ -1,0 +1,66 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L03",
+  "_title": "Lab 3: Descriptive statistics (mean, median, mode, histograms)",
+  "tasks": {
+    "T2": {
+      "text": "The normal histogram is roughly bell shaped and symmetric around the mean of 100. Most values lie within one standard deviation (90 to 110) and almost all within three (70 to 130). With only 200 values the bars are uneven.",
+      "concepts": [
+        {
+          "term": "bell shaped",
+          "variants": [
+            "bell",
+            "bell curve"
+          ]
+        },
+        {
+          "term": "symmetric",
+          "variants": [
+            "symmetrical"
+          ]
+        },
+        {
+          "term": "centred at the mean",
+          "variants": [
+            "mean of 100",
+            "centered",
+            "around 100"
+          ]
+        },
+        {
+          "term": "spread set by standard deviation",
+          "variants": [
+            "standard deviation",
+            "spread",
+            "within one"
+          ]
+        }
+      ]
+    },
+    "T4": {
+      "text": "Both 1 and 7 occur twice, so the data are bimodal. statistics.mode returns only the first mode it meets (1), so it hides the second one. multimode returns every value with the highest count.",
+      "concepts": [
+        {
+          "term": "bimodal",
+          "variants": [
+            "two modes",
+            "more than one mode"
+          ]
+        },
+        {
+          "term": "highest frequency",
+          "variants": [
+            "occur twice",
+            "most often"
+          ]
+        },
+        {
+          "term": "multimode",
+          "variants": [
+            "all modes"
+          ]
+        }
+      ]
+    }
+  }
+}

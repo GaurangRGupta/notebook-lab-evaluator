@@ -1,0 +1,56 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L03",
+  "_title": "Lab 3: Descriptive statistics (mean, median, mode, histograms)",
+  "code": 8,
+  "explanation": 8,
+  "documentation": 4,
+  "alignment": {
+    "mode": "loose",
+    "generic_q": true,
+    "min_similarity": 0.15,
+    "markers": [
+      [
+        "hist",
+        "T2"
+      ],
+      [
+        "median",
+        "T3"
+      ],
+      [
+        "mode",
+        "T4"
+      ]
+    ]
+  },
+  "not_required": [
+    "use",
+    "default_rng",
+    "show",
+    "legend",
+    "bar",
+    "plot",
+    "Counter",
+    "multimode",
+    "ttest_1samp",
+    "integers",
+    "random",
+    "astype",
+    "array",
+    "std",
+    "round",
+    "contains"
+  ],
+  "criteria": {
+    "code": "Each task attempted, runs without error, uses the required functions, and its printed output matches expected_outputs.json.",
+    "explanation": "Markdown or comment explanation covers the reference concepts for tasks that ask to explain.",
+    "documentation": "Headings or comments label each task; outputs are shown; no stale errors."
+  },
+  "tasks": {
+    "T1": "For data = [1, 3, 4, 5, 7, 9, 2] compute the mean by hand (sum / n) and with the statistics module.",
+    "T2": "Plot a histogram of data, and a histogram of 200 values drawn from a normal distribution with mean 100 and standard deviation 10.",
+    "T3": "Compute the median of data by sorting (odd and even n), and check with statistics.median.",
+    "T4": "Find the mode of [1, 3, 4, 5, 7, 9, 1, 7]. It has two modes."
+  }
+}

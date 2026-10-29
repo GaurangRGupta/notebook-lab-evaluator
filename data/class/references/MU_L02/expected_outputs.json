@@ -1,0 +1,17 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L02",
+  "_title": "Lab 2: Numpy and Pandas exercises",
+  "tasks": {
+    "T1": {
+      "value": "325 7.2111",
+      "match": "numeric",
+      "tol": 0.001
+    },
+    "T2": {
+      "value": "51",
+      "match": "numeric",
+      "tol": 0
+    }
+  }
+}

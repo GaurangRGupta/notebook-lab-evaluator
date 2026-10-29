@@ -1,0 +1,43 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L06",
+  "_title": "Lab 6: Conditional probability with Kerala rainfall and floods",
+  "tasks": {
+    "T2": {
+      "text": "P(F | J) is the probability of a flood year given that June rain exceeded 500 mm. It is about 0.58, a little higher than the unconditional P(F) of about 0.51, so heavy June rain raises the chance of floods only slightly. The events are not independent, but June rain alone is a weak predictor.",
+      "concepts": [
+        {
+          "term": "conditional probability",
+          "variants": [
+            "given that",
+            "p(f|j)",
+            "conditional"
+          ]
+        },
+        {
+          "term": "compare with unconditional",
+          "variants": [
+            "p(f)",
+            "unconditional",
+            "base rate"
+          ]
+        },
+        {
+          "term": "independence",
+          "variants": [
+            "independent",
+            "not independent"
+          ]
+        },
+        {
+          "term": "slightly higher",
+          "variants": [
+            "higher",
+            "increases",
+            "raises"
+          ]
+        }
+      ]
+    }
+  }
+}

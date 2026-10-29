@@ -1,0 +1,40 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L01",
+  "_title": "Lab 1: Car rental billing (Python control flow and functions)",
+  "code": 8,
+  "explanation": 8,
+  "documentation": 4,
+  "alignment": {
+    "mode": "loose",
+    "generic_q": true,
+    "min_similarity": 0.15
+  },
+  "not_required": [
+    "use",
+    "default_rng",
+    "show",
+    "legend",
+    "bar",
+    "plot",
+    "Counter",
+    "multimode",
+    "ttest_1samp",
+    "integers",
+    "random",
+    "astype",
+    "array",
+    "std",
+    "round",
+    "contains"
+  ],
+  "criteria": {
+    "code": "Each task attempted, runs without error, uses the required functions, and its printed output matches expected_outputs.json.",
+    "explanation": "Markdown or comment explanation covers the reference concepts for tasks that ask to explain.",
+    "documentation": "Headings or comments label each task; outputs are shown; no stale errors."
+  },
+  "tasks": {
+    "T1": "A rental company charges per day: SUV Rs 1000, Sedan Rs 500, Hatchback Rs 250. Rentals longer than 10 days get a 10% discount. A refundable deposit of Rs 500 is collected up front and deducted from the amount payable at return. Read the car type and number of days and print the bill (the reference fixes the inputs instead of using input()).",
+    "T2": "For one month (4 weeks) the SUV is rented on Mon/Wed/Fri, the Sedan on Tue/Thu/Sat and the Hatchback on Sunday. Using functions, print the bill for each car and the total."
+  }
+}

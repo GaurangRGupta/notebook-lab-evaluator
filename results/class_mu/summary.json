@@ -1,0 +1,820 @@
+{
+  "status": "out-of-domain, UNVALIDATED predictions. No human marks exist for these notebooks.",
+  "models": "frozen Week 6 asset trained on synthetic labs (results/week6/asset)",
+  "n_kept": 62,
+  "n_scored": 62,
+  "n_failed": 0,
+  "per_lab": {
+    "MU_L01": {
+      "n": 8,
+      "tfidf": {
+        "code": {
+          "n": 8,
+          "mean": 5.261,
+          "sd": 3.604,
+          "min": 0.57,
+          "median": 7.87,
+          "max": 7.87
+        },
+        "explanation": {
+          "n": 8,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 8,
+          "mean": 1.505,
+          "sd": 0.095,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.67
+        },
+        "overall": {
+          "n": 8,
+          "mean": 6.768,
+          "sd": 3.595,
+          "min": 2.01,
+          "median": 9.31,
+          "max": 9.49
+        }
+      },
+      "minilm": {
+        "code": {
+          "n": 8,
+          "mean": 5.261,
+          "sd": 3.604,
+          "min": 0.57,
+          "median": 7.87,
+          "max": 7.87
+        },
+        "explanation": {
+          "n": 8,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 8,
+          "mean": 1.505,
+          "sd": 0.095,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.67
+        },
+        "overall": {
+          "n": 8,
+          "mean": 6.768,
+          "sd": 3.595,
+          "min": 2.01,
+          "median": 9.31,
+          "max": 9.49
+        }
+      },
+      "output_match_rate": {
+        "n": 8,
+        "mean": 0.625,
+        "sd": 0.518,
+        "min": 0.0,
+        "median": 1.0,
+        "max": 1.0
+      },
+      "n_flag_output_ok_explanation_weak": 5,
+      "cells_nearest_task": 11,
+      "cells_unaligned": 0,
+      "cells_total": 19
+    },
+    "MU_L02": {
+      "n": 8,
+      "tfidf": {
+        "code": {
+          "n": 8,
+          "mean": 7.359,
+          "sd": 1.285,
+          "min": 4.18,
+          "median": 7.79,
+          "max": 7.89
+        },
+        "explanation": {
+          "n": 8,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 8,
+          "mean": 1.455,
+          "sd": 0.042,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.56
+        },
+        "overall": {
+          "n": 8,
+          "mean": 8.812,
+          "sd": 1.291,
+          "min": 5.62,
+          "median": 9.23,
+          "max": 9.37
+        }
+      },
+      "minilm": {
+        "code": {
+          "n": 8,
+          "mean": 7.359,
+          "sd": 1.285,
+          "min": 4.18,
+          "median": 7.79,
+          "max": 7.89
+        },
+        "explanation": {
+          "n": 8,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 8,
+          "mean": 1.455,
+          "sd": 0.042,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.56
+        },
+        "overall": {
+          "n": 8,
+          "mean": 8.812,
+          "sd": 1.291,
+          "min": 5.62,
+          "median": 9.23,
+          "max": 9.37
+        }
+      },
+      "output_match_rate": {
+        "n": 8,
+        "mean": 0.938,
+        "sd": 0.177,
+        "min": 0.5,
+        "median": 1.0,
+        "max": 1.0
+      },
+      "n_flag_output_ok_explanation_weak": 7,
+      "cells_nearest_task": 0,
+      "cells_unaligned": 0,
+      "cells_total": 542
+    },
+    "MU_L03": {
+      "n": 7,
+      "tfidf": {
+        "code": {
+          "n": 7,
+          "mean": 6.164,
+          "sd": 1.814,
+          "min": 2.9,
+          "median": 5.88,
+          "max": 7.83
+        },
+        "explanation": {
+          "n": 7,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 7,
+          "mean": 1.516,
+          "sd": 0.119,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.76
+        },
+        "overall": {
+          "n": 7,
+          "mean": 7.681,
+          "sd": 1.732,
+          "min": 4.66,
+          "median": 7.32,
+          "max": 9.39
+        }
+      },
+      "minilm": {
+        "code": {
+          "n": 7,
+          "mean": 6.164,
+          "sd": 1.814,
+          "min": 2.9,
+          "median": 5.88,
+          "max": 7.83
+        },
+        "explanation": {
+          "n": 7,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 7,
+          "mean": 1.516,
+          "sd": 0.119,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.76
+        },
+        "overall": {
+          "n": 7,
+          "mean": 7.681,
+          "sd": 1.732,
+          "min": 4.66,
+          "median": 7.32,
+          "max": 9.39
+        }
+      },
+      "output_match_rate": {
+        "n": 7,
+        "mean": 0.762,
+        "sd": 0.252,
+        "min": 0.333,
+        "median": 0.667,
+        "max": 1.0
+      },
+      "n_flag_output_ok_explanation_weak": 3,
+      "cells_nearest_task": 0,
+      "cells_unaligned": 0,
+      "cells_total": 54
+    },
+    "MU_L04": {
+      "n": 6,
+      "tfidf": {
+        "code": {
+          "n": 6,
+          "mean": 4.35,
+          "sd": 0.0,
+          "min": 4.35,
+          "median": 4.35,
+          "max": 4.35
+        },
+        "explanation": {
+          "n": 6,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 6,
+          "mean": 1.473,
+          "sd": 0.082,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.64
+        },
+        "overall": {
+          "n": 6,
+          "mean": 5.822,
+          "sd": 0.078,
+          "min": 5.79,
+          "median": 5.79,
+          "max": 5.98
+        }
+      },
+      "minilm": {
+        "code": {
+          "n": 6,
+          "mean": 4.35,
+          "sd": 0.0,
+          "min": 4.35,
+          "median": 4.35,
+          "max": 4.35
+        },
+        "explanation": {
+          "n": 6,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 6,
+          "mean": 1.473,
+          "sd": 0.082,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.64
+        },
+        "overall": {
+          "n": 6,
+          "mean": 5.822,
+          "sd": 0.078,
+          "min": 5.79,
+          "median": 5.79,
+          "max": 5.98
+        }
+      },
+      "output_match_rate": null,
+      "n_flag_output_ok_explanation_weak": 0,
+      "cells_nearest_task": 11,
+      "cells_unaligned": 0,
+      "cells_total": 14
+    },
+    "MU_L05": {
+      "n": 7,
+      "tfidf": {
+        "code": {
+          "n": 7,
+          "mean": 7.86,
+          "sd": 0.0,
+          "min": 7.86,
+          "median": 7.86,
+          "max": 7.86
+        },
+        "explanation": {
+          "n": 7,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 7,
+          "mean": 1.44,
+          "sd": 0.0,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.44
+        },
+        "overall": {
+          "n": 7,
+          "mean": 9.3,
+          "sd": 0.0,
+          "min": 9.3,
+          "median": 9.3,
+          "max": 9.3
+        }
+      },
+      "minilm": {
+        "code": {
+          "n": 7,
+          "mean": 7.86,
+          "sd": 0.0,
+          "min": 7.86,
+          "median": 7.86,
+          "max": 7.86
+        },
+        "explanation": {
+          "n": 7,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 7,
+          "mean": 1.44,
+          "sd": 0.0,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.44
+        },
+        "overall": {
+          "n": 7,
+          "mean": 9.3,
+          "sd": 0.0,
+          "min": 9.3,
+          "median": 9.3,
+          "max": 9.3
+        }
+      },
+      "output_match_rate": {
+        "n": 7,
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "median": 1.0,
+        "max": 1.0
+      },
+      "n_flag_output_ok_explanation_weak": 7,
+      "cells_nearest_task": 0,
+      "cells_unaligned": 0,
+      "cells_total": 120
+    },
+    "MU_L06": {
+      "n": 8,
+      "tfidf": {
+        "code": {
+          "n": 8,
+          "mean": 6.01,
+          "sd": 3.382,
+          "min": 0.53,
+          "median": 7.83,
+          "max": 7.87
+        },
+        "explanation": {
+          "n": 8,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 8,
+          "mean": 1.695,
+          "sd": 0.247,
+          "min": 1.44,
+          "median": 1.69,
+          "max": 2.03
+        },
+        "overall": {
+          "n": 8,
+          "mean": 7.705,
+          "sd": 3.305,
+          "min": 2.32,
+          "median": 9.27,
+          "max": 9.86
+        }
+      },
+      "minilm": {
+        "code": {
+          "n": 8,
+          "mean": 6.01,
+          "sd": 3.382,
+          "min": 0.53,
+          "median": 7.83,
+          "max": 7.87
+        },
+        "explanation": {
+          "n": 8,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 8,
+          "mean": 1.695,
+          "sd": 0.247,
+          "min": 1.44,
+          "median": 1.69,
+          "max": 2.03
+        },
+        "overall": {
+          "n": 8,
+          "mean": 7.705,
+          "sd": 3.305,
+          "min": 2.32,
+          "median": 9.27,
+          "max": 9.86
+        }
+      },
+      "output_match_rate": {
+        "n": 8,
+        "mean": 0.75,
+        "sd": 0.463,
+        "min": 0.0,
+        "median": 1.0,
+        "max": 1.0
+      },
+      "n_flag_output_ok_explanation_weak": 6,
+      "cells_nearest_task": 12,
+      "cells_unaligned": 1,
+      "cells_total": 91
+    },
+    "MU_L07_08": {
+      "n": 7,
+      "tfidf": {
+        "code": {
+          "n": 7,
+          "mean": 6.027,
+          "sd": 1.866,
+          "min": 2.74,
+          "median": 5.4,
+          "max": 7.75
+        },
+        "explanation": {
+          "n": 7,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 7,
+          "mean": 2.293,
+          "sd": 0.638,
+          "min": 1.84,
+          "median": 1.9,
+          "max": 3.44
+        },
+        "overall": {
+          "n": 7,
+          "mean": 8.32,
+          "sd": 2.3,
+          "min": 4.64,
+          "median": 7.65,
+          "max": 11.19
+        }
+      },
+      "minilm": {
+        "code": {
+          "n": 7,
+          "mean": 6.027,
+          "sd": 1.866,
+          "min": 2.74,
+          "median": 5.4,
+          "max": 7.75
+        },
+        "explanation": {
+          "n": 7,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 7,
+          "mean": 2.293,
+          "sd": 0.638,
+          "min": 1.84,
+          "median": 1.9,
+          "max": 3.44
+        },
+        "overall": {
+          "n": 7,
+          "mean": 8.32,
+          "sd": 2.3,
+          "min": 4.64,
+          "median": 7.65,
+          "max": 11.19
+        }
+      },
+      "output_match_rate": {
+        "n": 7,
+        "mean": 0.762,
+        "sd": 0.252,
+        "min": 0.333,
+        "median": 0.667,
+        "max": 1.0
+      },
+      "n_flag_output_ok_explanation_weak": 3,
+      "cells_nearest_task": 6,
+      "cells_unaligned": 2,
+      "cells_total": 43
+    },
+    "MU_L09": {
+      "n": 7,
+      "tfidf": {
+        "code": {
+          "n": 7,
+          "mean": 7.591,
+          "sd": 0.922,
+          "min": 5.5,
+          "median": 7.94,
+          "max": 7.94
+        },
+        "explanation": {
+          "n": 7,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 7,
+          "mean": 1.541,
+          "sd": 0.141,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.74
+        },
+        "overall": {
+          "n": 7,
+          "mean": 9.13,
+          "sd": 0.84,
+          "min": 7.24,
+          "median": 9.38,
+          "max": 9.67
+        }
+      },
+      "minilm": {
+        "code": {
+          "n": 7,
+          "mean": 7.591,
+          "sd": 0.922,
+          "min": 5.5,
+          "median": 7.94,
+          "max": 7.94
+        },
+        "explanation": {
+          "n": 7,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 7,
+          "mean": 1.541,
+          "sd": 0.141,
+          "min": 1.44,
+          "median": 1.44,
+          "max": 1.74
+        },
+        "overall": {
+          "n": 7,
+          "mean": 9.13,
+          "sd": 0.84,
+          "min": 7.24,
+          "median": 9.38,
+          "max": 9.67
+        }
+      },
+      "output_match_rate": {
+        "n": 7,
+        "mean": 0.952,
+        "sd": 0.126,
+        "min": 0.667,
+        "median": 1.0,
+        "max": 1.0
+      },
+      "n_flag_output_ok_explanation_weak": 6,
+      "cells_nearest_task": 0,
+      "cells_unaligned": 0,
+      "cells_total": 25
+    },
+    "MU_L10": {
+      "n": 4,
+      "tfidf": {
+        "code": {
+          "n": 4,
+          "mean": 6.957,
+          "sd": 1.825,
+          "min": 4.22,
+          "median": 7.87,
+          "max": 7.87
+        },
+        "explanation": {
+          "n": 4,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 4,
+          "mean": 2.242,
+          "sd": 0.528,
+          "min": 1.65,
+          "median": 2.205,
+          "max": 2.91
+        },
+        "overall": {
+          "n": 4,
+          "mean": 9.203,
+          "sd": 1.404,
+          "min": 7.14,
+          "median": 9.73,
+          "max": 10.21
+        }
+      },
+      "minilm": {
+        "code": {
+          "n": 4,
+          "mean": 6.957,
+          "sd": 1.825,
+          "min": 4.22,
+          "median": 7.87,
+          "max": 7.87
+        },
+        "explanation": {
+          "n": 4,
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0
+        },
+        "documentation": {
+          "n": 4,
+          "mean": 2.242,
+          "sd": 0.528,
+          "min": 1.65,
+          "median": 2.205,
+          "max": 2.91
+        },
+        "overall": {
+          "n": 4,
+          "mean": 9.203,
+          "sd": 1.404,
+          "min": 7.14,
+          "median": 9.73,
+          "max": 10.21
+        }
+      },
+      "output_match_rate": {
+        "n": 4,
+        "mean": 0.875,
+        "sd": 0.25,
+        "min": 0.5,
+        "median": 1.0,
+        "max": 1.0
+      },
+      "n_flag_output_ok_explanation_weak": 3,
+      "cells_nearest_task": 0,
+      "cells_unaligned": 0,
+      "cells_total": 26
+    }
+  },
+  "all": {
+    "tfidf": {
+      "code": {
+        "n": 62,
+        "mean": 6.395,
+        "sd": 2.254,
+        "min": 0.53,
+        "median": 7.81,
+        "max": 7.94
+      },
+      "explanation": {
+        "n": 62,
+        "mean": 0.0,
+        "sd": 0.0,
+        "min": 0.0,
+        "median": 0.0,
+        "max": 0.0
+      },
+      "documentation": {
+        "n": 62,
+        "mean": 1.655,
+        "sd": 0.395,
+        "min": 1.44,
+        "median": 1.44,
+        "max": 3.44
+      },
+      "overall": {
+        "n": 62,
+        "mean": 8.049,
+        "sd": 2.265,
+        "min": 2.01,
+        "median": 9.28,
+        "max": 11.19
+      }
+    },
+    "minilm": {
+      "code": {
+        "n": 62,
+        "mean": 6.395,
+        "sd": 2.254,
+        "min": 0.53,
+        "median": 7.81,
+        "max": 7.94
+      },
+      "explanation": {
+        "n": 62,
+        "mean": 0.0,
+        "sd": 0.0,
+        "min": 0.0,
+        "median": 0.0,
+        "max": 0.0
+      },
+      "documentation": {
+        "n": 62,
+        "mean": 1.655,
+        "sd": 0.395,
+        "min": 1.44,
+        "median": 1.44,
+        "max": 3.44
+      },
+      "overall": {
+        "n": 62,
+        "mean": 8.049,
+        "sd": 2.265,
+        "min": 2.01,
+        "median": 9.28,
+        "max": 11.19
+      }
+    }
+  },
+  "tfidf_vs_minilm_overall_mean_abs_diff": 0.0
+}

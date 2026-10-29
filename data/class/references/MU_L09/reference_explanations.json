@@ -1,0 +1,48 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L09",
+  "_title": "Lab 9: One-sample t-tests",
+  "tasks": {
+    "T3": {
+      "text": "H0: the mean score is 70; H1: the mean score is greater than 70. The t statistic is larger than the one-tailed critical value at alpha = 0.10 (equivalently the p-value is below 0.10), so we reject the null hypothesis and conclude the mean score is above 70. The sample uses the sample standard deviation with n - 1 degrees of freedom.",
+      "concepts": [
+        {
+          "term": "null hypothesis",
+          "variants": [
+            "h0",
+            "null"
+          ]
+        },
+        {
+          "term": "alternative hypothesis",
+          "variants": [
+            "h1",
+            "alternative",
+            "greater than 70"
+          ]
+        },
+        {
+          "term": "critical value or p-value",
+          "variants": [
+            "critical value",
+            "p-value",
+            "p value"
+          ]
+        },
+        {
+          "term": "degrees of freedom",
+          "variants": [
+            "n - 1",
+            "df"
+          ]
+        },
+        {
+          "term": "reject",
+          "variants": [
+            "rejected"
+          ]
+        }
+      ]
+    }
+  }
+}

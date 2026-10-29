@@ -1,0 +1,40 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L10",
+  "_title": "Lab 10: Two-sample t-tests",
+  "code": 8,
+  "explanation": 8,
+  "documentation": 4,
+  "alignment": {
+    "mode": "loose",
+    "generic_q": true,
+    "min_similarity": 0.15
+  },
+  "not_required": [
+    "use",
+    "default_rng",
+    "show",
+    "legend",
+    "bar",
+    "plot",
+    "Counter",
+    "multimode",
+    "ttest_1samp",
+    "integers",
+    "random",
+    "astype",
+    "array",
+    "std",
+    "round",
+    "contains"
+  ],
+  "criteria": {
+    "code": "Each task attempted, runs without error, uses the required functions, and its printed output matches expected_outputs.json.",
+    "explanation": "Markdown or comment explanation covers the reference concepts for tasks that ask to explain.",
+    "documentation": "Headings or comments label each task; outputs are shown; no stale errors."
+  },
+  "tasks": {
+    "T1": "Two groups of n = 20 have means 44 and 28 and standard deviations 30 and 20. Test whether the difference of means exceeds 2 at alpha = 0.05 (one-tailed, pooled variance).",
+    "T2": "Two machines: means 200 and 250, standard deviations 20 and 25, n = 25 each. Test for a difference at alpha = 0.01 (two-tailed)."
+  }
+}

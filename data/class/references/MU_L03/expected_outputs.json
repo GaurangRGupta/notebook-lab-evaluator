@@ -1,0 +1,22 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L03",
+  "_title": "Lab 3: Descriptive statistics (mean, median, mode, histograms)",
+  "tasks": {
+    "T1": {
+      "value": "4.4286",
+      "match": "numeric",
+      "tol": 0.001
+    },
+    "T3": {
+      "value": "4",
+      "match": "numeric",
+      "tol": 0
+    },
+    "T4": {
+      "value": "1 7",
+      "match": "numeric",
+      "tol": 0
+    }
+  }
+}

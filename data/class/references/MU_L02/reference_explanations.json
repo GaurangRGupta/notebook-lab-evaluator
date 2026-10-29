@@ -1,0 +1,59 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L02",
+  "_title": "Lab 2: Numpy and Pandas exercises",
+  "tasks": {
+    "T1": {
+      "text": "np.arange steps from a start value by a fixed step size and excludes the stop value. np.linspace returns a fixed number of evenly spaced points and includes both end points.",
+      "concepts": [
+        {
+          "term": "step size",
+          "variants": [
+            "step"
+          ]
+        },
+        {
+          "term": "number of points",
+          "variants": [
+            "number of samples",
+            "how many points"
+          ]
+        },
+        {
+          "term": "end point included",
+          "variants": [
+            "includes the end",
+            "inclusive",
+            "endpoint"
+          ]
+        }
+      ]
+    },
+    "T2": {
+      "text": "nunique counts the distinct values of the State column, so it gives the number of states (51 including the District of Columbia). value_counts counts how often each county name occurs and sorts by frequency, so its head gives the most common names.",
+      "concepts": [
+        {
+          "term": "unique values",
+          "variants": [
+            "nunique",
+            "distinct"
+          ]
+        },
+        {
+          "term": "frequency",
+          "variants": [
+            "value_counts",
+            "count of each"
+          ]
+        },
+        {
+          "term": "sorted",
+          "variants": [
+            "sort",
+            "descending"
+          ]
+        }
+      ]
+    }
+  }
+}

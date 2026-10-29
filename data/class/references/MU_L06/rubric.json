@@ -1,0 +1,47 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L06",
+  "_title": "Lab 6: Conditional probability with Kerala rainfall and floods",
+  "code": 8,
+  "explanation": 8,
+  "documentation": 4,
+  "alignment": {
+    "mode": "loose",
+    "generic_q": true,
+    "min_similarity": 0.15,
+    "markers": [
+      [
+        "jul",
+        "T3"
+      ]
+    ]
+  },
+  "not_required": [
+    "use",
+    "default_rng",
+    "show",
+    "legend",
+    "bar",
+    "plot",
+    "Counter",
+    "multimode",
+    "ttest_1samp",
+    "integers",
+    "random",
+    "astype",
+    "array",
+    "std",
+    "round",
+    "contains"
+  ],
+  "criteria": {
+    "code": "Each task attempted, runs without error, uses the required functions, and its printed output matches expected_outputs.json.",
+    "explanation": "Markdown or comment explanation covers the reference concepts for tasks that ask to explain.",
+    "documentation": "Headings or comments label each task; outputs are shown; no stale errors."
+  },
+  "tasks": {
+    "T1": "Load kerala.csv. Encode FLOODS as 1/0 and add indicator columns for June and July rainfall above 500 mm.",
+    "T2": "Cross-tabulate floods against June rain above 500 mm. Compute P(F), P(J), P(F and J) and P(F | J).",
+    "T3": "Repeat for July rain above 500 mm, and also compute P(July > 500 | F) using Bayes' rule."
+  }
+}

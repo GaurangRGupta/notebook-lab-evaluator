@@ -1,0 +1,22 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L07_08",
+  "_title": "Labs 7-8: Binomial and Poisson distributions",
+  "tasks": {
+    "T1": {
+      "value": "0.076165 0.695568 0.99892",
+      "match": "numeric",
+      "tol": 0.0001
+    },
+    "T2": {
+      "value": "0.200121 0.000341 0.275897 0.00159",
+      "match": "numeric",
+      "tol": 0.0001
+    },
+    "T3": {
+      "value": "0.210238 0.410173 0.036011",
+      "match": "numeric",
+      "tol": 0.0001
+    }
+  }
+}

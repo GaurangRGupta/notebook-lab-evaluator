@@ -1,0 +1,41 @@
+{
+  "_status": "team-authored reference, not faculty-issued",
+  "_lab": "MU_L05",
+  "_title": "Lab 5: Exploratory data analysis on the Titanic training data",
+  "code": 8,
+  "explanation": 8,
+  "documentation": 4,
+  "alignment": {
+    "mode": "loose",
+    "generic_q": true,
+    "min_similarity": 0.15
+  },
+  "not_required": [
+    "use",
+    "default_rng",
+    "show",
+    "legend",
+    "bar",
+    "plot",
+    "Counter",
+    "multimode",
+    "ttest_1samp",
+    "integers",
+    "random",
+    "astype",
+    "array",
+    "std",
+    "round",
+    "contains"
+  ],
+  "criteria": {
+    "code": "Each task attempted, runs without error, uses the required functions, and its printed output matches expected_outputs.json.",
+    "explanation": "Markdown or comment explanation covers the reference concepts for tasks that ask to explain.",
+    "documentation": "Headings or comments label each task; outputs are shown; no stale errors."
+  },
+  "tasks": {
+    "T1": "Load train.csv, show its shape and missing values, and count survivors and non-survivors.",
+    "T2": "Plot count plots / bar charts for Sex, Pclass, Parch and Embarked.",
+    "T3": "Tabulate survival by passenger class and by sex, and the survival rate of each group."
+  }
+}
