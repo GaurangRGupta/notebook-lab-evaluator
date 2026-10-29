@@ -1,0 +1,8 @@
+{
+  "source": "notebook-lab-evaluator",
+  "assignment_id": "LAB_SYN1",
+  "overall": 18.17,
+  "max_score": 20,
+  "needs_human_review": false,
+  "reason": "The saved output matches, and the write-up covers the reference ideas this check looks for."
+}

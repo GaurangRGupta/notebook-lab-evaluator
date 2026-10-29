@@ -1,0 +1,8 @@
+{
+  "source": "notebook-lab-evaluator",
+  "assignment_id": "LAB_SYN2",
+  "overall": 7.28,
+  "max_score": 20,
+  "needs_human_review": true,
+  "reason": "The write-up for T2 does not cover: zero probability, unseen bigrams, add one, vocabulary size, probability mass. The write-up for T3 does not cover: inverse probability."
+}

@@ -1,0 +1,8 @@
+{
+  "source": "notebook-lab-evaluator",
+  "assignment_id": "MU_L01",
+  "overall": 10.89,
+  "max_score": 20,
+  "needs_human_review": true,
+  "reason": "The saved output matches. The write-up does not cover the reference ideas named below. The write-up for T2 does not cover: more than 10 days, 10% discount, deposit deducted, function reuse."
+}

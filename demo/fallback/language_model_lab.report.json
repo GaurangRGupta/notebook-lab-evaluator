@@ -1,0 +1,57 @@
+{
+  "assignment_id": "LAB_SYN2",
+  "scoring_variant": "week3_combined",
+  "code": 7.87,
+  "explanation": 5.13,
+  "documentation": 2.14,
+  "overall": 15.14,
+  "max_score": 20,
+  "output_match_rate": 1.0,
+  "errors": [],
+  "missing_concepts": {
+    "T3": [
+      "inverse probability",
+      "surprise"
+    ]
+  },
+  "feedback": "The saved output matches. The write-up does not cover the reference ideas named below. The write-up for T3 does not cover: inverse probability, surprise.",
+  "confidence": {
+    "code": null,
+    "explanation": 0.986,
+    "documentation": null,
+    "overall": 0.986,
+    "method": "Agreement between week2_tfidf and week3_combined is computed only where their feature lists differ. This is not a calibrated probability."
+  },
+  "flag_output_ok_explanation_weak": true,
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS",
+  "reference_status": "SYNTHETIC_DEVELOPMENT_DATA (max marks from Week 1 proposal example)",
+  "alignment": {
+    "method": "strict",
+    "aligned": 11,
+    "unaligned": 3
+  },
+  "variant_marks": {
+    "week2_tfidf": {
+      "code": 7.87,
+      "explanation": 5.24,
+      "documentation": 2.14,
+      "overall": 15.26,
+      "max_score": 20
+    },
+    "week3_semantic": {
+      "code": 7.87,
+      "explanation": 4.77,
+      "documentation": 2.14,
+      "overall": 14.79,
+      "max_score": 20
+    },
+    "week3_combined": {
+      "code": 7.87,
+      "explanation": 5.13,
+      "documentation": 2.14,
+      "overall": 15.14,
+      "max_score": 20
+    }
+  },
+  "prediction_status": "out-of-domain, unvalidated prediction: models were trained on synthetic labs only"
+}

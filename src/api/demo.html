@@ -4,40 +4,110 @@
   <meta charset="utf-8">
   <title>Jupyter notebook lab evaluator</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 46rem; line-height: 1.45; color: #111; }
-    h1 { font-size: 1.4rem; }
-    h2 { font-size: 1.1rem; margin-top: 1.6rem; }
+    body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 60rem; line-height: 1.45; color: #111; padding: 0 1rem; }
+    h1 { font-size: 1.5rem; margin-bottom: .2rem; }
+    h2 { font-size: 1.1rem; margin-top: 1.6rem; border-bottom: 1px solid #ddd; padding-bottom: .2rem; }
     label { display: block; margin-top: 0.8rem; }
-    button { margin-top: 1rem; font: inherit; padding: 0.3rem 0.8rem; }
-    pre { white-space: pre-wrap; font-family: Consolas, monospace; background: #f6f6f6; padding: 0.8rem; }
-    .note { margin-top: 1rem; }
+    button { margin-top: 1rem; font: inherit; padding: 0.35rem 0.9rem; cursor: pointer; }
+    pre { white-space: pre-wrap; font-family: Consolas, monospace; background: #f6f6f6; padding: 0.8rem; font-size: .85rem; }
+    .row { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .row > div { flex: 1 1 24rem; }
+    .marks { display: flex; gap: .8rem; flex-wrap: wrap; margin: .6rem 0; }
+    .mark { border: 1px solid #ccc; border-radius: 6px; padding: .5rem .8rem; min-width: 7rem; text-align: center; }
+    .mark b { display: block; font-size: 1.4rem; }
+    .flag { display: inline-block; padding: .15rem .5rem; border-radius: 4px; margin: .15rem .3rem .15rem 0; font-size: .85rem; }
+    .warn { background: #ffe9b3; } .bad { background: #ffd0d0; } .ok { background: #d6f5d6; }
+    ul { margin: .3rem 0; }
+    .muted { color: #555; font-size: .9rem; }
+    .tabs button { margin-right: .4rem; }
   </style>
 </head>
 <body>
   <h1>Jupyter notebook lab evaluator</h1>
+  <p class="muted">Group 3 · Speech and NLP · NMIMS MPSTME</p>
   <p>Choose a notebook and a lab id. This page sends the file to <code>POST /evaluate-notebook</code>, then sends that JSON to <code>POST /support-signal</code>. The second call does not score the notebook again.</p>
   <p class="note">The student's code is not executed. The mark is a suggestion for the instructor.</p>
-  <form id="form">
-    <label>Notebook file <input id="file" name="file" type="file" accept=".ipynb,application/json" required></label>
-    <label>Lab id
-      <select id="lab" name="assignment_id" required>
-        <!-- LAB_OPTIONS -->
-      </select>
-    </label>
-    <button type="submit">Score notebook</button>
-  </form>
+
+  <div class="row">
+    <div>
+      <h2>Upload a notebook</h2>
+      <form id="form">
+        <label>Notebook file <input id="file" name="file" type="file" accept=".ipynb,application/json"></label>
+        <label>Lab id
+          <select id="lab" name="assignment_id" required>
+            <!-- LAB_OPTIONS -->
+          </select>
+        </label>
+        <button type="submit">Score notebook</button>
+      </form>
+    </div>
+    <div>
+      <h2>Or pick a sample</h2>
+      <label>Sample <select id="sample"><option value="">(loading)</option></select></label>
+      <button id="runSample" type="button">Score sample</button>
+      <p class="muted">Synthetic examples, three anonymised class notebooks (only if prepared on this machine) and one deliberate failure case.</p>
+    </div>
+  </div>
+
   <p id="status"></p>
   <h2>Score</h2>
+  <div id="summary"></div>
   <pre id="score">No notebook has been scored in this page yet.</pre>
   <h2>Student-support signal</h2>
   <pre id="signal">The support signal appears after a score.</pre>
+
+  <h2>Call it from another app</h2>
+  <div class="tabs"><button type="button" data-t="curl">curl</button><button type="button" data-t="py">Python</button><button type="button" data-t="ps">PowerShell</button></div>
+  <pre id="snippet"></pre>
+
   <script>
     const form = document.getElementById("form");
     const status = document.getElementById("status");
     const scoreBox = document.getElementById("score");
     const signalBox = document.getElementById("signal");
+    const summary = document.getElementById("summary");
+    const labSel = document.getElementById("lab");
+    const sampleSel = document.getElementById("sample");
+    const origin = window.location.origin;
+    function esc(s) { return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+    const snippets = {
+      curl: () => `curl -s -X POST ${origin}/evaluate-notebook -F "file=@my_lab.ipynb" -F "assignment_id=${labSel.value}"`,
+      py: () => `import requests\nr = requests.post("${origin}/evaluate-notebook",\n                  files={"file": open("my_lab.ipynb", "rb")},\n                  data={"assignment_id": "${labSel.value}"})\nreport = r.json()\nsignal = requests.post("${origin}/support-signal", json=report).json()\nprint(report["overall"], signal["needs_human_review"])`,
+      ps: () => `curl.exe -s -X POST ${origin}/evaluate-notebook -F "file=@my_lab.ipynb" -F "assignment_id=${labSel.value}"`
+    };
+    let tab = "curl";
+    function drawSnippet() { document.getElementById("snippet").textContent = snippets[tab](); }
+    document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => { tab = b.dataset.t; drawSnippet(); }));
+    labSel.addEventListener("change", drawSnippet);
+    drawSnippet();
+
+    fetch("/samples").then(r => r.json()).then(list => {
+      sampleSel.innerHTML = list.map(s => `<option value="${esc(s.name)}" data-lab="${esc(s.assignment_id)}">${esc(s.description)} [${esc(s.assignment_id)}]</option>`).join("");
+      // ?sample=<name> scores that sample on load (used by the headless check and as a demo shortcut).
+      const auto = new URLSearchParams(window.location.search).get("sample");
+      if (auto && list.some(s => s.name === auto)) { sampleSel.value = auto; document.getElementById("runSample").click(); }
+    }).catch(() => { sampleSel.innerHTML = "<option value=''>(no samples)</option>"; });
 
     function showFields(report) {
+      const flags = [];
+      if (report.flag_output_ok_explanation_weak) flags.push('<span class="flag warn">output OK, explanation weak</span>');
+      if (report.prediction_status) flags.push('<span class="flag warn">' + esc(report.prediction_status) + '</span>');
+      if (report.reference_status) flags.push('<span class="flag warn">' + esc(report.reference_status) + '</span>');
+      (report.errors || []).length ? flags.push('<span class="flag bad">' + report.errors.length + ' error(s)</span>') : flags.push('<span class="flag ok">no errors found</span>');
+      const mc = report.missing_concepts || {};
+      const mcList = Object.keys(mc).filter(k => (mc[k] || []).length).map(k => "<li><b>" + esc(k) + "</b>: " + mc[k].map(esc).join(", ") + "</li>").join("");
+      summary.innerHTML =
+        '<div class="marks">' +
+        '<div class="mark">Overall<b>' + report.overall + ' / ' + report.max_score + '</b></div>' +
+        '<div class="mark">Code<b>' + report.code + ' / 8</b></div>' +
+        '<div class="mark">Explanation<b>' + report.explanation + ' / 8</b></div>' +
+        '<div class="mark">Documentation<b>' + report.documentation + ' / 4</b></div>' +
+        '<div class="mark">Output match<b>' + (report.output_match_rate === null || report.output_match_rate === undefined ? "n/a" : report.output_match_rate) + '</b></div>' +
+        '</div>' + flags.join("") +
+        '<h3>Errors</h3><ul>' + ((report.errors || []).map(e => "<li>" + esc(e) + "</li>").join("") || "<li>none</li>") + '</ul>' +
+        '<h3>Missing concepts</h3><ul>' + (mcList || "<li>none</li>") + '</ul>' +
+        '<h3>Feedback</h3><p>' + esc(report.feedback || "") + '</p>';
       const lines = [
         "assignment_id: " + report.assignment_id,
         "code: " + report.code,
@@ -51,15 +121,14 @@
         "feedback: " + report.feedback,
         "confidence: " + JSON.stringify(report.confidence)
       ];
+      if (report.variant_marks) lines.push("variant_marks: " + JSON.stringify(report.variant_marks));
+      if (report.alignment) lines.push("alignment: " + JSON.stringify(report.alignment));
       scoreBox.textContent = lines.join("\n");
     }
 
-    form.addEventListener("submit", async function (event) {
-      event.preventDefault();
+    async function score(data) {
       status.textContent = "Scoring the saved notebook.";
-      scoreBox.textContent = "";
-      signalBox.textContent = "";
-      const data = new FormData(form);
+      scoreBox.textContent = ""; signalBox.textContent = ""; summary.innerHTML = "";
       let response;
       try {
         response = await fetch("/evaluate-notebook", { method: "POST", body: data });
@@ -94,6 +163,22 @@
       }
       status.textContent = "Score and support signal are ready.";
       signalBox.textContent = JSON.stringify(signal, null, 2);
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      score(new FormData(form));
+    });
+
+    document.getElementById("runSample").addEventListener("click", async function () {
+      const opt = sampleSel.selectedOptions[0];
+      if (!opt || !opt.value) return;
+      const blob = await fetch("/samples/" + opt.value).then(r => r.blob());
+      labSel.value = opt.dataset.lab; drawSnippet();
+      const data = new FormData();
+      data.append("file", blob, opt.value.split("/").pop());
+      data.append("assignment_id", opt.dataset.lab);
+      score(data);
     });
   </script>
 </body>

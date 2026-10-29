@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Jupyter notebook lab evaluator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 60rem; line-height: 1.45; color: #111; padding: 0 1rem; }
+    h1 { font-size: 1.5rem; margin-bottom: .2rem; }
+    h2 { font-size: 1.1rem; margin-top: 1.6rem; border-bottom: 1px solid #ddd; padding-bottom: .2rem; }
+    label { display: block; margin-top: 0.8rem; }
+    button { margin-top: 1rem; font: inherit; padding: 0.35rem 0.9rem; cursor: pointer; }
+    pre { white-space: pre-wrap; font-family: Consolas, monospace; background: #f6f6f6; padding: 0.8rem; font-size: .85rem; }
+    .row { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .row > div { flex: 1 1 24rem; }
+    .marks { display: flex; gap: .8rem; flex-wrap: wrap; margin: .6rem 0; }
+    .mark { border: 1px solid #ccc; border-radius: 6px; padding: .5rem .8rem; min-width: 7rem; text-align: center; }
+    .mark b { display: block; font-size: 1.4rem; }
+    .flag { display: inline-block; padding: .15rem .5rem; border-radius: 4px; margin: .15rem .3rem .15rem 0; font-size: .85rem; }
+    .warn { background: #ffe9b3; } .bad { background: #ffd0d0; } .ok { background: #d6f5d6; }
+    ul { margin: .3rem 0; }
+    .muted { color: #555; font-size: .9rem; }
+    .tabs button { margin-right: .4rem; }
+  </style>
+</head>
+<body>
+  <h1>Jupyter notebook lab evaluator</h1>
+  <p class="muted">Group 3 · Speech and NLP · NMIMS MPSTME</p>
+  <p>Choose a notebook and a lab id. This page sends the file to <code>POST /evaluate-notebook</code>, then sends that JSON to <code>POST /support-signal</code>. The second call does not score the notebook again.</p>
+  <p class="note">The student's code is not executed. The mark is a suggestion for the instructor.</p>
+
+  <div class="row">
+    <div>
+      <h2>Upload a notebook</h2>
+      <form id="form">
+        <label>Notebook file <input id="file" name="file" type="file" accept=".ipynb,application/json"></label>
+        <label>Lab id
+          <select id="lab" name="assignment_id" required="">
+            <option value="LAB_SYN1">LAB_SYN1</option>
+<option value="LAB_SYN2">LAB_SYN2</option>
+<option value="MU_L01">MU_L01</option>
+<option value="MU_L02">MU_L02</option>
+<option value="MU_L03">MU_L03</option>
+<option value="MU_L04">MU_L04</option>
+<option value="MU_L05">MU_L05</option>
+<option value="MU_L06">MU_L06</option>
+<option value="MU_L07_08">MU_L07_08</option>
+<option value="MU_L09">MU_L09</option>
+<option value="MU_L10">MU_L10</option>
+          </select>
+        </label>
+        <button type="submit">Score notebook</button>
+      </form>
+    </div>
+    <div>
+      <h2>Or pick a sample</h2>
+      <label>Sample <select id="sample"><option value="tfidf_lab.ipynb" data-lab="LAB_SYN1">synthetic: strong TF-IDF lab [LAB_SYN1]</option><option value="language_model_lab.ipynb" data-lab="LAB_SYN2">synthetic: language-model lab, one concept gap [LAB_SYN2]</option><option value="language_model_weak.ipynb" data-lab="LAB_SYN2">synthetic: weak lab with errors [LAB_SYN2]</option><option value="failure_hardcoded_output_MU_L01.ipynb" data-lab="MU_L01">FAILURE CASE: hard-coded prints, no logic [MU_L01]</option><option value="class/MU_L06_sample.ipynb" data-lab="MU_L06">class (anonymised): conditional probability [MU_L06]</option><option value="class/MU_L07_08_sample.ipynb" data-lab="MU_L07_08">class (anonymised): binomial / Poisson [MU_L07_08]</option><option value="class/MU_L01_sample.ipynb" data-lab="MU_L01">class (anonymised): car rental billing [MU_L01]</option></select></label>
+      <button id="runSample" type="button">Score sample</button>
+      <p class="muted">Synthetic examples, three anonymised class notebooks (only if prepared on this machine) and one deliberate failure case.</p>
+    </div>
+  </div>
+
+  <p id="status">Score and support signal are ready.</p>
+  <h2>Score</h2>
+  <div id="summary"><div class="marks"><div class="mark">Overall<b>15.14 / 20</b></div><div class="mark">Code<b>7.87 / 8</b></div><div class="mark">Explanation<b>5.13 / 8</b></div><div class="mark">Documentation<b>2.14 / 4</b></div><div class="mark">Output match<b>1</b></div></div><span class="flag warn">output OK, explanation weak</span><span class="flag warn">out-of-domain, unvalidated prediction: models were trained on synthetic labs only</span><span class="flag warn">SYNTHETIC_DEVELOPMENT_DATA (max marks from Week 1 proposal example)</span><span class="flag ok">no errors found</span><h3>Errors</h3><ul><li>none</li></ul><h3>Missing concepts</h3><ul><li><b>T3</b>: inverse probability, surprise</li></ul><h3>Feedback</h3><p>The saved output matches. The write-up does not cover the reference ideas named below. The write-up for T3 does not cover: inverse probability, surprise.</p></div>
+  <pre id="score">assignment_id: LAB_SYN2
+code: 7.87
+explanation: 5.13
+documentation: 2.14
+overall: 15.14 / 20
+output_match_rate: 1
+flag_output_ok_explanation_weak: true
+errors: []
+missing_concepts: {"T3":["inverse probability","surprise"]}
+feedback: The saved output matches. The write-up does not cover the reference ideas named below. The write-up for T3 does not cover: inverse probability, surprise.
+confidence: {"code":null,"explanation":0.986,"documentation":null,"overall":0.986,"method":"Agreement between week2_tfidf and week3_combined is computed only where their feature lists differ. This is not a calibrated probability."}
+variant_marks: {"week2_tfidf":{"code":7.87,"explanation":5.24,"documentation":2.14,"overall":15.26,"max_score":20},"week3_semantic":{"code":7.87,"explanation":4.77,"documentation":2.14,"overall":14.79,"max_score":20},"week3_combined":{"code":7.87,"explanation":5.13,"documentation":2.14,"overall":15.14,"max_score":20}}
+alignment: {"method":"strict","aligned":11,"unaligned":3}</pre>
+  <h2>Student-support signal</h2>
+  <pre id="signal">{
+  "source": "notebook-lab-evaluator",
+  "assignment_id": "LAB_SYN2",
+  "overall": 15.14,
+  "max_score": 20,
+  "needs_human_review": true,
+  "reason": "The saved output matches. The write-up does not cover the reference ideas named below. The write-up for T3 does not cover: inverse probability, surprise."
+}</pre>
+
+  <h2>Call it from another app</h2>
+  <div class="tabs"><button type="button" data-t="curl">curl</button><button type="button" data-t="py">Python</button><button type="button" data-t="ps">PowerShell</button></div>
+  <pre id="snippet">curl -s -X POST http://127.0.0.1:8000/evaluate-notebook -F "file=@my_lab.ipynb" -F "assignment_id=LAB_SYN2"</pre>
+
+  <script>
+    const form = document.getElementById("form");
+    const status = document.getElementById("status");
+    const scoreBox = document.getElementById("score");
+    const signalBox = document.getElementById("signal");
+    const summary = document.getElementById("summary");
+    const labSel = document.getElementById("lab");
+    const sampleSel = document.getElementById("sample");
+    const origin = window.location.origin;
+    function esc(s) { return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+    const snippets = {
+      curl: () => `curl -s -X POST ${origin}/evaluate-notebook -F "file=@my_lab.ipynb" -F "assignment_id=${labSel.value}"`,
+      py: () => `import requests\nr = requests.post("${origin}/evaluate-notebook",\n                  files={"file": open("my_lab.ipynb", "rb")},\n                  data={"assignment_id": "${labSel.value}"})\nreport = r.json()\nsignal = requests.post("${origin}/support-signal", json=report).json()\nprint(report["overall"], signal["needs_human_review"])`,
+      ps: () => `curl.exe -s -X POST ${origin}/evaluate-notebook -F "file=@my_lab.ipynb" -F "assignment_id=${labSel.value}"`
+    };
+    let tab = "curl";
+    function drawSnippet() { document.getElementById("snippet").textContent = snippets[tab](); }
+    document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => { tab = b.dataset.t; drawSnippet(); }));
+    labSel.addEventListener("change", drawSnippet);
+    drawSnippet();
+
+    fetch("/samples").then(r => r.json()).then(list => {
+      sampleSel.innerHTML = list.map(s => `<option value="${esc(s.name)}" data-lab="${esc(s.assignment_id)}">${esc(s.description)} [${esc(s.assignment_id)}]</option>`).join("");
+      // ?sample=<name> scores that sample on load (used by the headless check and as a demo shortcut).
+      const auto = new URLSearchParams(window.location.search).get("sample");
+      if (auto && list.some(s => s.name === auto)) { sampleSel.value = auto; document.getElementById("runSample").click(); }
+    }).catch(() => { sampleSel.innerHTML = "<option value=''>(no samples)</option>"; });
+
+    function showFields(report) {
+      const flags = [];
+      if (report.flag_output_ok_explanation_weak) flags.push('<span class="flag warn">output OK, explanation weak</span>');
+      if (report.prediction_status) flags.push('<span class="flag warn">' + esc(report.prediction_status) + '</span>');
+      if (report.reference_status) flags.push('<span class="flag warn">' + esc(report.reference_status) + '</span>');
+      (report.errors || []).length ? flags.push('<span class="flag bad">' + report.errors.length + ' error(s)</span>') : flags.push('<span class="flag ok">no errors found</span>');
+      const mc = report.missing_concepts || {};
+      const mcList = Object.keys(mc).filter(k => (mc[k] || []).length).map(k => "<li><b>" + esc(k) + "</b>: " + mc[k].map(esc).join(", ") + "</li>").join("");
+      summary.innerHTML =
+        '<div class="marks">' +
+        '<div class="mark">Overall<b>' + report.overall + ' / ' + report.max_score + '</b></div>' +
+        '<div class="mark">Code<b>' + report.code + ' / 8</b></div>' +
+        '<div class="mark">Explanation<b>' + report.explanation + ' / 8</b></div>' +
+        '<div class="mark">Documentation<b>' + report.documentation + ' / 4</b></div>' +
+        '<div class="mark">Output match<b>' + (report.output_match_rate === null || report.output_match_rate === undefined ? "n/a" : report.output_match_rate) + '</b></div>' +
+        '</div>' + flags.join("") +
+        '<h3>Errors</h3><ul>' + ((report.errors || []).map(e => "<li>" + esc(e) + "</li>").join("") || "<li>none</li>") + '</ul>' +
+        '<h3>Missing concepts</h3><ul>' + (mcList || "<li>none</li>") + '</ul>' +
+        '<h3>Feedback</h3><p>' + esc(report.feedback || "") + '</p>';
+      const lines = [
+        "assignment_id: " + report.assignment_id,
+        "code: " + report.code,
+        "explanation: " + report.explanation,
+        "documentation: " + report.documentation,
+        "overall: " + report.overall + " / " + report.max_score,
+        "output_match_rate: " + report.output_match_rate,
+        "flag_output_ok_explanation_weak: " + report.flag_output_ok_explanation_weak,
+        "errors: " + JSON.stringify(report.errors),
+        "missing_concepts: " + JSON.stringify(report.missing_concepts),
+        "feedback: " + report.feedback,
+        "confidence: " + JSON.stringify(report.confidence)
+      ];
+      if (report.variant_marks) lines.push("variant_marks: " + JSON.stringify(report.variant_marks));
+      if (report.alignment) lines.push("alignment: " + JSON.stringify(report.alignment));
+      scoreBox.textContent = lines.join("\n");
+    }
+
+    async function score(data) {
+      status.textContent = "Scoring the saved notebook.";
+      scoreBox.textContent = ""; signalBox.textContent = ""; summary.innerHTML = "";
+      let response;
+      try {
+        response = await fetch("/evaluate-notebook", { method: "POST", body: data });
+      } catch (err) {
+        status.textContent = "The server did not answer.";
+        return;
+      }
+      const payload = await response.json().catch(function () { return {}; });
+      if (!response.ok) {
+        status.textContent = "The score was not produced.";
+        scoreBox.textContent = payload.detail || response.statusText;
+        signalBox.textContent = "No support signal, because there is no score.";
+        return;
+      }
+      showFields(payload);
+      let signalResponse;
+      try {
+        signalResponse = await fetch("/support-signal", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        status.textContent = "The score is shown. The support signal did not answer.";
+        return;
+      }
+      const signal = await signalResponse.json().catch(function () { return {}; });
+      if (!signalResponse.ok) {
+        status.textContent = "The score is shown. The support signal was refused.";
+        signalBox.textContent = signal.detail || signalResponse.statusText;
+        return;
+      }
+      status.textContent = "Score and support signal are ready.";
+      signalBox.textContent = JSON.stringify(signal, null, 2);
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      score(new FormData(form));
+    });
+
+    document.getElementById("runSample").addEventListener("click", async function () {
+      const opt = sampleSel.selectedOptions[0];
+      if (!opt || !opt.value) return;
+      const blob = await fetch("/samples/" + opt.value).then(r => r.blob());
+      labSel.value = opt.dataset.lab; drawSnippet();
+      const data = new FormData();
+      data.append("file", blob, opt.value.split("/").pop());
+      data.append("assignment_id", opt.dataset.lab);
+      score(data);
+    });
+  </script>
+
+
+</body></html>
