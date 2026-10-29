@@ -41,6 +41,32 @@ A new lab is a new folder of five files (handout, solution, explanations, expect
 
 The repository also keeps earlier notes. Retired material is in `local_archive/`, which is gitignored. `docs/cleanup_log.md` records the cleanup. `docs/limitations.md` records the limits of the fitted models.
 
+## Quick start: browser demo (Windows)
+
+```bat
+python -m venv .venv
+.venv\Scripts\pip install -r requirements.txt
+.venv\Scripts\python scripts\prepare_demo_samples.py   REM optional, needs the class data on this machine
+.venv\Scripts\python -m src.api.app
+```
+
+Open `http://127.0.0.1:8000/`. The page has: upload + lab picker (synthetic `LAB_SYN1`, `LAB_SYN2` and the class labs `MU_L01` … `MU_L10`), a sample picker (synthetic examples, anonymised class samples if prepared, one failure case), the marks, errors, missing concepts, feedback, the "output OK, explanation weak" flag, the student-support signal, and a *Call it from another app* panel (curl / Python / PowerShell). `?sample=<name>` scores a sample on load. The 2-3 minute live demo script is `demo/RUNBOOK.md`; saved JSON fallbacks are in `demo/fallback/` and page captures in `demo/check/`.
+
+## Class dataset (Managing Uncertainty)
+
+- `data/class/manifest.csv`: keep/drop decision for each of the 88 files (62 kept, 26 dropped) with the reason and flags. Raw copies, id map and names are gitignored. Summary and feasibility verdict: `docs/class_dataset.md`.
+- `data/class/references/MU_*`: five-file references per lab, **team-authored, not faculty-issued** (`python scripts/build_class_references.py`).
+- `python scripts/run_class.py` anonymises and scores every kept notebook into `results/class_mu/` and writes `data/class/annotations/marking_sheet.csv`.
+- `python scripts/eval_class.py` compares filled human marks with predictions (MAE, RMSE, Pearson, Spearman, within ±1, QWK). Today it reports "no human marks yet".
+- The optional LLM grader is never called on class notebooks.
+
+## Tests
+
+```bat
+.venv\Scripts\python -m pytest -q
+```
+
+# Development history
 ## Week 5
 Protocol: `docs/week5_protocol.md` (written before any v2 model run). Report: `results/week5/Group3_Week5_Evaluation_Report.docx`. Addendum: `results/week5/Group3_Week5_Addendum.docx`.
 ```bash
@@ -54,11 +80,9 @@ All data are synthetic (v1: simulated annotators; v2: rule-derived labels). The 
 
 NLP Course Project 2026, AI University Platform. Team: J013, J015, J016, J017, J018.
 
-> **Current status: development build on SYNTHETIC data.** The class notebooks, reference
-> solutions/explanations and faculty-approved dataset are not yet available. Everything under
-> `data/synthetic/` is team-authored fixture data with SIMULATED labels. It exists to build and
-> test the pipeline. No result in `results/synthetic_dev/` is evidence of how the evaluator
-> performs on real student submissions.
+> **Status:** the models are trained on SYNTHETIC labs with rule-derived labels. The class
+> dataset (Managing Uncertainty, 62 kept notebooks) is scored as out-of-domain, unvalidated
+> predictions against team-authored references. No human marks exist yet. See `docs/evaluation.md`.
 
 ## Week 4: baseline vs improved model
 
