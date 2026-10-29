@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 8.0,
+  "documentation": 3.0,
+  "overall": 17.0,
+  "max_score": 20,
+  "feedback": "Task T3 code uses product of probabilities instead of the reference sum-of-log-probabilities then exp(-avg).",
+  "justification": {
+    "code": "T1 and T2 match the reference method and output exactly (T2 reimplements counters but still uses the intended add-one formula). T3 uses the mathematically equivalent product-of-probabilities form instead of the reference sum-of-logs then exp; this is a non-intended method that still produces the correct numeric output, so the anchor for 6 applies (all tasks essentially correct with one minor issue).",
+    "explanation": "T2 explanation is conceptually correct and covers all reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass) in the student's own words. T3 explanation is also correct, covers inverse probability / normalised per word / lower is better / surprise, and matches the reference closely; all prompts answered, so the anchor for 8 applies.",
+    "documentation": "T1 and T2 contain brief but meaningful comments explaining the purpose of the counters and the smoothing formula; T3 has a comment on the probability multiplication. Combined with clear markdown headings this meets the anchor for 3 (good comments with only minor gaps)."
+  },
+  "missing_concepts": {},
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2483,
+    "completion_tokens": 289
+  },
+  "cost_usd": 0.00382625
+}

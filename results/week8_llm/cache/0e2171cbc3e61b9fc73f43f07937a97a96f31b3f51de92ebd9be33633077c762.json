@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 4.0,
+  "documentation": 2.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T2: missing add-one function, NameError on vocab_size, no saved P(cat | the) output. T3 explanation: misses inverse probability, normalised per word, lower is better, surprise.",
+  "justification": {
+    "code": "Code: 4 - T2 has a NameError (vocab_size undefined) and uses a different non-intended method that produces wrong output (no saved numeric output for T2); T1 and T3 are essentially correct and produce the expected saved outputs with the reference method (T3 uses the product form but yields the identical numeric result).",
+    "explanation": "Explanation: 4 - T2 explanation is completely missing (placeholder/empty markdown); T3 explanation is partly correct but generic/vague and misses all reference ideas (inverse probability, normalised per word, lower is better, surprise).",
+    "documentation": "Documentation: 2 - A helper function is defined with a trivial comment-free docstring-like name; otherwise no comments, no docstrings, and no markdown structure beyond the required headings."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2380,
+    "completion_tokens": 278
+  },
+  "cost_usd": 0.00367
+}

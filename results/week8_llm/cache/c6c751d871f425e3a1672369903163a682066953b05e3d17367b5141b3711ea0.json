@@ -1,0 +1,32 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 4.0,
+  "documentation": 2.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T1 missed adjacent bigrams (used skip-2 instead of zip(toks[:-1], toks[1:])). T3 explanation missed inverse probability, normalised per word, and surprise.",
+  "justification": {
+    "code": "T1 uses wrong bigram extraction (zip(toks[:-2], toks[2:]) instead of adjacent pairs) and produces wrong output 0 instead of 2; T2 and T3 are essentially correct with the intended Laplace method and give the expected numeric outputs. This is one major error plus a cosmetic helper function, fitting the 4-anchor (about half the tasks correct with wrong output).",
+    "explanation": "T2 explanation covers zero probability, unseen bigrams, add one, vocabulary size, and probability mass in own words (matches all reference ideas). T3 explanation only says 'A lower perplexity is better' and misses inverse probability, normalised per word, and surprise; this is partly correct with several reference ideas missing, fitting the 4-anchor.",
+    "documentation": "A few non-trivial comments are present (e.g. '# pairs of tokens', '# Laplace estimate for one bigram', '# perplexity = exp of the average negative log-probability per bigram') but they are sparse and some are partly trivial; fits the 2-anchor."
+  },
+  "missing_concepts": {
+    "T1": [
+      "adjacent bigrams via zip(toks[:-1], toks[1:])"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2420,
+    "completion_tokens": 379
+  },
+  "cost_usd": 0.0039725
+}

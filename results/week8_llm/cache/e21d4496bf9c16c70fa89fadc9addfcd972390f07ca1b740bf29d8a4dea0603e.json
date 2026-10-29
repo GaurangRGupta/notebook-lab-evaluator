@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 4.0,
+  "documentation": 2.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T1 missed adjacent bigram counting (used skip-bigrams instead) and produced count=0 instead of 2. T2 missed the correct Laplace formula, had a syntax error, and produced no valid P(cat | the). Both explanations missed all reference ideas (zero probability/unseen bigrams/add one/vocabulary size/probability mass for T2; inverse probability/normalised per word/lower is better/surprise for T3).",
+  "justification": {
+    "code": "T1 uses wrong bigram extraction (zip(toks[:-2], toks[2:]) instead of adjacent pairs) and produces wrong output (0 instead of 2); T2 has a syntax error (unclosed parenthesis and missing closing paren) plus wrong formula (division placed incorrectly); T3 is essentially correct and matches the expected output. This is about half the tasks correct with runtime/syntax errors and wrong outputs, so code=4.",
+    "explanation": "T2 explanation is a vague placeholder ('Smoothing is used to smooth the probabilities of the model') that does not cover any reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass). T3 explanation is also vague ('Perplexity shows how good the model is') and misses all reference ideas (inverse probability, normalised per word, lower is better, surprise). This is generic, contains conceptual shallowness, and misses several ideas, so explanation=4.",
+    "documentation": "There is a docstring on the tokens helper and one non-trivial comment on the perplexity formula; otherwise comments are absent or trivial. This qualifies as some comments but sparse, so documentation=2."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2415,
+    "completion_tokens": 470
+  },
+  "cost_usd": 0.00419375
+}

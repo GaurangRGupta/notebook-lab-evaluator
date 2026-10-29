@@ -1,0 +1,31 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 6.0,
+  "documentation": 3.0,
+  "overall": 13.0,
+  "max_score": 20,
+  "feedback": "T2 code uses undefined 'doc' (should be 'docs') and has output mismatch; T3 has syntax error (missing comma) and output mismatch.",
+  "justification": {
+    "code": "Code: 4 - about half the tasks correct (T1 correct with intended method and output; T2 and T3 have runtime/syntax errors plus wrong output in T2 and T3 as per checks).",
+    "explanation": "Explanation: 6 - both prompts answered and conceptually correct, covers most reference ideas in own words but misses 'logarithm', 'inverse document frequency' (T2) and 'norm' (T3).",
+    "documentation": "Documentation: 3 - one meaningful comment present; docstring for function; clear markdown structure but gaps in other cells."
+  },
+  "missing_concepts": {
+    "T2": [
+      "logarithm",
+      "inverse document frequency"
+    ],
+    "T3": [
+      "norm"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2279,
+    "completion_tokens": 202
+  },
+  "cost_usd": 0.00335375
+}

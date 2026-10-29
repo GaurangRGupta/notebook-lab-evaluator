@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 4.0,
+  "documentation": 2.0,
+  "overall": 12.0,
+  "max_score": 20,
+  "feedback": "T2 explanation misses zero probability, unseen bigrams, add one to counts, and probability mass. T3 explanation incorrectly states perplexity multiplies sentence length by probability and claims longer sentences are always better.",
+  "justification": {
+    "code": "T1 uses a different method (plain dict instead of Counter) but produces the correct numeric output; T2 and T3 also produce the correct numeric outputs with essentially correct smoothing and perplexity calculations (T3 uses product of probs instead of sum of log-probs but still yields the reference 4.472). One minor non-intended method and duplicated code, so 6.",
+    "explanation": "T2 explanation is shallow and only mentions adding to the vocabulary size; it misses zero probability, unseen bigrams, add one to counts, and redistributing probability mass. T3 explanation is conceptually wrong (claims longer sentences are always better and misstates the formula). Several reference ideas missing plus one clear error, so 4.",
+    "documentation": "Some inline comments exist (e.g. \"add-one smoothing\" and \"multiply smoothed bigram probabilities\") and a helper function is defined, but they are partly trivial and there are no docstrings or clear markdown beyond the task headings, so 2."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2454,
+    "completion_tokens": 379
+  },
+  "cost_usd": 0.004015
+}

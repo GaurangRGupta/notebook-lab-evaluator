@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 6.0,
+  "documentation": 3.0,
+  "overall": 13.0,
+  "max_score": 20,
+  "feedback": "T2 and T3: missed reference ideas zero probability/unseen bigrams/add one/vocabulary size/probability mass (T2) and inverse probability/normalised per word/surprise (T3); also output mismatches and syntax error in T3.",
+  "justification": {
+    "code": "Code: 4 - about half the tasks correct (T1 correct with intended method and correct output; T2 and T3 have wrong outputs, T3 has a syntax error, and multiple cells were not executed).",
+    "explanation": "Explanation: 6 - both prompts answered and conceptually correct, but misses several reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass for T2; inverse probability, normalised per word, surprise for T3) and is somewhat shallow/generic.",
+    "documentation": "Documentation: 3 - docstring present for the helper function, some meaningful comments on logic, but gaps in other cells and no markdown structure beyond headings."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2513,
+    "completion_tokens": 262
+  },
+  "cost_usd": 0.00379625
+}

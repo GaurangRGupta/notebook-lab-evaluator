@@ -1,0 +1,34 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 6.0,
+  "documentation": 3.0,
+  "overall": 13.0,
+  "max_score": 20,
+  "feedback": "T1: for-loop syntax error and output mismatch (reference uses list comprehension and sorted set); T2/T3: multiple syntax errors (missing parentheses, missing comma) prevent correct saved outputs.",
+  "justification": {
+    "code": "4: about half the tasks correct (T2 shape is the expected (3,12) when syntax is ignored), but T1 and T3 have syntax errors preventing execution, T1 output mismatch, and non-intended methods in all tasks.",
+    "explanation": "6: explanations are conceptually correct in the student's own words and cover the core reference ideas for both T2 (term frequency, common words down-weighted, rare words weighted higher) and T3 (dot product), but miss inverse document frequency / logarithm from T2 and angle / norm / document length / direction from T3.",
+    "documentation": "3: docstring present for the tokenize function with meaningful comment on non-obvious logic; markdown structure is clear but no other comments."
+  },
+  "missing_concepts": {
+    "T2": [
+      "inverse document frequency",
+      "logarithm"
+    ],
+    "T3": [
+      "angle",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2257,
+    "completion_tokens": 247
+  },
+  "cost_usd": 0.00343875
+}

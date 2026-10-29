@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 8.0,
+  "documentation": 3.0,
+  "overall": 17.0,
+  "max_score": 20,
+  "feedback": "T2 code uses a non-intended method (no vectorizer variable or print) and T3 computes cosine manually instead of using sklearn.metrics.pairwise.cosine_similarity.",
+  "justification": {
+    "code": "T1: correct output with a relevant (if slightly more complex) method, no errors. T2: correct shape but uses a non-intended method (no explicit vectorizer variable, direct call on class, no print, relies on last-expression output). T3: correct output but uses a non-intended method (manual numpy calculation instead of cosine_similarity). Overall essentially correct with one or two minor issues per the 6-anchor.",
+    "explanation": "Both explanation prompts are answered in the student's own words. They cover all reference ideas (term frequency, inverse document frequency, logarithm, common words down-weighted, rare words weighted higher for T2; angle, dot product, norm, document length, direction for T3) and are conceptually correct, matching the reference explanation closely.",
+    "documentation": "Includes a meaningful docstring for the tokenize function where the logic is non-obvious; uses clear markdown structure with headings for each task. Minor gap in lacking comments for the T3 numpy implementation."
+  },
+  "missing_concepts": {},
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2259,
+    "completion_tokens": 285
+  },
+  "cost_usd": 0.00353625
+}

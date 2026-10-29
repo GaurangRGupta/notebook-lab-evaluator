@@ -1,0 +1,18 @@
+{
+  "notebooks": 6,
+  "runs_per_notebook": 3,
+  "temperature": 0,
+  "max_range_per_dimension": {
+    "code": 2.0,
+    "explanation": 2.0,
+    "documentation": 1.0,
+    "overall": 5.0
+  },
+  "mean_range_per_dimension": {
+    "code": 0.6666666666666666,
+    "explanation": 1.3333333333333333,
+    "documentation": 0.5,
+    "overall": 1.8333333333333333
+  },
+  "notebooks_identical_on_all_dimensions": 1
+}

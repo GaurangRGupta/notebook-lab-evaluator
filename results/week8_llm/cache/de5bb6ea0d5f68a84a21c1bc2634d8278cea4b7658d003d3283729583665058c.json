@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 2.0,
+  "documentation": 2.0,
+  "overall": 6.0,
+  "max_score": 20,
+  "feedback": "T1 missed adjacent bigrams (used skip-grams, output 0 instead of 2); T2 missed reference explanation ideas on zero probability/unseen bigrams/add-one/vocabulary size/probability mass (generic text only, plus NameError); T3 missed reference explanation ideas on inverse probability/normalised per word/lower is better/surprise (generic text only, plus NameError).",
+  "justification": {
+    "code": "Code: 2. Most tasks fail (T1 uses wrong skip-bigram instead of adjacent bigrams and gives wrong output 0; T2 and T3 have NameError crashes from undefined vocab_size/math and wrong outputs), but there are relevant attempts at counters and probability loops (anchor: most tasks fail but relevant attempt).",
+    "explanation": "Explanation: 2. Both explanations are mostly vague/generic ('makes the language model better', 'shows how good the model is') and miss all reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass, inverse probability, normalised per word, lower is better, surprise); contains no conceptual depth from the reference (anchor: mostly vague).",
+    "documentation": "Documentation: 2. Some comments present (e.g. '# pairs of tokens', '# smoothed probability', '# perplexity of the test sentence') but they are sparse and mostly trivial."
+  },
+  "missing_concepts": {
+    "T1": [
+      "adjacent bigrams via zip(toks[:-1], toks[1:])"
+    ],
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2403,
+    "completion_tokens": 367
+  },
+  "cost_usd": 0.00392125
+}

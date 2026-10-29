@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 6.0,
+  "documentation": 3.0,
+  "overall": 11.0,
+  "max_score": 20,
+  "feedback": "T1 and T3: student missed reference method and expected numeric output (unique vocab of 12; TF-IDF cosine 0.6344).",
+  "justification": {
+    "code": "Code: 2. T1 uses a wrong method (counts tokens with repetition instead of unique vocabulary) and produces wrong output (17 instead of 12); T2 is essentially correct (minor alias and no print but correct shape); T3 uses wrong method (raw counts dot product instead of TF-IDF cosine) and produces wrong output (6 instead of 0.6344). This is most tasks fail but with relevant attempts, matching the 2 anchor.",
+    "explanation": "Explanation: 6. T2 explanation is conceptually correct in own words but shallow and misses several reference ideas (inverse document frequency, logarithm, rare words weighted higher); T3 explanation is vague/generic and misses all reference ideas (angle, dot product, norm, document length, direction).",
+    "documentation": "Documentation: 3. Good docstring on the tokenize helper and a meaningful comment on the TF-IDF matrix; minor gap is lack of any comment on the T3 similarity code."
+  },
+  "missing_concepts": {
+    "T1": [
+      "unique vocabulary",
+      "len(vocab)"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ],
+    "T2": [
+      "inverse document frequency",
+      "logarithm",
+      "rare words weighted higher"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2220,
+    "completion_tokens": 338
+  },
+  "cost_usd": 0.00362
+}

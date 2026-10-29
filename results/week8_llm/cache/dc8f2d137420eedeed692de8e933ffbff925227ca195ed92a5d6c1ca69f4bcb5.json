@@ -1,0 +1,34 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 4.0,
+  "documentation": 3.0,
+  "overall": 13.0,
+  "max_score": 20,
+  "feedback": "T2 explanation misses zero probability, add one, vocabulary size, and probability mass; T3 explanation misses inverse probability and normalised per word.",
+  "justification": {
+    "code": "T1-T3 all produce the exact expected numeric outputs using the intended Counter-based counting and add-one smoothing; the only deviation is redundant re-counting of the corpus in T2 and T3 (and an extra helper function in T1), but every cell runs without error and matches the reference outputs. This is one minor issue, so code = 6.",
+    "explanation": "T2 explanation only mentions unseen bigrams and is otherwise generic; it omits zero probability, add one, vocabulary size, and probability mass. T3 explanation is conceptually correct but replaces the reference phrasing with 'two raised to the per-token cross-entropy' and only partially covers 'lower is better' and 'surprise'. Several reference ideas are missing or shallow, so explanation = 4.",
+    "documentation": "T1 has a meaningful docstring on the helper; T2 and T3 contain brief inline comments describing the smoothing and perplexity formulas. This is good but has minor gaps (no docstring on p_add_one, some comments are near-trivial), so documentation = 3."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2466,
+    "completion_tokens": 369
+  },
+  "cost_usd": 0.004005
+}

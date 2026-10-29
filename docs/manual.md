@@ -557,7 +557,7 @@ That check uses a TF-IDF notebook already in the package. It confirms the server
 
 The marks in the sections above stay as they are. This call adds a separate `llm` object. It does not replace `code`, `explanation`, `documentation`, or `overall`.
 
-The client library is the OpenAI Python package, with `base_url` set to `https://api.x.ai/v1` and the model set to `grok-4.7`. The key is an xAI API key from the xAI console. That package speaks the OpenAI request shape, so it can call a vendor that offers the same shape. xAI does. Anthropic's own API uses a different request shape, so this setting does not send the notebook to Claude. A SuperGrok subscription does not pay for these calls. Put the key in a file named `.env` in the package directory. That file is gitignored.
+The client library is the OpenAI Python package, with `base_url` set to `https://api.x.ai/v1` and the model set to `grok-4.20-0309-non-reasoning` by default (set `NB_EVAL_LLM_MODEL` to change it). The evaluation of this grader is `docs/llm_evaluation.md`. The key is an xAI API key from the xAI console. That package speaks the OpenAI request shape, so it can call a vendor that offers the same shape. xAI does. Anthropic's own API uses a different request shape, so this setting does not send the notebook to Claude. A SuperGrok subscription does not pay for these calls. Put the key in a file named `.env` in the package directory. That file is gitignored.
 
 ```text
 XAI_API_KEY=your-key-here

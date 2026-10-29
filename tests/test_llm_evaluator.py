@@ -100,7 +100,7 @@ def test_cache_reuses_the_parsed_grade(tmp_path, monkeypatch):
     second = maybe_grade(_cells(), _ref(), [], complete=complete, cache_dir=tmp_path)
     assert calls["n"] == 1
     assert first["status"] == "ok"
-    assert first["model"] == "grok-4.7"
+    assert first["model"] == llm_evaluator.MODEL
     assert first["reference"] == "reference_solution.ipynb"
     assert first["overall"] == 15.14
     assert first["missing_concepts"] == {"T1": ["add one"]}

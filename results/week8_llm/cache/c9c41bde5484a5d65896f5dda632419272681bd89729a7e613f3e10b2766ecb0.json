@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 2.0,
+  "documentation": 3.0,
+  "overall": 9.0,
+  "max_score": 20,
+  "feedback": "T2: smoothing explanation misses all reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass) and is replaced by a generic statement; T2 code has NameError on vocab_size and does not define p_add_one; T3 explanation misses inverse probability, normalised per word, lower is better, surprise.",
+  "justification": {
+    "code": "Code: 4 - T1 produces the correct output with the intended method (using Counter and zip); T2 and T3 are essentially the same algorithm but T2 has a runtime NameError (vocab_size undefined) and redefines counters unnecessarily, while T3 gives the correct numeric output but uses a non-intended inline implementation instead of a reusable function like the reference p_add_one. Overall about half the tasks are fully correct with at least one runtime error and wrong output in T2.",
+    "explanation": "Explanation: 2 - T2 explanation is vague and generic ('makes the language model better and more accurate') and contains none of the reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass); T3 explanation is also generic ('a metric used for language models') and misses all reference ideas (inverse probability, normalised per word, lower is better, surprise).",
+    "documentation": "Documentation: 3 - Good docstring on the tokens helper and several meaningful comments explaining non-obvious logic (e.g. 'adjacent token pairs are bigrams', 'smoothed probability', perplexity comment); minor gap is that the main probability/perplexity cells lack docstrings."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2437,
+    "completion_tokens": 387
+  },
+  "cost_usd": 0.00401375
+}

@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 2.0,
+  "documentation": 1.0,
+  "overall": 5.0,
+  "max_score": 20,
+  "feedback": "T1: missed sorted set comprehension and has syntax error; T2: missed IDF explanation (wrongly claims common words get largest weight) and has syntax error; T3: missed full reference ideas on norm and direction.",
+  "justification": {
+    "code": "Code mark 2: most tasks fail (T1 has syntax error and wrong method/output, T2 has syntax error and wrong output, T3 has correct output but uses non-intended repeated vectorizer; cells not all executed), but there are relevant attempts matching the reference structure.",
+    "explanation": "Explanation mark 2: T2 explanation contains a clear conceptual error (claims common words like 'the' receive largest weight instead of being down-weighted) and misses all reference ideas; T3 is mostly correct but overall mostly vague with errors.",
+    "documentation": "Documentation mark 1: one trivial comment (the function definition) but otherwise no docstrings, comments, or meaningful markdown beyond the task headers."
+  },
+  "missing_concepts": {
+    "T1": [
+      "sorted({t for doc in tokens for t in doc})"
+    ],
+    "T2": [
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "norm",
+      "direction"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2246,
+    "completion_tokens": 345
+  },
+  "cost_usd": 0.00367
+}

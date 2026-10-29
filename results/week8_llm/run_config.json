@@ -1,0 +1,9 @@
+{
+  "model": "grok-4.20-0309-non-reasoning",
+  "temperature": 0,
+  "base_url": "https://api.x.ai/v1",
+  "labels": "results/week5/v2_run/labels_final.csv (rule-derived, synthetic)",
+  "split": "results/week5/v2_run/split.json (seed 42)",
+  "bootstrap": "bootstrap_ci n_boot=2000 seed=0; paired n_boot=5000 seed=0",
+  "data_status": "SYNTHETIC_DEVELOPMENT_DATA_V2_RULE_LABELS"
+}

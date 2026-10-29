@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 4.0,
+  "documentation": 2.0,
+  "overall": 12.0,
+  "max_score": 20,
+  "feedback": "T2 explanation misses zero probability, add one, vocabulary size and probability mass. T3 explanation misses inverse probability, normalised per word, lower is better and surprise. T3 output does not match the reference value.",
+  "justification": {
+    "code": "T1 matches reference output and method (with helper function). T2 and T3 produce correct numeric output but duplicate the corpus counting code instead of reusing the earlier unigrams/bigrams counters and the p_add_one function from the reference; this is a non-intended method. Cell 11 was never executed. Overall one minor issue plus the non-executed cell, so code=6.",
+    "explanation": "T2 explanation only says 'some bigrams are unseen' and omits all reference ideas (zero probability, add one, vocabulary size, probability mass). T3 explanation is conceptually correct but uses different wording and misses every named reference idea (inverse probability, normalised per word, lower is better, surprise). Therefore explanation=4.",
+    "documentation": "One docstring is present for the tokens helper; the rest of the notebook has no comments or markdown beyond the required headings, so documentation=2."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2419,
+    "completion_tokens": 360
+  },
+  "cost_usd": 0.00392375
+}

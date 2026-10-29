@@ -1,0 +1,43 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 2.0,
+  "documentation": 3.0,
+  "overall": 7.0,
+  "max_score": 20,
+  "feedback": "T1: uses undefined 'documents' and misses sorted set vocabulary; T2: syntax error and generic TF-IDF explanation misses term frequency / inverse document frequency / logarithm / down-weighting; T3: uses CountVectorizer instead of cosine_similarity and misses most reference ideas on cosine.",
+  "justification": {
+    "code": "Code mark 2: most tasks fail (T1 uses undefined 'documents' and produces output mismatch, T2 has syntax error preventing run, T3 uses wrong method with wrong output) but there are relevant attempts at each task.",
+    "explanation": "Explanation mark 2: T2 explanation is vague/generic and misses all reference ideas (term frequency, inverse document frequency, logarithm, common words down-weighted, rare words weighted higher); T3 explanation is shallow, mentions only 'angle' and misses the other reference ideas (dot product, norm, document length, direction).",
+    "documentation": "Documentation mark 3: docstring present for the tokenize function and a few non-trivial comments, but gaps remain (no docstrings for other cells, sparse overall)."
+  },
+  "missing_concepts": {
+    "T1": [
+      "sorted vocabulary set",
+      "output Vocabulary size: 12"
+    ],
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher",
+      "output TF-IDF matrix shape: (3, 12)"
+    ],
+    "T3": [
+      "dot product",
+      "norm",
+      "document length",
+      "direction",
+      "output Cosine similarity: 0.6344"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2209,
+    "completion_tokens": 327
+  },
+  "cost_usd": 0.00357875
+}

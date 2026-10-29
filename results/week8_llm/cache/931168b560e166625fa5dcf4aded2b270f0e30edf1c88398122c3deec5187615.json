@@ -1,0 +1,35 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 4.0,
+  "documentation": 2.0,
+  "overall": 12.0,
+  "max_score": 20,
+  "feedback": "T2 explanation misses all reference ideas on why smoothing is needed (zero probability, unseen bigrams, add one, vocabulary size, probability mass). T3 explanation misses the exact reference phrasing of inverse probability and normalised per word.",
+  "justification": {
+    "code": "T1 uses a different method (plain dict instead of Counter) but produces the correct numeric output; T2 and T3 are essentially correct with the intended Laplace smoothing and perplexity calculation (minor code duplication and cosmetic differences). This matches the 6 anchor: all tasks essentially correct with one minor issue (non-intended method that still gives the right output).",
+    "explanation": "T2 explanation is a vague placeholder that does not cover any of the reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass) and is not in the student's own words. T3 explanation is conceptually correct and covers most reference ideas (inverse probability via effective choices, normalised per word implied, lower is better, surprise via 'rarely caught off guard') but is shallow on the exact definition. Overall this is 4: partly correct, generic in places, several ideas missing.",
+    "documentation": "T1 has a trivial function comment; T3 has one meaningful comment on the perplexity formula; no docstrings or clear markdown beyond headings. This matches the 2 anchor: some comments but sparse or partly trivial."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2432,
+    "completion_tokens": 404
+  },
+  "cost_usd": 0.00405
+}

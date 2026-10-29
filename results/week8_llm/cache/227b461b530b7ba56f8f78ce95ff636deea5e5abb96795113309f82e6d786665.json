@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 2.0,
+  "documentation": 2.0,
+  "overall": 8.0,
+  "max_score": 20,
+  "feedback": "T1 used wrong method and produced incorrect vocabulary size 17 instead of 12; T2 explanation reversed how IDF works.",
+  "justification": {
+    "code": "Code: 4 - T1 gives wrong output (17 instead of 12) with non-intended method (counts with multiplicity instead of unique vocabulary); T2 and T3 are essentially correct (T2 uses alias and no print but produces right shape, T3 matches intended method and output).",
+    "explanation": "Explanation: 2 - T2 explanation contains a clear conceptual error (claims IDF grows with documents containing the word and gives highest weight to common words); T3 explanation is too shallow and misses most reference ideas (angle, dot product, norm, document length, direction).",
+    "documentation": "Documentation: 2 - some comments present but mostly trivial or sparse; no docstrings."
+  },
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2200,
+    "completion_tokens": 239
+  },
+  "cost_usd": 0.0033475
+}

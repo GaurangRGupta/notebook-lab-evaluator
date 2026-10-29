@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 6.0,
+  "documentation": 2.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T1: student used zip(toks[:-2], toks[2:]) instead of zip(toks[:-1], toks[1:]) and obtained count(the, cat) = 0 instead of 2. T2 explanation misses reference ideas zero probability, unseen bigrams, add one to every bigram count, vocabulary size, probability mass.",
+  "justification": {
+    "code": "Code: 2. T1 uses the wrong method (skipping tokens with zip(toks[:-2], toks[2:]) instead of adjacent pairs) and produces wrong output (0 instead of 2); T2 and T3 are essentially correct with the intended Laplace smoothing and produce the expected numeric outputs. This matches the anchor for most tasks failing but with relevant attempt.",
+    "explanation": "Explanation: 6. Both explanation prompts are answered in the student's own words and are conceptually correct, but the T2 explanation is shallow and misses several reference ideas (zero probability to any bigram that never appeared, sentence gets probability zero, adds one to every bigram count, adds V to the denominator, redistributing probability mass from seen to unseen events).",
+    "documentation": "Documentation: 2. There are some comments present (e.g. \"pairs of tokens\", \"Laplace estimate for one bigram\", \"perplexity = exp of the average negative log-probability per bigram\"), but they are sparse and partly trivial."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2420,
+    "completion_tokens": 357
+  },
+  "cost_usd": 0.0039175
+}

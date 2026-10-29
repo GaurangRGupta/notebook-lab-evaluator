@@ -1,0 +1,33 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 6.0,
+  "documentation": 0.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T1 code contains a syntax error and does not use Counter; T3 explanation misses the reference ideas inverse probability and normalised per word.",
+  "justification": {
+    "code": "T1 has a syntax error (missing colon) and uses a non-intended manual dict instead of Counter, so does not run; T2 and T3 are essentially correct with the right numeric output but repeat the corpus counting code unnecessarily. This matches the 4 anchor: about half the tasks correct, at least one runtime/syntax error.",
+    "explanation": "Both explanation prompts are answered in the student's own words. T2 explanation covers all reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass). T3 explanation is conceptually correct but only shallowly touches 'lower is better' and 'surprise' while missing the explicit reference ideas 'inverse probability' and 'normalised per word'.",
+    "documentation": "No docstrings, no markdown beyond the supplied headings, and no comments at all inside any code cell."
+  },
+  "missing_concepts": {
+    "T1": [
+      "Counter",
+      "unigrams",
+      "bigrams"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2448,
+    "completion_tokens": 316
+  },
+  "cost_usd": 0.00385
+}

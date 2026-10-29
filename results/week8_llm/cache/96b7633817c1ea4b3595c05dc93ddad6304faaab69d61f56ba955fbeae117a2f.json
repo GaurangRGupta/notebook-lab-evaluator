@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 8.0,
+  "explanation": 2.0,
+  "documentation": 2.0,
+  "overall": 12.0,
+  "max_score": 20,
+  "feedback": "T2 explanation misses zero probability, unseen bigrams, add one to counts and probability mass. T3 explanation misses inverse probability, normalised per word, lower is better and surprise.",
+  "justification": {
+    "code": "T1 and T2 and T3 all produce the exact expected numeric outputs using the intended add-one smoothing method (T3 uses the mathematically equivalent product form); cells run in order with only cosmetic differences such as extra re-counting and a helper function. Matches the 8 anchor.",
+    "explanation": "T2 explanation is shallow and only mentions adding to the vocabulary size; it omits zero probability, unseen bigrams, add one to counts, and redistributing probability mass. T3 explanation is generic and contains none of the reference ideas (inverse probability, normalised per word, lower is better, surprise). Scores 2.",
+    "documentation": "T1 has a meaningful docstring on the helper and a non-trivial comment; other cells have only one trivial comment. Matches the 2 anchor."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2417,
+    "completion_tokens": 332
+  },
+  "cost_usd": 0.00385125
+}

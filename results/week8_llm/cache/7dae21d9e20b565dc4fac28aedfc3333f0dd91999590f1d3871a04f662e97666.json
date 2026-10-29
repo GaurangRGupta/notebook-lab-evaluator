@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 2.0,
+  "documentation": 2.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T2 explanation misses zero probability, unseen bigrams, add one to counts, and probability mass. T3 explanation misses inverse probability, normalised per word, lower is better, and surprise; it also contains a clear conceptual error.",
+  "justification": {
+    "code": "T1 uses a different method (plain dict instead of Counter) but produces the correct output; T2 and T3 are essentially correct with the intended smoothing and perplexity calculation (minor code duplication and a non-intended product-of-probs form in T3 that still yields the right numeric result). This matches the 6 anchor: all tasks essentially correct with one minor issue (non-intended method that still gives the right output).",
+    "explanation": "T2 explanation is shallow and only mentions adding to the vocabulary size; it misses all reference ideas (zero probability, unseen bigrams, add one to counts, redistributing probability mass). T3 explanation is factually wrong (perplexity is not sentence length times probability) and misses every reference idea (inverse probability, normalised per word, lower is better, surprise). This is a 2: mostly vague or contains a clear conceptual error.",
+    "documentation": "A few inline comments exist but they are partly trivial or repeat the prompt; no docstrings or meaningful markdown structure beyond headings. Matches the 2 anchor: some comments but sparse or partly trivial."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2454,
+    "completion_tokens": 406
+  },
+  "cost_usd": 0.0040825
+}

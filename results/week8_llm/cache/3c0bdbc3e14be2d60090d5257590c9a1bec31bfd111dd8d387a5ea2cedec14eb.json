@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 4.0,
+  "documentation": 3.0,
+  "overall": 9.0,
+  "max_score": 20,
+  "feedback": "T1: syntax error and non-Counter implementation; T2 explanation misses zero probability / unseen bigrams / add one to counts / vocabulary size / probability mass; T3 explanation misses inverse probability / normalised per word / lower is better / surprise.",
+  "justification": {
+    "code": "Code: 2. T1 has a syntax error (missing colon) and uses a non-Counter dict loop instead of the reference method; T2 and T3 are essentially correct but repeat code and T3 uses the product-of-probabilities formulation rather than the reference log-sum-exp method. This is most tasks fail but with relevant attempt (anchor 2).",
+    "explanation": "Explanation: 4. T2 explanation is partly correct but generic, misses all reference ideas (zero probability, unseen bigrams, add one to counts, vocabulary size, redistributing probability mass) and is shallow; T3 explanation is vague and misses all reference ideas (inverse probability, normalised per word, lower is better, surprise).",
+    "documentation": "Documentation: 3. The tokens helper has a meaningful docstring; other comments are present but sparse/trivial."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2431,
+    "completion_tokens": 298
+  },
+  "cost_usd": 0.00378375
+}

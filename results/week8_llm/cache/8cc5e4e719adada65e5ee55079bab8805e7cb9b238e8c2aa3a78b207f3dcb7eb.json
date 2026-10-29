@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 4.0,
+  "documentation": 2.0,
+  "overall": 12.0,
+  "max_score": 20,
+  "feedback": "T2 explanation misses reference ideas zero probability, unseen bigrams, add one, vocabulary size, probability mass. T3 explanation misses reference ideas inverse probability, normalised per word, lower is better, surprise.",
+  "justification": {
+    "code": "Code: 6 - all tasks essentially correct (T1-T3 produce the expected numeric outputs) but with one minor issue per the anchor (non-intended method in T1 using plain dict instead of Counter, and duplicated corpus-counting code in T3).",
+    "explanation": "Explanation: 4 - partly correct and generic in places; T2 explanation misses most reference ideas (zero probability, unseen bigrams, add one to counts, vocabulary size, redistributing probability mass) and is shallow/incorrect; T3 explanation contains a clear conceptual error and misses all reference ideas (inverse probability, normalised per word, lower is better, surprise).",
+    "documentation": "Documentation: 2 - some comments present (e.g. \"add-one smoothing\" and \"multiply smoothed bigram probabilities\") but sparse and partly trivial; helper function lacks a docstring."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2454,
+    "completion_tokens": 290
+  },
+  "cost_usd": 0.0037925
+}

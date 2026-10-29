@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 0.0,
+  "documentation": 2.0,
+  "overall": 4.0,
+  "max_score": 20,
+  "feedback": "T1 and T2 and T3: syntax and name errors prevent correct outputs; T2 and T3 explanations are missing.",
+  "justification": {
+    "code": "Code mark 2: most tasks fail (T1 has syntax error and wrong output, T2 has NameError and wrong variable, T3 has syntax error) but there are relevant attempts at tokenization, vectorization and cosine similarity.",
+    "explanation": "Explanation mark 0: both explanation prompts contain only placeholder text ('Your answer here' and blank) and do not cover any reference ideas.",
+    "documentation": "Documentation mark 2: some comments present (e.g. '# build the matrix', '# add tokens') but they are sparse and partly trivial."
+  },
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2191,
+    "completion_tokens": 282
+  },
+  "cost_usd": 0.00344375
+}

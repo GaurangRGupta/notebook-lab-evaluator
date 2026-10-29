@@ -1,0 +1,27 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 6.0,
+  "documentation": 3.0,
+  "overall": 13.0,
+  "max_score": 20,
+  "feedback": "T3: student perplexity computation uses incorrect normalisation (len(test) instead of len(test)-1) and therefore produces the wrong numeric output (3.314 instead of 4.472).",
+  "justification": {
+    "code": "Code mark 4: T1 and T2 are essentially correct (T1 uses a non-intended but working dict method, T2 uses intended Counter method and gives correct output), but T3 has wrong output (3.314 instead of 4.472) due to incorrect normalisation (len(test) instead of len(test)-1) producing a runtime-correct but conceptually wrong result; this places it at the 'about half the tasks correct' anchor with one wrong output.",
+    "explanation": "Explanation mark 6: Both explanations are conceptually correct and cover the core reference ideas in own words (T2 covers zero probability, unseen bigrams, add one, vocabulary size, probability mass; T3 covers inverse probability/surprise, lower is better), but T3 is slightly shallow on 'normalised per word' and misses explicitly naming 'inverse probability of the test sentence'.",
+    "documentation": "Documentation mark 3: Good docstring for the tokens helper function and mostly clear markdown structure with comments; minor gap is lack of docstrings on the probability/perplexity calculations themselves."
+  },
+  "missing_concepts": {
+    "T3": [
+      "normalised by the number of words"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2463,
+    "completion_tokens": 341
+  },
+  "cost_usd": 0.00393125
+}

@@ -1,0 +1,39 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 6.0,
+  "documentation": 2.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T1 misses Counter and zip-based bigram counting (uses dict instead, with syntax error); T2/T3 miss full reference ideas on zero probability, unseen bigrams, probability mass, inverse probability, normalised per word, lower is better, surprise; syntax errors in T1 and T3.",
+  "justification": {
+    "code": "Code mark 2: most tasks fail (T1 has syntax error and wrong method/output, T2 and T3 have syntax errors preventing execution and output mismatches) but there are relevant attempts at counting and smoothing; does not reach 4 because of multiple runtime/syntax errors and wrong outputs across tasks.",
+    "explanation": "Explanation mark 6: both prompts answered and mostly correct in own words, but misses several reference ideas (e.g. 'unseen bigrams', 'redistributing probability mass', 'inverse probability', 'normalised per word', 'lower is better', 'surprise') making it shallow especially for T3.",
+    "documentation": "Documentation mark 2: some comments present (e.g. '# add-one smoothing...') but sparse and partly trivial; no docstrings or clear markdown beyond headings."
+  },
+  "missing_concepts": {
+    "T1": [
+      "Counter",
+      "zip(toks[:-1], toks[1:])"
+    ],
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "redistributing probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2482,
+    "completion_tokens": 319
+  },
+  "cost_usd": 0.0039
+}

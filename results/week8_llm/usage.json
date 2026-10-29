@@ -1,0 +1,13 @@
+{
+  "prompt_tokens": 167940,
+  "completion_tokens": 22571,
+  "calls_in_cache": 72,
+  "model": "grok-4.20-0309-non-reasoning",
+  "price_usd_per_1M": [
+    1.25,
+    2.5
+  ],
+  "total_cost_usd_all_cached_calls": 0.2663525,
+  "new_calls_this_run": 0,
+  "new_cost_usd_this_run": 0.0
+}

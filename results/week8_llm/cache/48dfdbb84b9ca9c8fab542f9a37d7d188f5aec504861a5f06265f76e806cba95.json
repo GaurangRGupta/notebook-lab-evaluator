@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 4.0,
+  "documentation": 2.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T1: bigram_counts undefined and no output produced. T2 explanation: misses zero probability, unseen bigrams, add one, vocabulary size, probability mass. T3 explanation: completely missing.",
+  "justification": {
+    "code": "T1 fails with NameError (bigram_counts undefined) and produces no output; T2 and T3 are essentially correct with the intended add-one method and give the exact expected numeric outputs. This is one major runtime error plus a missing task, so code = 4.",
+    "explanation": "T2 explanation is a single generic sentence that does not cover any of the reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass). T3 explanation is entirely missing. This is several ideas missing plus one explanation missing, so explanation = 4.",
+    "documentation": "A few trivial inline comments are present; no docstrings, no meaningful comments on non-obvious logic, and markdown is minimal, so documentation = 2."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2391,
+    "completion_tokens": 335
+  },
+  "cost_usd": 0.00382625
+}

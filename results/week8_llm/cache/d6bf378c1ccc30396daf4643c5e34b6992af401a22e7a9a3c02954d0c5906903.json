@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 6.0,
+  "documentation": 2.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T1 missed unique vocabulary (used repeated token count); T2 missed correct variable and TfidfVectorizer usage; T3 missed cosine_similarity on TF-IDF vectors. T3 explanation missed angle, dot product, norm.",
+  "justification": {
+    "code": "Code mark 2: T1 uses a wrong method (counts tokens with repetition instead of unique vocabulary) and gives wrong output (17 instead of 12); T2 has a NameError (uses undefined 'doc' instead of 'docs') and wrong output; T3 uses CountVectorizer + raw dot product instead of TfidfVectorizer + cosine_similarity and gives wrong output (6 instead of 0.6344). This is a relevant attempt but most tasks fail with errors or wrong output (anchor 2).",
+    "explanation": "Explanation mark 6: T2 explanation is conceptually correct and covers all reference ideas (term frequency, inverse document frequency, logarithm, common words down-weighted, rare words weighted higher) in own words; T3 explanation is partly correct but shallow, mentions direction and document length but misses explicit reference ideas such as angle, dot product and norm (anchor 6).",
+    "documentation": "Documentation mark 2: A few trivial or sparse comments are present (e.g. '# count the words', '# build the matrix', '# similarity as a dot product of counts') but they are not meaningful for non-obvious logic and there are no docstrings or clear markdown beyond the task headings (anchor 2)."
+  },
+  "missing_concepts": {
+    "T1": [
+      "unique vocabulary",
+      "sorted set of tokens"
+    ],
+    "T2": [
+      "use docs not doc"
+    ],
+    "T3": [
+      "use TfidfVectorizer and cosine_similarity",
+      "angle",
+      "dot product",
+      "norm"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2265,
+    "completion_tokens": 446
+  },
+  "cost_usd": 0.00394625
+}

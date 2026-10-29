@@ -1,0 +1,34 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 4.0,
+  "documentation": 2.0,
+  "overall": 10.0,
+  "max_score": 20,
+  "feedback": "T1: used multiplicity count instead of set-based vocabulary and printed 17 instead of 12. T3 explanation: missed angle/norm/document-length ideas, only mentioned dot product.",
+  "justification": {
+    "code": "T1 uses a wrong method (counts tokens with multiplicity instead of unique vocabulary) and gives wrong output 17 instead of 12; T2 and T3 are essentially correct with the intended method and give the expected numeric outputs. This is about half the tasks correct with a wrong output, so code = 4.",
+    "explanation": "T2 explanation covers term frequency, inverse document frequency, logarithm, common words down-weighted and rare words weighted higher in the student's own words. T3 explanation is shallow, mentions only dot product and sharing words, and misses all reference ideas (angle, norm, document length, direction). One full explanation missing plus several ideas missing, so explanation = 4.",
+    "documentation": "T2 has one meaningful comment explaining the matrix shape; T3 has one comment naming the formula; other cells have only trivial comments or none. This matches 2 (some comments but sparse)."
+  },
+  "missing_concepts": {
+    "T1": [
+      "unique vocabulary",
+      "set of tokens"
+    ],
+    "T3": [
+      "angle",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2258,
+    "completion_tokens": 340
+  },
+  "cost_usd": 0.0036725
+}

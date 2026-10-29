@@ -1,0 +1,39 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 2.0,
+  "documentation": 2.0,
+  "overall": 6.0,
+  "max_score": 20,
+  "feedback": "T1 missed bigram counting with adjacent tokens (used skip-bigrams instead, output 0 instead of 2); T2 missed zero probability, unseen bigrams, add one, vocabulary size, probability mass (explanation is a tautology); T3 missed inverse probability, normalised per word, surprise (and has syntax errors).",
+  "justification": {
+    "code": "Code mark 2: most tasks fail (T1 uses wrong skip-bigram instead of bigram and gives wrong output 0; T2 and T3 have syntax errors so do not run and give wrong output), but there are relevant attempts at counters and probability calculations.",
+    "explanation": "Explanation mark 2: both explanations are mostly vague or contain clear conceptual errors (T2 is a tautology that does not cover any reference ideas; T3 is partly correct on lower-is-better but misses inverse probability, normalised per word, and surprise).",
+    "documentation": "Documentation mark 2: one non-trivial docstring for the tokens helper, but all other comments are absent and markdown structure is minimal."
+  },
+  "missing_concepts": {
+    "T1": [
+      "adjacent bigrams via zip(toks[:-1], toks[1:])"
+    ],
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2430,
+    "completion_tokens": 306
+  },
+  "cost_usd": 0.0038025
+}

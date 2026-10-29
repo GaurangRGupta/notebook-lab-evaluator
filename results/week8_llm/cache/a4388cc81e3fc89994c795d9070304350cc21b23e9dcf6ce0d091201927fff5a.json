@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 6.0,
+  "documentation": 3.0,
+  "overall": 11.0,
+  "max_score": 20,
+  "feedback": "T1 missed adjacent bigram counting (used zip(toks[:-2], toks[2:]) instead of zip(toks[:-1], toks[1:])), producing wrong count(the, cat). T2 missed reference explanation ideas (zero probability to sentence, add one to every bigram, vocabulary size).",
+  "justification": {
+    "code": "Code: 2. T1 uses the wrong method (skipping tokens with zip(toks[:-2], toks[2:]) instead of adjacent pairs) and produces wrong output 0; T2 reimplements correctly but T3 uses the non-intended product-of-probabilities method instead of the reference sum-of-logs + exp; one cell never executed. Matches anchor for 2 (most tasks fail but relevant attempt exists).",
+    "explanation": "Explanation: 6. Both prompts answered in own words and conceptually correct, but misses several reference ideas (zero probability to sentence, add-one to every bigram, vocabulary size in denominator, inverse probability, normalised per word).",
+    "documentation": "Documentation: 3. The helper function has a clear docstring; other comments are present and mostly meaningful, with only minor gaps."
+  },
+  "missing_concepts": {
+    "T1": [
+      "adjacent bigrams via zip(toks[:-1], toks[1:])"
+    ],
+    "T2": [
+      "zero probability to sentence",
+      "add one to every bigram",
+      "vocabulary size in denominator"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2480,
+    "completion_tokens": 324
+  },
+  "cost_usd": 0.00391
+}

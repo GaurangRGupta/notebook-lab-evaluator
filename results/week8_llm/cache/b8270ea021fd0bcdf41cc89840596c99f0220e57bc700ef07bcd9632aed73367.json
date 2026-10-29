@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 2.0,
+  "documentation": 3.0,
+  "overall": 9.0,
+  "max_score": 20,
+  "feedback": "T2 and T3: student missed reference ideas zero probability, unseen bigrams, add one to count, vocabulary size in denominator, probability mass, inverse probability, lower is better, surprise; also produced wrong perplexity output.",
+  "justification": {
+    "code": "Code: 4 - about half the tasks correct (T1 correct with intended method and output; T2 has syntax error and wrong output; T3 has wrong output and uses non-intended normalisation).",
+    "explanation": "Explanation: 2 - mostly vague or contains a clear conceptual error (T2 explanation is incomplete and misses all reference ideas; T3 explanation has the clear error that higher perplexity is better).",
+    "documentation": "Documentation: 3 - good comments present (e.g. on bigrams and normalisation) with only minor gaps; no docstrings but clear structure."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2423,
+    "completion_tokens": 241
+  },
+  "cost_usd": 0.00363125
+}

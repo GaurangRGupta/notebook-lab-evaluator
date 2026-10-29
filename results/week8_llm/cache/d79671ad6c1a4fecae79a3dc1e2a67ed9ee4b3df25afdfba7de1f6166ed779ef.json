@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 2.0,
+  "documentation": 3.0,
+  "overall": 11.0,
+  "max_score": 20,
+  "feedback": "T2 explanation misses zero probability, unseen bigrams, add one, vocabulary size, probability mass; T3 explanation misses inverse probability, normalised per word, lower is better, surprise.",
+  "justification": {
+    "code": "Code: 6 - all tasks essentially correct (T1, T2, T3 produce the expected numeric outputs) with one minor issue (T2 output mismatch noted in checks, plus cell 7 never executed).",
+    "explanation": "Explanation: 2 - mostly vague (T2 explanation is generic and incorrect; T3 explanation contains a clear conceptual error) and misses all reference ideas.",
+    "documentation": "Documentation: 3 - good docstring for the helper function and some explanatory comments, with only minor gaps."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2464,
+    "completion_tokens": 218
+  },
+  "cost_usd": 0.003625
+}

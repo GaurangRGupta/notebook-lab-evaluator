@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 6.0,
+  "documentation": 3.0,
+  "overall": 11.0,
+  "max_score": 20,
+  "feedback": "T1: output mismatch and NameError on bigram_counts; T3: output mismatch, missing import math, and no perplexity explanation covering inverse probability / normalised per word / lower is better / surprise.",
+  "justification": {
+    "code": "Code: 2. T1 fails with NameError (bigram_counts undefined) and output mismatch; T2 is essentially correct and produces the expected output; T3 has a NameError (math undefined) plus output mismatch. This is most tasks fail but with relevant attempts (anchor 2).",
+    "explanation": "Explanation: 6. Both prompts answered in own words and conceptually correct, but misses several reference ideas (zero probability to unseen bigrams, add one to counts, vocabulary size, redistributing probability mass, inverse probability, normalised per word, lower is better, surprise).",
+    "documentation": "Documentation: 3. The tokens helper has a meaningful docstring; other cells have no comments but the markdown structure is clear."
+  },
+  "missing_concepts": {
+    "T1": [
+      "count(the, cat) = 2"
+    ],
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2414,
+    "completion_tokens": 284
+  },
+  "cost_usd": 0.0037275
+}

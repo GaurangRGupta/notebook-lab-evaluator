@@ -1,0 +1,29 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 6.0,
+  "documentation": 2.0,
+  "overall": 14.0,
+  "max_score": 20,
+  "feedback": "T2 code uses undefined vocab_size (NameError) and recomputes counters; T3 explanation only says lower is better and misses inverse probability / normalised per word / surprise.",
+  "justification": {
+    "code": "Code: 6 - T1 and T3 give the correct output with the intended method (T3 uses the mathematically equivalent product form); T2 has a runtime NameError (vocab_size undefined) and reimplements the counters unnecessarily, but the core idea is present. One minor issue plus one runtime error fits the 6-anchor after accounting for the explicit checks provided.",
+    "explanation": "Explanation: 6 - Both prompts answered and conceptually correct; T2 explanation covers zero probability, unseen bigrams, add one, vocabulary size, and probability mass (in student's own words); T3 explanation only states \"lower is better\" and therefore misses the reference ideas inverse probability, normalised per word, and surprise.",
+    "documentation": "Documentation: 2 - A few comments exist (\"unigram and bigram counts\", \"smoothed probability\", \"multiply smoothed bigram probabilities\") but they are sparse and mostly trivial; the helper function lacks a docstring."
+  },
+  "missing_concepts": {
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2433,
+    "completion_tokens": 272
+  },
+  "cost_usd": 0.00372125
+}

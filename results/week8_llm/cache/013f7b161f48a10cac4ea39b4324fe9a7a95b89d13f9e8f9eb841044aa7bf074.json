@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 2.0,
+  "explanation": 2.0,
+  "documentation": 2.0,
+  "overall": 6.0,
+  "max_score": 20,
+  "feedback": "T1: syntax error and output mismatch (missing sorted set comprehension); T2: used CountVectorizer instead of TfidfVectorizer and explanation misses all TF-IDF reference ideas; T3: output mismatch and cell not executed, explanation misses cosine reference ideas (angle, norm, document length).",
+  "justification": {
+    "code": "Code: 2. Most tasks fail (T1 has syntax error and does not run, T2 uses wrong vectorizer though output matches by chance, T3 output mismatches reference and cell never executed) but there are relevant attempts at tokenization, vectorization and cosine similarity (anchor 2).",
+    "explanation": "Explanation: 2. T2 explanation is vague/generic and misses all reference ideas (term frequency, inverse document frequency, logarithm, common words down-weighted, rare words weighted higher); T3 explanation is partly correct but shallow, misses angle/norm/document length/direction and is not in own words matching reference (anchor 2).",
+    "documentation": "Documentation: 2. Some comments present (e.g. '# term counts', '# recompute tf-idf...') but they are sparse and mostly trivial (anchor 2)."
+  },
+  "missing_concepts": {
+    "T1": [
+      "sorted set comprehension from tokens list"
+    ],
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "common words down-weighted",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2200,
+    "completion_tokens": 320
+  },
+  "cost_usd": 0.00355
+}

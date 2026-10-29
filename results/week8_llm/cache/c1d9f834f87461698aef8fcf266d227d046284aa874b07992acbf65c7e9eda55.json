@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 6.0,
+  "explanation": 2.0,
+  "documentation": 3.0,
+  "overall": 11.0,
+  "max_score": 20,
+  "feedback": "T3 used CountVectorizer and raw dot product instead of TfidfVectorizer + cosine_similarity (wrong output 6 instead of 0.6344). T2 explanation missed term frequency, inverse document frequency, logarithm, and rare-word weighting. T3 explanation contained a conceptual error about cosine similarity depending on Euclidean distance.",
+  "justification": {
+    "code": "T1 and T2 are essentially correct (T2 uses an alias but produces the right numeric output); T3 uses the wrong method (CountVectorizer + raw dot product instead of TfidfVectorizer + cosine_similarity) and gives the wrong output (6 instead of 0.6344), so one major error. This matches the anchor for code=6.",
+    "explanation": "T2 explanation is shallow and only mentions down-weighting of common words; it omits term frequency, inverse document frequency, logarithm, and higher weighting for rare words. T3 explanation is factually wrong (misstates what cosine similarity does and why it is preferred). This is partly correct but contains a clear conceptual error and misses several reference ideas, matching the anchor for explanation=2.",
+    "documentation": "T1 has a meaningful docstring and two non-trivial comments; T2 and T3 have one comment each that is partly trivial. This is good comments with minor gaps, matching the anchor for documentation=3."
+  },
+  "missing_concepts": {
+    "T2": [
+      "term frequency",
+      "inverse document frequency",
+      "logarithm",
+      "rare words weighted higher"
+    ],
+    "T3": [
+      "angle",
+      "dot product",
+      "norm",
+      "document length",
+      "direction"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2206,
+    "completion_tokens": 400
+  },
+  "cost_usd": 0.0037575
+}

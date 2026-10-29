@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "model": "grok-4.20-0309-non-reasoning",
+  "reference": "reference_solution.ipynb",
+  "code": 4.0,
+  "explanation": 2.0,
+  "documentation": 1.0,
+  "overall": 7.0,
+  "max_score": 20,
+  "feedback": "T1 fails with NameError on bigram_counts and lacks corpus counting loop; T2 explanation misses zero probability, unseen bigrams, add one, vocabulary size, probability mass; T3 explanation is missing.",
+  "justification": {
+    "code": "Code: 4. T1 has a NameError (bigram_counts undefined) and uses a non-intended helper function with no corpus loop; T2 and T3 are essentially correct but duplicate the counting code and T3 uses the product-of-probabilities form instead of the reference log-sum-exp method. This is about half the tasks correct with runtime error and non-intended method (anchor 4).",
+    "explanation": "Explanation: 2. T2 answer is vague/generic (\"Smoothing is used to smooth the probabilities of the model\") and misses all reference ideas (zero probability, unseen bigrams, add one, vocabulary size, probability mass); T3 explanation is entirely missing (placeholder).",
+    "documentation": "Documentation: 1. Only one trivial inline comment (\"look up the bigram count\" and \"add-one smoothing\" comment); no docstrings or meaningful markdown beyond headings."
+  },
+  "missing_concepts": {
+    "T2": [
+      "zero probability",
+      "unseen bigrams",
+      "add one",
+      "vocabulary size",
+      "probability mass"
+    ],
+    "T3": [
+      "inverse probability",
+      "normalised per word",
+      "lower is better",
+      "surprise"
+    ]
+  },
+  "cached": false,
+  "usage": {
+    "prompt_tokens": 2391,
+    "completion_tokens": 301
+  },
+  "cost_usd": 0.00374125
+}
